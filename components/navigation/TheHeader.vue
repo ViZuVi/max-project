@@ -1,8 +1,10 @@
 <template>
   <header class="app-header">
     <div class="app-header__navigation">
+      <v-main>
       <UserNav />
       <MainNav />
+      </v-main>
     </div>
   </header>
 </template>
@@ -22,9 +24,12 @@ export default {
 
 <style lang="scss">
 .app-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   margin: 0 auto;
-  background-image: url("../../assets/img/header-background.jpg");
-  min-height: 631px;
+  z-index: 2;
 }
 .app-header__navigation {
   max-width: $max-width;

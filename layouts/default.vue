@@ -1,9 +1,11 @@
 <template>
-  <div class="app-layout">
-    <TheHeader/>
-    <Nuxt />
-    <TheFooter />
-  </div>
+  <v-app>
+    <div class="app-layout">
+      <TheHeader />
+      <Nuxt />
+      <TheFooter />
+    </div>
+  </v-app>
 </template>
 
 <script>
@@ -20,4 +22,13 @@ export default {
 </script>
 
 <style lang="scss">
+#__layout {
+  // TODO: check styles for ayout in docs
+  .v-application {
+    font-family: "Montserrat", "Arial", sans-serif;
+  }
+}
+.app-layout {
+  position: relative;
+}
 </style>
