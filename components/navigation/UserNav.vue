@@ -53,7 +53,18 @@ export default {
   justify-content: space-between;
   min-height: 82px;
 }
+.user-nav__logo {
+  margin-right: 30px;
+}
 .user-nav__logo-icon {
   color: #365edc;
+}
+.user-nav__site-description {
+  color: #333333;
+  max-width: 200px;
+  font-size: 0.867em;
+  line-height: 20px;
+  opacity: 0.6;
+  margin-right: 77px;
 }
 </style>
