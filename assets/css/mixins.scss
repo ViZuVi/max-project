@@ -1,0 +1,21 @@
+@mixin font-small-uppercase {
+  margin-bottom: 11px;
+  font-size: 0.667em;
+  line-height: 1.3em;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+@mixin section-title {
+  font-size: 1.6em;
+  line-height: 1.126em;
+  font-weight: normal;
+}
+
+// TODO: and title to common/layout styles?
+@mixin section-size {
+  padding: 60px 30px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $max-width;
+}

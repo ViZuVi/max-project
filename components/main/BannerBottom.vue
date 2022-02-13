@@ -83,11 +83,7 @@ export default {
 }
 // TODO: check font styles
 .banner-bottom__section {
-  margin-bottom: 11px;
-  font-size: 0.667em;
-  line-height: 1.3em;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
+  @include font-small-uppercase;
   opacity: 0.7;
 }
 .banner-bottom__title {

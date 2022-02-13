@@ -2,6 +2,7 @@ module.exports = {
   css: [
     "~/assets/css/fonts.scss",
     "~/assets/css/variables.scss",
+    "~assets/css/mixins.scss",
     "~/assets/css/common.scss",
   ],
   head: {
