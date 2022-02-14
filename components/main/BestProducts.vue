@@ -8,7 +8,12 @@
       >
         <AppTabs :tabs="['Хит', 'Советуем', 'Новинка', 'Акция']" />
       </SectionTitle>
-      <div class="best-products__list"></div>
+      <div class="best-products__list">
+        <div v-for="(product, i) in products" :key="product.id" :index="i">
+          <BestProductCard :product="product" />
+        </div>
+      </div>
+      <AppButton label="Загрузить еще" className="transparant" />
     </div>
   </section>
 </template>
@@ -16,12 +21,84 @@
 <script>
 import SectionTitle from "./SectionTitle";
 import AppTabs from "~/components/ui/AppTabs";
+import AppButton from "~/components/ui/AppButton";
+import BestProductCard from "./BestProductCard";
 
 export default {
   name: "BestProducts",
   components: {
     SectionTitle,
     AppTabs,
+    AppButton,
+    BestProductCard,
+  },
+  data() {
+    return {
+      // TODO: this is mocks, delete; check image
+      products: [
+        {
+          id: 1,
+          name: "Косуха из натуральной кожи",
+          rating: 0,
+          count: "many",
+          code: "A36955R7",
+          price: 16800,
+          images: [require("~/assets/img/best-product-prime.jpg")],
+        },
+        {
+          id: 2,
+          name: "Смартфон SY 15",
+          rating: 0,
+          count: "many",
+          code: "A36955R7",
+          price: 36000,
+          images: [
+            require("~/assets/img/best-product-phone-1.jpg"),
+            require("~/assets/img/best-product-phone-2.jpg"),
+            require("~/assets/img/best-product-phone-3.jpg"),
+          ],
+        },
+        {
+          id: 3,
+          name: "Смартфон SY 15",
+          rating: 0,
+          count: "many",
+          code: "A36955R7",
+          price: 36000,
+          images: [
+            require("~/assets/img/best-product-phone-1.jpg"),
+            require("~/assets/img/best-product-phone-2.jpg"),
+            require("~/assets/img/best-product-phone-3.jpg"),
+          ],
+        },
+        {
+          id: 4,
+          name: "Смартфон SY 15",
+          rating: 0,
+          count: "many",
+          code: "A36955R7",
+          price: 36000,
+          images: [
+            require("~/assets/img/best-product-phone-1.jpg"),
+            require("~/assets/img/best-product-phone-2.jpg"),
+            require("~/assets/img/best-product-phone-3.jpg"),
+          ],
+        },
+        {
+          id: 5,
+          name: "Смартфон SY 15",
+          rating: 0,
+          count: "many",
+          code: "A36955R7",
+          price: 36000,
+          images: [
+            require("~/assets/img/best-product-phone-1.jpg"),
+            require("~/assets/img/best-product-phone-2.jpg"),
+            require("~/assets/img/best-product-phone-3.jpg"),
+          ],
+        },
+      ],
+    };
   },
 };
 </script>
@@ -34,5 +111,9 @@ export default {
 }
 .best-products__wrapper {
   @include section-size;
+}
+.best-products__list {
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>
