@@ -1,5 +1,10 @@
 <template>
   <div class="section-title">
+    <AppIcon
+      v-if="iconSymbol"
+      :symbol="iconSymbol"
+      className="section-title__icon"
+    />
     <h2 class="section-title__name">{{ title }}</h2>
     <slot></slot>
     <a class="section-title__link" :href="allLink">{{ allName }}</a>
@@ -7,8 +12,13 @@
 </template>
 
 <script>
+import AppIcon from "~/components/ui/AppIcon";
+
 export default {
   name: "SectionTitle",
+  components: {
+    AppIcon,
+  },
   props: {
     title: {
       type: String,
@@ -23,6 +33,11 @@ export default {
     allLink: {
       type: String,
       required: true,
+      default: () => "",
+    },
+    iconSymbol: {
+      type: String,
+      required: false,
       default: () => "",
     },
   },
@@ -48,4 +63,12 @@ export default {
     color: #007aff;
   }
 }
+  .section-title__icon {
+    margin-right: 14px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 </style>

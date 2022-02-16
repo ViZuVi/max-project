@@ -9,8 +9,8 @@
         <AppTabs :tabs="['Хит', 'Советуем', 'Новинка', 'Акция']" />
       </SectionTitle>
       <div class="best-products__list">
-        <div v-for="(product, i) in products" :key="product.id" :index="i">
-          <BestProductCard :product="product" />
+        <div v-for="(product, i) in products" :key="product.id">
+          <BestProductCard :product="product"  :index="i" />
         </div>
       </div>
       <AppButton label="Загрузить еще" className="transparant" />
