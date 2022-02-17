@@ -11,7 +11,7 @@
         v-for="category in categories"
         :key="category.title"
       >
-        <a class="popular-categories__link" :href="category.link">
+        <nuxt-link class="popular-categories__link" :to="category.link">
           <img
             width="80"
             height="80"
@@ -20,7 +20,7 @@
             :alt="category.title"
           />
           {{ category.title }}
-        </a>
+        </nuxt-link>
       </div>
     </div>
   </section>

@@ -2,30 +2,30 @@
   <div class="banner-bottom">
     <!-- TODO: v-for -->
     <div class="banner-bottom__wrapper banner-bottom__wrapper--service">
-      <a href="#" class="banner-bottom__link">
+      <nuxt-link to="#" class="banner-bottom__link">
         <span class="banner-bottom__text-wrapper">
           <span class="banner-bottom__section">Услуга</span>
           <span class="banner-bottom__title">Настройка электроники</span>
         </span>
-      </a>
+      </nuxt-link>
     </div>
     <div class="banner-bottom__wrapper banner-bottom__wrapper--blog">
-      <a href="#" class="banner-bottom__link">
+      <nuxt-link to="#" class="banner-bottom__link">
         <span class="banner-bottom__text-wrapper">
           <span class="banner-bottom__section">Блог</span>
           <span class="banner-bottom__title">Топ-5 лучших смартфонов</span>
         </span>
-      </a>
+      </nuxt-link>
     </div>
     <div class="banner-bottom__wrapper banner-bottom__wrapper--promo">
-      <a href="#" class="banner-bottom__link">
+      <nuxt-link to="#" class="banner-bottom__link">
         <span class="banner-bottom__text-wrapper">
           <span class="banner-bottom__section">Акция</span>
           <span class="banner-bottom__title"
             >Скидка 10% на любой товар по хэштегу</span
           >
         </span>
-      </a>
+      </nuxt-link>
     </div>
   </div>
 </template>

@@ -7,7 +7,7 @@
     />
     <h2 class="section-title__name">{{ title }}</h2>
     <slot></slot>
-    <a class="section-title__link" :href="allLink">{{ allName }}</a>
+    <nuxt-link class="section-title__link" :to="allLink">{{ allName }}</nuxt-link>
   </div>
 </template>
 

@@ -1,13 +1,17 @@
 <template>
   <div class="ads-list-card">
-    <a
-      class="ads-list-card__link"
-      :href="card.link"
-      :style="{ backgroundImage: `url(${card.img})` }"
-    >
-    </a>
-    <a class="ads-list-card__title">{{ card.title }}</a>
-    <span class="ads-list-card__category">{{ card.category }}</span>
+    <div class="ads-list-card__link-wrapper">
+      <nuxt-link
+        class="ads-list-card__link"
+        :to="card.link"
+        :style="{ backgroundImage: `url(${card.img})` }"
+      >
+      </nuxt-link>
+      <div class="ads-list-card__link-text">
+        <span class="ads-list-card__title">{{ card.title }}</span>
+        <span class="ads-list-card__category">{{ card.category }}</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,13 +39,17 @@ export default {
     margin-right: 32px;
   }
 }
+.ads-list-card__link-wrapper {
+  width: 313px;
+  height: 431px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  position: relative;
+}
 .ads-list-card__link {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 431px;
-  background-color: grey;
-  margin-bottom: 25px;
   background-position: center;
   background-size: cover;
   transition: transform 0.8s ease;
@@ -49,11 +57,17 @@ export default {
     transform: scale(1.05);
   }
 }
+.ads-list-card__link-text {
+  position: absolute;
+  top: 0;
+}
 .ads-list-card__title {
   margin-bottom: 6px;
   font-size: 1.2em;
   line-height: 1.454em;
   color: inherit;
+  cursor: pointer;
+
   &:hover {
     color: #007aff;
   }

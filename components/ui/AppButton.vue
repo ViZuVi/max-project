@@ -38,6 +38,9 @@ export default {
   transition: background-color 0.3s ease;
   // transform: translate3d(0,0,0);
   white-space: nowrap;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
   &.transparant {
     border: 1px solid #365edc;

@@ -4,11 +4,11 @@
     :class="index === 0 ? 'best-product-card--prime' : ''"
   >
     <div class="best-product-card__wrapper">
-      <a
-        href=""
+      <nuxt-link
+        to=""
         class="best-product-card__link"
         :style="{ backgroundImage: product.images[0] }"
-      ></a>
+      ></nuxt-link>
       <div class="best-product-card__info">
         <div class="best-product-card__rating">{{ product.rating }}</div>
         <p>{{ product.name }}</p>
