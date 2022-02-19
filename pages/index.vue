@@ -13,6 +13,7 @@
       :style="{ backgroundImage: `url(${promoImg})` }"
     ></div>
     <CollectionsList />
+    <LookBooks />
   </div>
 </template>
 
@@ -26,6 +27,7 @@ import DayOffer from "~/components/main/DayOffer";
 import AdsList from "~/components/main/AdsList";
 import SaleProducts from "~/components/main/SaleProducts";
 import CollectionsList from "~/components/main/CollectionsList";
+import LookBooks from "~/components/main/LookBooks";
 
 export default {
   components: {
@@ -37,7 +39,8 @@ export default {
     DayOffer,
     AdsList,
     SaleProducts,
-    CollectionsList
+    CollectionsList,
+    LookBooks
   },
   data() {
     return {

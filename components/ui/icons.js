@@ -20,6 +20,9 @@ const icons = {
   `,
   icon_lightning: `
     <svg xmlns="http://www.w3.org/2000/svg" width="9" height="12" viewBox="0 0 9 12" fill="#fc5a42"><path data-name="Shape 943 copy 12" d="M710,75l-7,7h3l-1,5,7-7h-3Z" transform="translate(-703 -75)"></path></svg>
+  `,
+  icon_next_arrow: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="currentColor"><path data-name="Rounded Rectangle 1059" d="M1089.85,846.853l-3.01,2.993a0.492,0.492,0,0,1-.7,0,0.51,0.51,0,0,1,0-.707l2.15-2.14h-9.79a0.5,0.5,0,0,1,0-1h9.82l-2.18-2.175a0.5,0.5,0,0,1,0-.7,0.494,0.494,0,0,1,.7,0l3.01,3a0.507,0.507,0,0,1,.14.365A0.514,0.514,0,0,1,1089.85,846.853Z" transform="translate(-1078 -843)"></path></svg>
   `
 }
 
