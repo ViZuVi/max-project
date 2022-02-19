@@ -14,6 +14,8 @@
     ></div>
     <CollectionsList />
     <LookBooks />
+    <Stories />
+    <Reviews />
   </div>
 </template>
 
@@ -28,6 +30,8 @@ import AdsList from "~/components/main/AdsList";
 import SaleProducts from "~/components/main/SaleProducts";
 import CollectionsList from "~/components/main/CollectionsList";
 import LookBooks from "~/components/main/LookBooks";
+import Stories from "~/components/main/Stories";
+import Reviews from "~/components/main/Reviews";
 
 export default {
   components: {
@@ -40,7 +44,9 @@ export default {
     AdsList,
     SaleProducts,
     CollectionsList,
-    LookBooks
+    LookBooks,
+    Stories,
+    Reviews,
   },
   data() {
     return {
