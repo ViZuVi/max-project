@@ -16,6 +16,9 @@
     <LookBooks />
     <Stories />
     <Reviews />
+    <BannersMiddle />
+    <Blog />
+    <Map />
   </div>
 </template>
 
@@ -32,6 +35,9 @@ import CollectionsList from "~/components/main/CollectionsList";
 import LookBooks from "~/components/main/LookBooks";
 import Stories from "~/components/main/Stories";
 import Reviews from "~/components/main/Reviews";
+import BannersMiddle from "~/components/main/BannersMiddle";
+import Blog from "~/components/main/Blog";
+import Map from "~/components/main/Map";
 
 export default {
   components: {
@@ -47,6 +53,9 @@ export default {
     LookBooks,
     Stories,
     Reviews,
+    BannersMiddle,
+    Blog,
+    Map
   },
   data() {
     return {

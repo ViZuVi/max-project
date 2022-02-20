@@ -161,6 +161,7 @@ export default {
   letter-spacing: 0.8px;
   color: #999999;
   margin-right: 37px;
+  margin-left: auto;
   display: flex;
   align-items: center;
 

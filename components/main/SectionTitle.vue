@@ -7,7 +7,9 @@
     />
     <h2 class="section-title__name">{{ title }}</h2>
     <slot></slot>
-    <nuxt-link class="section-title__link" :to="allLink">{{ allName }}</nuxt-link>
+    <nuxt-link class="section-title__link" :to="allLink">{{
+      allName
+    }}</nuxt-link>
   </div>
 </template>
 
@@ -48,13 +50,13 @@ export default {
 .section-title {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   color: #333333;
   margin-bottom: 33px;
 }
 .section-title__name {
   @include section-title;
-  margin-right: auto;
 }
 .section-title__link {
   color: #999999;

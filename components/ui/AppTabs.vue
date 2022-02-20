@@ -40,6 +40,7 @@ export default {
 .app-tabs {
   display: flex;
   margin-right: 65px;
+  margin-left: auto;
   font-size: 0.867em;
   line-height: 1.692em;
   color: #666666;
