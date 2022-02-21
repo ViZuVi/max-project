@@ -21,6 +21,7 @@
     <Map />
     <Company />
     <Brands />
+    <Instagram />
   </div>
 </template>
 
@@ -42,6 +43,7 @@ import Blog from "~/components/main/Blog";
 import Map from "~/components/main/Map";
 import Company from "~/components/main/Company";
 import Brands from "~/components/main/Brands";
+import Instagram from "~/components/main/Instagram";
 
 export default {
   components: {
@@ -61,7 +63,8 @@ export default {
     Blog,
     Map,
     Company,
-    Brands
+    Brands,
+    Instagram
   },
   data() {
     return {

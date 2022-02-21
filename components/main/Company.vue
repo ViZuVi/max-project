@@ -50,6 +50,7 @@ export default {
 <style lang="scss" scoped>
 .company {
   display: flex;
+  border-bottom: 1px solid #ececec;
   // min-height: 59.7%;
 .company__details-btn {
   margin-left: 0;

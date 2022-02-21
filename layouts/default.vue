@@ -10,7 +10,7 @@
 
 <script>
 import TheHeader from "@/components/navigation/TheHeader";
-import TheFooter from "@/components/navigation/TheFooter";
+import TheFooter from "@/components/footer/TheFooter";
 
 export default {
   name: "default",

@@ -1,7 +1,7 @@
 <template>
   <section class="collections">
     <div class="collections__wrapper">
-      <SectionTitle
+      <AppSectionTitle
         title="Коллекции"
         allName="Все коллекции"
         allLink="/collections"
@@ -14,13 +14,13 @@
 </template>
 
 <script>
-import SectionTitle from "./SectionTitle";
+import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import CollectionCard from "./CollectionCard";
 
 export default {
   name: "CollectionsList",
   components: {
-    SectionTitle,
+    AppSectionTitle,
     CollectionCard,
   },
   data() {

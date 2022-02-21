@@ -1,6 +1,6 @@
 <template>
   <section class="popular-categories">
-    <SectionTitle
+    <AppSectionTitle
       title="Популярные категории"
       allName="Весь каталог"
       allLink="/catalog"
@@ -28,12 +28,12 @@
 
 <script>
 import categories from "./categories-static";
-import SectionTitle from "./SectionTitle";
+import AppSectionTitle from "~/components/ui/AppSectionTitle";
 
 export default {
   name: "PopularCategories",
   components: {
-    SectionTitle,
+    AppSectionTitle,
   },
   data() {
     return {
@@ -46,6 +46,7 @@ export default {
 <style lang="scss" scoped>
 .popular-categories {
   @include section-size;
+  border-bottom: 1px solid #ececec;
 }
 .popular-categories__list {
   width: 100%;

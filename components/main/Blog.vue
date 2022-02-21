@@ -1,12 +1,12 @@
 <template>
   <section class="blog">
     <div class="blog__wrapper">
-      <SectionTitle title="Блог" allName="Все статьи" allLink="/blog">
+      <AppSectionTitle title="Блог" allName="Все статьи" allLink="/blog">
         <button class="blog__add-btn">
           <AppIcon symbol="icon_subscribe" className="blog__chat-icon" />
           <span>Подписаться</span>
         </button>
-      </SectionTitle>
+      </AppSectionTitle>
       <div class="blog__list">
         <div
           class="blog__item"
@@ -37,14 +37,14 @@
 </template>
 
 <script>
-import SectionTitle from "./SectionTitle";
+import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import AppButton from "~/components/ui/AppButton";
 import AppIcon from "~/components/ui/AppIcon";
 
 export default {
   name: "Blog",
   components: {
-    SectionTitle,
+    AppSectionTitle,
     AppButton,
     AppIcon,
   },
@@ -112,7 +112,7 @@ export default {
   align-items: center;
 
   &:hover {
-    color: #007aff;
+    color: #365edc;
   }
 }
 .blog__chat-icon {

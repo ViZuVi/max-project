@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 .stories {
-  border: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
 }
 .stories__wrapper {
   @include section-size;

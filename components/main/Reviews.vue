@@ -1,12 +1,12 @@
 <template>
   <section class="reviews">
     <div class="reviews__wrapper">
-      <SectionTitle title="О нас пишут" allName="Все отзывы" allLink="/reviews">
+      <AppSectionTitle title="О нас пишут" allName="Все отзывы" allLink="/reviews">
         <button class="reviews__add-btn">
           <AppIcon symbol="icon_chat" className="review__chat-icon" />
           <span>Оставить отзыв</span>
         </button>
-      </SectionTitle>
+      </AppSectionTitle>
       <v-carousel class="reviews__carousel" hide-delimiters height="auto">
         <!-- <template #prev>
           <AppIcon symbol="icon_prev" className="review__icon" />
@@ -48,14 +48,14 @@
 </template>
 
 <script>
-import SectionTitle from "./SectionTitle";
+import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import AppButton from "~/components/ui/AppButton";
 import AppIcon from "~/components/ui/AppIcon";
 
 export default {
   name: "Reviews",
   components: {
-    SectionTitle,
+    AppSectionTitle,
     AppButton,
     AppIcon,
   },
@@ -92,7 +92,7 @@ export default {
 
 <style lang="scss">
 .reviews {
-  border: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
   background-color: #f8f8f8;
 
   .v-sheet {

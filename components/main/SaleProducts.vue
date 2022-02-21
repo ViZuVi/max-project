@@ -1,7 +1,7 @@
 <template>
   <section class="sale-products">
     <div class="sale-products__wrapper">
-      <SectionTitle
+      <AppSectionTitle
         title="Выгодные предложения"
         allName="Все акции"
         allLink="/sale"
@@ -15,14 +15,14 @@
 </template>
 
 <script>
-import SectionTitle from "./SectionTitle";
+import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import AppButton from "~/components/ui/AppButton";
 import SaleCard from "./SaleCard";
 
 export default {
   name: "SaleProducts",
   components: {
-    SectionTitle,
+    AppSectionTitle,
     AppButton,
     SaleCard,
   },
@@ -55,7 +55,7 @@ export default {
 
 <style lang="scss" scoped>
 .sale-products {
-  border: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
   background-color: #f8f8f8;
 }
 .sale-products__wrapper {

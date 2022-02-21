@@ -1,7 +1,7 @@
 <template>
   <section class="day-offer">
     <div class="day-offer__wrapper">
-      <SectionTitle
+      <AppSectionTitle
         title="Товар дня"
         allName="Весь каталог"
         allLink="/catalog"
@@ -18,12 +18,12 @@
 </template>
 
 <script>
-import SectionTitle from "./SectionTitle";
+import AppSectionTitle from "~/components/ui/AppSectionTitle";
 
 export default {
   name: "DayOffer",
   components: {
-    SectionTitle,
+    AppSectionTitle,
   },
   data() {
     return {

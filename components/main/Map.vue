@@ -1,7 +1,7 @@
 <template>
   <section class="map">
     <div class="map__wrapper">
-      <SectionTitle
+      <AppSectionTitle
         title="Адреса магазинов"
         allName="Перейти в раздел"
         allLink="/contacts"
@@ -51,13 +51,13 @@
 </template>
 
 <script>
-import SectionTitle from "./SectionTitle";
+import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import AppButton from "~/components/ui/AppButton";
 
 export default {
   name: "Map",
   components: {
-    SectionTitle,
+    AppSectionTitle,
     AppButton,
   },
   data() {

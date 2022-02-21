@@ -1,9 +1,9 @@
 <template>
   <section class="lookbooks">
     <div class="lookbooks__wrapper">
-      <SectionTitle title="Образы" allName="Все образы" allLink="/lookbooks">
+      <AppSectionTitle title="Образы" allName="Все образы" allLink="/lookbooks">
         <AppTabs :tabs="['Мужчины', 'Женщины', 'Дети']" />
-      </SectionTitle>
+      </AppSectionTitle>
       <div class="lookbooks__list">
         <LookBooksCard v-for="card in cards" :key="card.id" :card="card" />
       </div>
@@ -12,14 +12,14 @@
 </template>
 
 <script>
-import SectionTitle from "./SectionTitle";
+import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import LookBooksCard from "./LookBooksCard";
 import AppTabs from "~/components/ui/AppTabs";
 
 export default {
   name: "LookBooks",
   components: {
-    SectionTitle,
+    AppSectionTitle,
     LookBooksCard,
     AppTabs,
   },

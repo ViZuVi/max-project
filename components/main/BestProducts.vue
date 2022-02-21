@@ -1,13 +1,13 @@
 <template>
   <section class="best-products">
     <div class="best-products__wrapper">
-      <SectionTitle
+      <AppSectionTitle
         title="Лучшие предложения"
         allName="Весь каталог"
         allLink="/catalog"
       >
         <AppTabs :tabs="['Хит', 'Советуем', 'Новинка', 'Акция']" />
-      </SectionTitle>
+      </AppSectionTitle>
       <div class="best-products__list">
         <div v-for="(product, i) in products" :key="product.id">
           <BestProductCard :product="product"  :index="i" />
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import SectionTitle from "./SectionTitle";
+import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import AppTabs from "~/components/ui/AppTabs";
 import AppButton from "~/components/ui/AppButton";
 import BestProductCard from "./BestProductCard";
@@ -27,7 +27,7 @@ import BestProductCard from "./BestProductCard";
 export default {
   name: "BestProducts",
   components: {
-    SectionTitle,
+    AppSectionTitle,
     AppTabs,
     AppButton,
     BestProductCard,
@@ -106,7 +106,7 @@ export default {
 <style lang="scss" scoped>
 .best-products {
   // TODO: border - variable?
-  border: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
   background-color: #f8f8f8;
 }
 .best-products__wrapper {

@@ -7,9 +7,11 @@
     />
     <h2 class="section-title__name">{{ title }}</h2>
     <slot></slot>
-    <nuxt-link class="section-title__link" :to="allLink">{{
-      allName
-    }}</nuxt-link>
+    <slot name="link">
+      <nuxt-link class="section-title__link" :to="allLink">{{
+        allName
+      }}</nuxt-link>
+    </slot>
   </div>
 </template>
 
@@ -17,7 +19,7 @@
 import AppIcon from "~/components/ui/AppIcon";
 
 export default {
-  name: "SectionTitle",
+  name: "AppSectionTitle",
   components: {
     AppIcon,
   },
@@ -29,12 +31,12 @@ export default {
     },
     allName: {
       type: String,
-      required: true,
+      required: false,
       default: () => "",
     },
     allLink: {
       type: String,
-      required: true,
+      required: false,
       default: () => "",
     },
     iconSymbol: {
@@ -62,15 +64,15 @@ export default {
   color: #999999;
   @include font-small-uppercase;
   &:hover {
-    color: #007aff;
+    color: #356edc;
   }
 }
-  .section-title__icon {
-    margin-right: 14px;
-    width: 22px;
-    height: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.section-title__icon {
+  margin-right: 14px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
