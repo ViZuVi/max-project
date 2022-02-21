@@ -19,6 +19,8 @@
     <BannersMiddle />
     <Blog />
     <Map />
+    <Company />
+    <Brands />
   </div>
 </template>
 
@@ -38,6 +40,8 @@ import Reviews from "~/components/main/Reviews";
 import BannersMiddle from "~/components/main/BannersMiddle";
 import Blog from "~/components/main/Blog";
 import Map from "~/components/main/Map";
+import Company from "~/components/main/Company";
+import Brands from "~/components/main/Brands";
 
 export default {
   components: {
@@ -55,7 +59,9 @@ export default {
     Reviews,
     BannersMiddle,
     Blog,
-    Map
+    Map,
+    Company,
+    Brands
   },
   data() {
     return {
