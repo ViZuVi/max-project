@@ -1,5 +1,5 @@
 <template>
-  <button :type="type" class="app-button" :class="className">
+  <button :type="type" class="app-button" :class="className" @click="$emit('click', $event)">
     {{ label }}
     <AppIcon v-if="btnSymbol" :symbol="btnSymbol" :className="iconClassName" />
   </button>
@@ -26,7 +26,7 @@ export default {
     },
     label: {
       type: String,
-      required: true,
+      required: false,
       default: () => "",
     },
     btnSymbol: {
@@ -67,6 +67,11 @@ export default {
       background-color: #365edc;
       color: #ffffff;
     }
+  }
+
+  &.small{
+    padding: 10px 14px 8px;
+    font-size: 9px;
   }
 }
 </style>

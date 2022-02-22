@@ -9,9 +9,12 @@
         <AppTabs :tabs="['Хит', 'Советуем', 'Новинка', 'Акция']" />
       </AppSectionTitle>
       <div class="best-products__list">
-        <div v-for="(product, i) in products" :key="product.id">
-          <BestProductCard :product="product"  :index="i" />
-        </div>
+        <BestProductCard
+          v-for="(product, i) in products"
+          :key="product.id"
+          :product="product"
+          :index="i"
+        />
       </div>
       <AppButton label="Загрузить еще" className="transparant" />
     </div>
@@ -97,6 +100,19 @@ export default {
             require("~/assets/img/best-product-phone-3.jpg"),
           ],
         },
+        {
+          id: 6,
+          name: "Смартфон SY 15",
+          rating: 0,
+          count: "many",
+          code: "A36955R7",
+          price: 36000,
+          images: [
+            require("~/assets/img/best-product-phone-1.jpg"),
+            require("~/assets/img/best-product-phone-2.jpg"),
+            require("~/assets/img/best-product-phone-3.jpg"),
+          ],
+        },
       ],
     };
   },
@@ -108,12 +124,13 @@ export default {
   // TODO: border - variable?
   border-bottom: 1px solid #ececec;
   background-color: #f8f8f8;
+  width: 100%;
 }
 .best-products__wrapper {
   @include section-size;
 }
 .best-products__list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 </style>
