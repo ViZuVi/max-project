@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div class="app-layout">
-      <TheHeader :short="true" />
+      <TheHeader />
       <Nuxt />
       <TheFooter />
     </div>

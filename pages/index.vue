@@ -66,6 +66,7 @@ export default {
     Brands,
     Instagram
   },
+  layout: "hero",
   data() {
     return {
       promoImg: require("~/assets/img/promo.jpg"),

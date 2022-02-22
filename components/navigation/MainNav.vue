@@ -28,12 +28,16 @@ export default {
 
 <style lang="scss">
 .main-nav {
+  max-width: $max-width;
+  margin: 0 auto;
   background-color: #365edc;
   color: #ffffff;
   border-radius: 3px;
 }
 .main-nav__list {
   display: flex;
+  max-width: $max-width;
+  margin: 0 auto;
 }
 .main-nav__item {
   padding: 18px;
