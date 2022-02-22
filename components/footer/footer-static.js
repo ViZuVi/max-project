@@ -1,0 +1,33 @@
+export default [
+  {title: "Каталог", link: "/catalog"},
+  {title: "Акции", link: "/sale"},
+  {title: "Услуги", link: "/services"},
+  {title: "Бренды", link: "/brands"},
+  {title: "Компания", link: "/company", subMenu: [
+    {title: "О компании", link: "/company"},
+    {title: "Новости", link: "/company/news"},
+    {title: "Команда", link: "/company/staff"},
+    {title: "Отзывы", link: "/company/reviews"},
+    {title: "Карьера", link: "/company/vacancy"},
+    {title: "Контакты", link: "/company/contacts"},
+    {title: "Партнеры", link: "/company/partners"},
+    {title: "Лицензии", link: "/company/licenses"},
+    {title: "Документы", link: "/company/docs"},
+  ]},
+  {title: "Информация", link: "/info", subMenu: [
+    {title: "Магазины", link: "/contacts/stores"},
+    {title: "Блог", link: "/blog"},
+    {title: "Проекты", link: "/projects"},
+    {title: "Политика", link: "/include"},
+    {title: "Реквизиты", link: "/requisites"},
+    {title: "Возможности", link: "/info/more"},
+  ]},
+  {title: "Помощь", link: "/help", subMenu: [
+    {title: "Условия оплаты", link: "/help/payment"},
+    {title: "Условия доставки", link: "/help/delivery"},
+    {title: "Гарантия на товар", link: "/help/warranty"},
+    {title: "Вопрос-ответ", link: "/info/faq"},
+    {title: "Коллекции", link: "/landings"},
+    {title: "Образы", link: "/lookbooks"},
+  ]},
+]

@@ -1,12 +1,18 @@
 <template>
   <button :type="type" class="app-button" :class="className">
     {{ label }}
+    <AppIcon v-if="btnSymbol" :symbol="btnSymbol" :className="iconClassName" />
   </button>
 </template>
 
 <script>
+import AppIcon from "~/components/ui/AppIcon";
+
 export default {
   name: "AppButton",
+  components: {
+    AppIcon
+  },
   props: {
     type: {
       type: String,
@@ -23,6 +29,16 @@ export default {
       required: true,
       default: () => "",
     },
+    btnSymbol: {
+      type: String,
+      required: false,
+      default: () => "",
+    },
+    iconClassName: {
+      type: String,
+      required: false,
+      default: () => "",
+    }
   },
 };
 </script>

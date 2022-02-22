@@ -1,5 +1,6 @@
 <template>
   <section class="blog">
+    <!-- TODO: check all wrappers -->
     <div class="blog__wrapper">
       <AppSectionTitle title="Блог" allName="Все статьи" allLink="/blog">
         <button class="blog__add-btn">
