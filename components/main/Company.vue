@@ -15,7 +15,7 @@
         </p>
         <AppButton
           label="Подробности"
-          className="transparant company__details-btn"
+          className="app-button--transparent company__details-btn"
           @click="$router.push('/company')"
         />
       </div>

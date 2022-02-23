@@ -16,7 +16,7 @@
           :index="i"
         />
       </div>
-      <AppButton label="Загрузить еще" className="transparant" />
+      <AppButton label="Загрузить еще" className="app-button--transparent" />
     </div>
   </section>
 </template>

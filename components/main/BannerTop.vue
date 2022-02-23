@@ -32,7 +32,7 @@ export default {
     top: 50%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: transparent;
+    background-color: app-button--transparent;
   }
 }
 </style>

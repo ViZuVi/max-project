@@ -34,7 +34,7 @@
               </div>
               <AppButton
                 label="Отзыв полностью"
-                className="transparant raviews__btn"
+                className="app-button--transparent raviews__btn"
               />
             </div>
           </v-sheet>
@@ -96,7 +96,7 @@ export default {
   background-color: #f8f8f8;
 
   .v-sheet {
-    background-color: transparent;
+    background-color: app-button--transparent;
   }
 }
 .reviews__wrapper {

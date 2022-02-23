@@ -31,7 +31,7 @@
       <!-- TODO: fix button -->
       <AppButton
         label="Подписаться на рассылку"
-        className="transparant footer-menu__subscribe-btn"
+        className="app-button--transparent footer-menu__subscribe-btn"
         btnSymbol="icon_subscribe"
         iconClassName="footer-menu__subscribe-icon"
       />

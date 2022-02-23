@@ -9,7 +9,7 @@
       <div class="sale-products__list">
         <SaleCard v-for="card in cards" :key="card.id" :card="card" />
       </div>
-      <AppButton label="Загрузить еще" className="transparant" />
+      <AppButton label="Загрузить еще" className="app-button--transparent" />
     </div>
   </section>
 </template>

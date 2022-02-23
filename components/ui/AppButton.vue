@@ -58,7 +58,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
 
-  &.transparant {
+  &--transparent {
     border: 1px solid #365edc;
     color: #365edc;
     background-color: transparent;
@@ -69,7 +69,7 @@ export default {
     }
   }
 
-  &.small{
+  &--small{
     padding: 10px 14px 8px;
     font-size: 9px;
   }

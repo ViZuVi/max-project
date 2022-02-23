@@ -12,11 +12,11 @@
         <div class="product-card__header-btn-wrapper">
           <AppButton
             label="Отложить"
-            className="transparant product-card__header-btn small"
+            className="app-button--transparent product-card__header-btn app-button--small"
           />
           <AppButton
             label="Сравнить"
-            className="transparant product-card__header-btn small"
+            className="app-button--transparent product-card__header-btn app-button--small"
           />
         </div>
         <div>{{ product.rating }}</div>
@@ -41,11 +41,11 @@
         <div class="product-card__main-btn-wrapper">
           <AppButton
             label="Отложить"
-            className="transparant product-card__header-btn small"
+            className="app-button--transparent product-card__header-btn app-button--small"
           />
           <AppButton
             label="Сравнить"
-            className="transparant product-card__header-btn small"
+            className="app-button--transparent product-card__header-btn app-button--small"
           />
         </div>
         <div>{{ product.description }}</div>

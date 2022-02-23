@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <ViewedBefore v-if="viewed.length" :cards="viewed" />
+    <ViewedBefore v-if="viewed.length && !short" :cards="viewed" />
     <div class="footer__inner">
       <FooterMenu />
       <FooterSocial />
@@ -21,7 +21,14 @@ export default {
     ViewedBefore,
     FooterMenu,
     FooterSocial,
-    FooterCopy
+    FooterCopy,
+  },
+  props: {
+    short: {
+      type: Boolean,
+      required: false,
+      default: () => false,
+    },
   },
   data() {
     return {
@@ -48,7 +55,6 @@ export default {
       ],
     };
   },
-  
 };
 </script>
 
@@ -58,5 +64,4 @@ export default {
   background-color: #333333;
   padding: 59px 0 64px;
 }
-
 </style>

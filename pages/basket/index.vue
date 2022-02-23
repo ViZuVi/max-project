@@ -1,6 +1,7 @@
 <template>
   <div class="basket-page">
-    <!-- TODO: layote with personal recomendations -->
+    <!-- TODO: layot with personal recomendations -->
+    <!-- TODO: to componnent -->
     <div class="basket-page__header">
       <div class="basket-page__title-wrapper">
         <h1 class="basket-page__title">Корзина</h1>
@@ -10,7 +11,10 @@
       </div>
       <div class="basket-page__header-actions">
         <button class="basket-page__header-btn">
-          <AppIcon symbol="icon_download" className="basket-page__header-icon" />
+          <AppIcon
+            symbol="icon_download"
+            className="basket-page__header-icon"
+          />
           <span>Скачать файлом</span>
         </button>
         <button class="basket-page__header-btn">
@@ -23,15 +27,42 @@
         </button>
       </div>
     </div>
+    <div class="basket-page__main">
+      <div v-if="cart && cart.length">
+        <div class="basket-page__items"></div>
+        <div class="basket-page__checkout"></div>
+      </div>
+      <div class="basket-page__empty" v-else>
+        <AppIcon symbol="icon_cart" className="basket-page__cart-icon" />
+        <span class="basket-page__empty-title">Ваша корзина пуста</span>
+        <div class="basket-page__empty-text-wrapper">
+          <nuxt-link class="basket-page__empty-link" to="/"
+            >Нажмите здесь</nuxt-link
+          >
+          <span class="basket-page__empty-text"
+            >, чтобы продолжить покупки</span
+          >
+        </div>
+      </div>
+      <RecommendedProducts />
+    </div>
   </div>
 </template>
 
 <script>
+import RecommendedProducts from "~/components/cart/RecommendedProducts";
 import AppIcon from "~/components/ui/AppIcon";
 
 export default {
   components: {
+    RecommendedProducts,
     AppIcon,
+  },
+  layout: "cart",
+  data() {
+    return {
+      cart: [],
+    };
   },
 };
 </script>
@@ -79,6 +110,32 @@ export default {
 }
 .basket-page__header-icon {
   margin-right: 10px;
-  color: #B8B8B8;
+  color: #b8b8b8;
+}
+.basket-page__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 42px;
+}
+.basket-page__cart-icon {
+  color: #cccccc;
+}
+
+.basket-page__empty-title {
+  color: #333333;
+  font-size: 1.6em;
+  margin: 2.2rem 0 1.2rem;
+}
+.basket-page__empty-text-wrapper {
+  font-size: 0.933em;
+  color: #777;
+  line-height: 1.714em;
+}
+.basket-page__empty-link {
+  color: #365edc;
+  &:hover {
+    color: #333333;
+  }
 }
 </style>

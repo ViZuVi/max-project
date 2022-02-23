@@ -36,7 +36,7 @@
               >{{ contacts.email }}</a
             >
           </div>
-          <AppButton label="Написать сообщение" className="transparant map__contact-btn" />
+          <AppButton label="Написать сообщение" className="app-button--transparent map__contact-btn" />
         </div>
         <iframe
           class="map__frame"
