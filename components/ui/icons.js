@@ -79,7 +79,7 @@ const icons = {
     <svg class="svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5 14H14L14 6H11H10V5V2H5V6H7H9V8V10V12H7H5V14ZM13.6716 4L12 2.32843V4H13.6716ZM6 8H7V10H6H5H3H2V8H3H5H6ZM3 6H2H0V8V10V12H2H3V14V16H5H14H16V14V4.32843C16 3.79799 15.7893 3.28929 15.4142 2.91421L13.0858 0.585786C12.7107 0.210714 12.202 0 11.6716 0H5H3V2V6Z"></path></svg>
   `,
   icon_print:  `
-    <svg class="svg svg-print" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path id="Rectangle_665_copy_4" data-name="Rectangle 665 copy 4" class="cls-print" d="M1570,210h-2v3h-8v-3h-2a2,2,0,0,1-2-2v-5a2,2,0,0,1,2-2h2v-4h8v4h2a2,2,0,0,1,2,2v5A2,2,0,0,1,1570,210Zm-8,1h4v-4h-4v4Zm4-12h-4v2h4v-2Zm4,4h-12v5h2v-3h8v3h2v-5Z" transform="translate(-1556 -197)"></path></svg>
+    <svg class="svg svg-print" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path id="Rectangle_665_copy_4" data-name="Rectangle 665 copy 4" d="M1570,210h-2v3h-8v-3h-2a2,2,0,0,1-2-2v-5a2,2,0,0,1,2-2h2v-4h8v4h2a2,2,0,0,1,2,2v5A2,2,0,0,1,1570,210Zm-8,1h4v-4h-4v4Zm4-12h-4v2h4v-2Zm4,4h-12v5h2v-3h8v3h2v-5Z" transform="translate(-1556 -197)"></path></svg>
   `,
   icon_share: `
     <svg class="svg svg-share" xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="currentColor"><path data-name="Ellipse 223 copy 8" d="M1613,203a2.967,2.967,0,0,1-1.86-.661l-3.22,2.01a2.689,2.689,0,0,1,0,1.3l3.22,2.01A2.961,2.961,0,0,1,1613,207a3,3,0,1,1-3,3,3.47,3.47,0,0,1,.07-0.651l-3.21-2.01a3,3,0,1,1,0-4.678l3.21-2.01A3.472,3.472,0,0,1,1610,200,3,3,0,1,1,1613,203Zm0,8a1,1,0,1,0-1-1A1,1,0,0,0,1613,211Zm-8-7a1,1,0,1,0,1,1A1,1,0,0,0,1605,204Zm8-5a1,1,0,1,0,1,1A1,1,0,0,0,1613,199Z" transform="translate(-1602 -197)" fill="#B8B8B8"></path></svg>
@@ -88,6 +88,9 @@ const icons = {
     <svg xmlns="http://www.w3.org/2000/svg" width="84.03" height="72" viewBox="0 0 84.03 72" fill="currentColor">
       <path id="Rounded_Rectangle_906_copy_10" data-name="Rounded Rectangle 906 copy 10" d="M1570.92,203.46l-4.57,18.2a4.479,4.479,0,0,1-4.75,3.334c-0.04,0-.07.01-0.1,0.01h-47c-0.14,0-.26-0.028-0.39-0.04a4.219,4.219,0,0,1-4.67-3.445L1502.72,193H1491.5a4.5,4.5,0,0,1,0-9h14c0.1,0,.19.022,0.28,0.028a4.253,4.253,0,0,1,4.32,3.488L1512.57,198h53.93a0.117,0.117,0,0,1,.02,0,4.469,4.469,0,0,1,1.1.113A4.415,4.415,0,0,1,1570.92,203.46ZM1516.81,216h41.7l2.26-9h-46.08Zm5.69,13a13.5,13.5,0,1,1-13.5,13.5A13.5,13.5,0,0,1,1522.5,229Zm0,18a4.5,4.5,0,1,0-4.5-4.5A4.5,4.5,0,0,0,1522.5,247Zm31-18a13.5,13.5,0,1,1-13.5,13.5A13.5,13.5,0,0,1,1553.5,229Zm0,18a4.5,4.5,0,1,0-4.5-4.5A4.5,4.5,0,0,0,1553.5,247Z" transform="translate(-1487 -184)"/>
     </svg>
+  `,
+  icon_close: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><path id="Rounded_Rectangle_568_copy_13" data-name="Rounded Rectangle 568 copy 13" d="M1615.4,589l2.32,2.315a0.987,0.987,0,0,1,0,1.4,1,1,0,0,1-1.41,0L1614,590.4l-2.31,2.315a1,1,0,0,1-1.41,0,0.987,0.987,0,0,1,0-1.4L1612.6,589l-2.32-2.314a0.989,0.989,0,0,1,0-1.4,1,1,0,0,1,1.41,0l2.31,2.315,2.31-2.315a1,1,0,0,1,1.41,0,0.989,0.989,0,0,1,0,1.4Z" transform="translate(-1610 -585)"></path></svg>
   `
 }
 

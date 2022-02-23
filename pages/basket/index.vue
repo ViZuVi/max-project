@@ -29,7 +29,8 @@
     </div>
     <div class="basket-page__main">
       <div v-if="cart && cart.length">
-        <div class="basket-page__items"></div>
+        <BasketProducts />
+        
         <div class="basket-page__checkout"></div>
       </div>
       <div class="basket-page__empty" v-else>
@@ -51,17 +52,24 @@
 
 <script>
 import RecommendedProducts from "~/components/cart/RecommendedProducts";
+import BasketProducts from "~/components/cart/BasketProducts";
 import AppIcon from "~/components/ui/AppIcon";
 
 export default {
   components: {
     RecommendedProducts,
+    BasketProducts,
     AppIcon,
   },
   layout: "cart",
   data() {
     return {
-      cart: [],
+      cart: [
+        {
+          id: 1,
+          image: require("~/assets/img/recommended-1.jpg"),
+        }
+      ],
     };
   },
 };
