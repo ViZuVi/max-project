@@ -9,7 +9,9 @@
         card.title
       }}</nuxt-link>
       <p class="sale-card__decription">{{ card.description }}</p>
-      <span class="sale-card__discount" v-if="card.discount">{{ card.discount }}</span>
+      <span class="sale-card__discount" v-if="card.discount">{{
+        card.discount
+      }}</span>
       <span class="sale-card__timer">{{ card.timeLeft }}</span>
     </div>
     <nuxt-link
@@ -63,6 +65,7 @@ export default {
 }
 .sale-card__icon {
   margin-right: 9px;
+  color: #fc5a42;
 }
 .sale-card__title {
   display: block;
@@ -83,7 +86,7 @@ export default {
 .sale-card__timer,
 .sale-card__discount {
   padding: 5px 9px;
-  border:  1px solid #eee;
+  border: 1px solid #eee;
   font-weight: bold;
   font-size: 13px;
   border-radius: 2px;
