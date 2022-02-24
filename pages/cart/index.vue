@@ -19,7 +19,7 @@
           <span>Версия для печати</span>
         </button>
         <button class="cart-page__header-btn">
-          <AppIcon symbol="icon_share" className="cart-page__header-icon" />
+          <AppIcon symbol="icon_share_cart" className="cart-page__header-icon" />
           <span>Поделиться корзиной</span>
         </button>
       </div>
