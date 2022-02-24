@@ -1,48 +1,65 @@
 <template>
   <nav class="user-nav">
-    <!-- TODO: icons to ui -->
-    <span class="user-nav__logo">
-      <!-- TODO: check svg classes etc -->
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="177"
-        height="30"
-        viewBox="0 0 177 30"
-      >
-        <path
-          class="user-nav__logo-icon"
-          d="M1755,783.051l-1.8-.917s-2.55-1.321-4.22-2.382c-1.15-.726-1.98-1.3-1.98-2.98v-2.425l8,4.35,14.99-8.2h0.02v4.367h0V777a15.005,15.005,0,0,1-30.01,0V766.367h0V762h0.02l14.98,8.2,14.99-8.2h0.02v2.411a2.715,2.715,0,0,1-1.57,2.774c-3.59,2-11.63,6.454-11.63,6.454l-1.81.917-1.8-.916-9.2-5.069V777a11,11,0,0,0,22,.067l-9.19,5.066Z"
-          transform="translate(-1740 -762)"
-        ></path>
-        <path
-          class="user-nav__logo-text"
-          fill="#000"
-          d="M1789,786V773.07l3.9,5.926h2.16l3.95-5.926V786h3.98V767.006h-3.83l-5.17,7.779-5.15-7.779h-3.86V786H1789Zm30.94-3.162a0.877,0.877,0,0,1-.94-1.026v-4.539a4.7,4.7,0,0,0-1.79-3.887,7.144,7.144,0,0,0-4.64-1.4,13.072,13.072,0,0,0-5.57,1.08v3.185a10.042,10.042,0,0,1,4.65-1.133c2.38,0,3.37.689,3.37,2.389v0.4a7.461,7.461,0,0,0-3.69-.837,6.225,6.225,0,0,0-3.75,1.134,3.787,3.787,0,0,0-1.57,3.293c0,2.726,2.05,4.508,4.97,4.508a6.207,6.207,0,0,0,4.64-1.836,3.059,3.059,0,0,0,3.05,1.853,4.274,4.274,0,0,0,2.35-.567v-2.78A3.118,3.118,0,0,1,1819.94,782.838Zm-4.92-1.151a3.248,3.248,0,0,1-2.85,1.377c-1.41,0-2.41-.567-2.41-1.755,0-1.107,1.03-1.754,2.65-1.754a4.33,4.33,0,0,1,2.61.782v1.35ZM1827,786v-5.8l5.19,5.8h4.91l-6.78-7.4,5.86-6.593h-4.67l-4.51,5.432v-5.432h-4V786h4Zm17.3-.018a10.687,10.687,0,0,0,4.7-1V781.8a8.036,8.036,0,0,1-3.9.963,4.369,4.369,0,0,1-2.96-1.053,3.215,3.215,0,0,1-1-2.69,3.529,3.529,0,0,1,.97-2.817,4.372,4.372,0,0,1,2.99-1.022,10.617,10.617,0,0,1,3.88,1v-3.3a11.64,11.64,0,0,0-4.62-.891,7.539,7.539,0,0,0-5.21,1.944,6.983,6.983,0,0,0,0,10.1A7.43,7.43,0,0,0,1844.3,785.982ZM1855.58,786l5.42-7.936V786h4V772h-3.53l-5.5,8.467V772h-3.96v14h3.57Zm16.42,0v-8.11l2.75,4.031h1.52l2.73-4.031V786h4V771.969h-3.75l-3.74,5.582-3.66-5.582h-3.84V786H1872Zm16.75,5.041c2.4,0,4.18-1.376,5.37-4.157l5.91-14.873h-4.02l-3.05,8.854-3.82-8.854h-4.11l6.07,13.011c-0.78,1.862-1.62,2.7-3,2.7a4.146,4.146,0,0,1-2.05-.54v3.32A5.925,5.925,0,0,0,1888.75,791.041ZM1906,786v-8.11l2.76,4.125h1.51l2.74-4.125V786h4V771.969h-3.79l-3.77,5.582-3.66-5.582h-3.77V786H1906Z"
-          transform="translate(-1740 -762)"
-        ></path>
-      </svg>
-    </span>
+    <nuxt-link class="user-nav__logo" to="/">
+      <AppIcon symbol="icon_logo" className="user-nav__logo-icon" />
+    </nuxt-link>
     <span class="user-nav__site-description">
       Интернет-магазин представительского класса
     </span>
     <!-- TODO: add modal -->
-    <button>Челябинск</button>
-    <div>
-      <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+    <button class="user-nav__city-btn">
+      <span>Москва</span>
+      <AppIcon symbol="icon_dropdown" className="user-nav__dropdown-icon" />
+    </button>
+    <div class="user-nav__phones-wrapper">
+      <a class="user-nav__phone-main" href="tel:+70000000000">
+        <span>+7 (000) 000-00-00</span>
+        <AppIcon symbol="icon_dropdown" className="user-nav__dropdown-icon" />
+      </a>
+      <div class="user-nav__phones-block">
+        <a class="user-nav__phone" href="tel:+70000000000">
+          <img
+            class="user-nav__phone-img"
+            :src="require('~/assets/img/beeline.svg')"
+            alt=""
+          />
+          <span>+7 (000) 000 00 00</span></a
+        >
+        <a class="user-nav__phone" href="tel:+70000000006">
+          <img
+            class="user-nav__phone-img"
+            :src="require('~/assets/img/megafon.svg')"
+            alt=""
+          />
+          <span>+7 (000) 000 00 06</span>
+          <span class="user-nav__phone-description">Бухгалтерия</span>
+        </a>
+      </div>
     </div>
     <div>
-      <span>Заказать звонок</span>
+      <button class="user-nav__callback">Заказать звонок</button>
     </div>
-    <div>
-      <span>Поиск</span>
-      <span>Войти</span>
+    <div class="user-nav__auth-wrapper">
+      <button class="user-nav__main-button">
+        <AppIcon symbol="icon_search" className="user-nav__main-icon" />
+        <span>Поиск</span>
+      </button>
+      <button class="user-nav__main-button">
+        <AppIcon symbol="icon_auth" className="user-nav__main-icon" />
+        <span>Войти</span>
+      </button>
     </div>
   </nav>
 </template>
 
 <script>
+import AppIcon from "~/components/ui/AppIcon";
+
 export default {
   name: "UserNav",
+  components: {
+    AppIcon,
+  },
 };
 </script>
 
@@ -50,17 +67,28 @@ export default {
 .user-nav {
   max-width: $max-width;
   margin: 0 auto;
-  padding: 0 30px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   min-height: 82px;
 }
 .user-nav__logo {
   margin-right: 30px;
 }
-.user-nav__logo-icon {
-  color: #365edc;
+.user-nav__city-btn {
+  position: relative;
+  margin-right: 25px;
+  padding-right: 10px;
+  font-size: 0.867em;
+  line-height: 20px;
+  color: #333333;
+  &:hover {
+    color: #365edc;
+  }
+}
+.user-nav__dropdown-icon {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
 }
 .user-nav__site-description {
   color: #333333;
@@ -69,5 +97,99 @@ export default {
   line-height: 20px;
   opacity: 0.6;
   margin-right: 77px;
+}
+.user-nav__phones-wrapper {
+  padding-right: 15px;
+  position: relative;
+
+  .user-nav__phone-main {
+    position: relative;
+    color: #333333;
+    font-size: 1.0666em;
+    line-height: 25px;
+    font-weight: bold;
+    padding-right: 10px;
+  }
+
+  &:hover {
+    .user-nav__phones-block {
+      display: block;
+    }
+  }
+}
+.user-nav__phones-block {
+  display: none;
+  background-color: #ffffff;
+  position: absolute;
+  left: -43px;
+  top: -20px;
+  max-width: 245px;
+  min-width: 198px;
+  max-height: 500px;
+  box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%);
+  border-radius: 3px;
+
+  .user-nav__phone {
+    display: block;
+    padding: 18px 22px 18px;
+    color: #222222;
+    font-size: 1.0666em;
+    line-height: 25px;
+    font-weight: bold;
+    white-space: nowrap;
+
+    &:not(:first-child) {
+      border-top: 1px solid #f2f2f2;
+    }
+  }
+}
+.user-nav__phone-description {
+  color: #999999;
+  display: block;
+  font-size: 0.8em;
+  font-weight: 400;
+  padding-top: 6px;
+}
+.user-nav__phone-img {
+  margin-right: 10px;
+}
+.user-nav__callback {
+  margin: 0 0 0 13px;
+  font-size: 0.6em;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #365edc;
+  &:hover {
+    color: #333333;
+  }
+}
+.user-nav__auth-wrapper {
+  margin-left: auto;
+  display: flex;
+  padding-left: 9px;
+}
+.user-nav__main-button {
+  color: #333333;
+  font-size: 0.6667em;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+
+  &:last-child {
+    margin-left: 50px;
+  }
+
+  &:hover {
+    color: #365edc;
+    .user-nav__main-icon {
+      opacity: 1;
+    }
+  }
+}
+.user-nav__main-icon {
+  margin-right: 9px;
+  opacity: 0.5;
 }
 </style>

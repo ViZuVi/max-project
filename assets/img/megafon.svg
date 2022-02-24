@@ -1,0 +1,13 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="8" cy="8" r="8" fill="#00B855"/>
+<mask id="svg_mask_mask_megafon_markID" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+<circle cx="8" cy="8" r="8" fill="#00B855"/>
+</mask>
+<g mask="url(#svg_mask_mask_megafon_markID)">
+<path d="M8.71882 0V7.01096C8.71882 7.39756 8.40541 7.71096 8.01882 7.71096H6.40081C6.01421 7.71096 5.70081 8.02436 5.70081 8.41096V16" stroke="white" stroke-width="1.4"/>
+</g>
+<circle cx="6.1575" cy="5.15774" r="0.85" fill="white"/>
+<circle cx="8.50527" cy="10.4767" r="0.85" fill="white"/>
+<circle cx="10.9932" cy="10.4767" r="0.85" fill="white"/>
+<circle cx="13.4811" cy="10.4767" r="0.85" fill="white"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="8" cy="8" r="8" fill="#FEBA29"/>
+<circle cx="8" cy="8" r="8" fill="url(#svg_paint_linear_beeline_markID)"/>
+<mask id="svg_mask_beeline_markID" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+<circle cx="8" cy="8" r="8" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#svg_mask_beeline_markID)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16 0H0V3H16V0ZM0 6H16V10H0V6ZM0 13H16V16H0V13Z" fill="#333333"/>
+</g>
+<defs>
+<linearGradient id="svg_paint_linear_beeline_markID" x1="-1.26893e-09" y1="8" x2="16" y2="8" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FBAC17"/>
+<stop offset="0.718744" stop-color="#FFDC74"/>
+<stop offset="1" stop-color="#FBE00B"/>
+</linearGradient>
+</defs>
+</svg>
