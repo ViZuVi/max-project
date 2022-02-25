@@ -64,7 +64,7 @@ export default {
           published: "2022-01-01 17:39",
         },
         {
-          id: 1,
+          id: 2,
           title: "Тестовая запись",
           // TODO: add category in mocks
           category: "Советы покупателям",
@@ -75,7 +75,7 @@ export default {
           published: "2022-01-01 17:39",
         },
         {
-          id: 1,
+          id: 3,
           title: "Тестовая запись",
           // TODO: add category in mocks
           category: "Советы покупателям",

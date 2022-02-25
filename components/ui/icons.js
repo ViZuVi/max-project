@@ -107,7 +107,19 @@ const icons = {
     <svg class="" width="17" height="17" viewBox="0 0 17 17" aria-hidden="true" fill="currentColor"><path d="M16.709,16.719a1,1,0,0,1-1.412,0l-3.256-3.287A7.475,7.475,0,1,1,15,7.5a7.433,7.433,0,0,1-1.549,4.518l3.258,3.289A1,1,0,0,1,16.709,16.719ZM7.5,2A5.5,5.5,0,1,0,13,7.5,5.5,5.5,0,0,0,7.5,2Z"></path></svg>
   `,
   icon_auth: `
-    <svg class="" width="18" height="18" viewBox="0 0 18 18"  fill="currentColor"><path data-name="Ellipse 206 copy 4" d="M909,961a9,9,0,1,1,9-9A9,9,0,0,1,909,961Zm2.571-2.5a6.825,6.825,0,0,0-5.126,0A6.825,6.825,0,0,0,911.571,958.5ZM909,945a6.973,6.973,0,0,0-4.556,12.275,8.787,8.787,0,0,1,9.114,0A6.973,6.973,0,0,0,909,945Zm0,10a4,4,0,1,1,4-4A4,4,0,0,1,909,955Zm0-6a2,2,0,1,0,2,2A2,2,0,0,0,909,949Z" transform="translate(-900 -943)"></path></svg>
+    <svg class="" width="18" height="18" viewBox="0 0 18 18" fill="currentColor"><path data-name="Ellipse 206 copy 4" d="M909,961a9,9,0,1,1,9-9A9,9,0,0,1,909,961Zm2.571-2.5a6.825,6.825,0,0,0-5.126,0A6.825,6.825,0,0,0,911.571,958.5ZM909,945a6.973,6.973,0,0,0-4.556,12.275,8.787,8.787,0,0,1,9.114,0A6.973,6.973,0,0,0,909,945Zm0,10a4,4,0,1,1,4-4A4,4,0,0,1,909,955Zm0-6a2,2,0,1,0,2,2A2,2,0,0,0,909,949Z" transform="translate(-900 -943)"></path></svg>
+  `,
+  icon_star: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 15 13" fill="transparent"><rect width="15" height="13"></rect><path data-name="Shape 921 copy 15" fill="currentColor" d="M1333.37,457.5l-4.21,2.408,0.11,0.346,2.07,4.745h-0.72l-4.12-3-4.09,3h-0.75l2.04-4.707,0.12-.395-4.19-2.4V457h5.12l1.53-5h0.38l1.57,5h5.14v0.5Z" transform="translate(-1319 -452)"></path></svg>
+  `,
+  icon_wallet: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13" fill="currentColor"><path data-name="Rectangle 783 copy" d="M1447,521h-10a2,2,0,0,1-2-2v-6h0v-2.5h0a2.5,2.5,0,0,1,2.5-2.5h7.5a1.88,1.88,0,0,1,1.95,2H1437v1h10a2,2,0,0,1,2,2v6A2,2,0,0,1,1447,521Zm0-8h-10v6h10v-6Zm-3,2h1a1,1,0,0,1,0,2h-1A1,1,0,0,1,1444,515Z" transform="translate(-1435 -508)"></path></svg>
+  `,
+  icon_truck: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="currentColor"><path data-name="Ellipse 299 copy 2" d="M1346,916a3,3,0,0,1-6,0h-1a1.012,1.012,0,0,1-.42-0.1,1.917,1.917,0,0,1-.58.1h-2a3,3,0,0,1-6,0,2.344,2.344,0,0,1,.03-0.264A1.992,1.992,0,0,1,1329,914v-7a2,2,0,0,1,2-2h7a2,2,0,0,1,2,2h3l4,4v4A1,1,0,0,1,1346,916Zm-13,1a1,1,0,1,0-1-1A1,1,0,0,0,1333,917Zm5-10h-7v6.778a2.961,2.961,0,0,1,4.22.221H1338v-7Zm5,10a1,1,0,1,0-1-1A1,1,0,0,0,1343,917Zm2-5.313L1342.31,909H1340v5h0.78a2.96,2.96,0,0,1,4.22-.222v-2.09Z" transform="translate(-1329 -905)"></path></svg>
+  `,
+  icon_exclamation: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#999999" fill-rule="evenodd" data-name="Rounded Rectangle 937" d="M1338,932a8,8,0,1,1-8,8A8,8,0,0,1,1338,932Zm0,2a6,6,0,1,1-6,6A6,6,0,0,1,1338,934Zm0,5a1,1,0,0,1,1,1v3a1,1,0,0,1-2,0v-3A1,1,0,0,1,1338,939Zm0-3a1,1,0,1,1-1,1A1,1,0,0,1,1338,936Z" transform="translate(-1330 -932)"></path></svg>
   `
 }
 

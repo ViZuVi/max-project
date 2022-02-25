@@ -1,6 +1,6 @@
 <template>
   <button :type="type" class="app-button" :class="className" @click="$emit('click', $event)">
-    {{ label }}
+    <span class="app-button__label">{{ label }}</span>
     <AppIcon v-if="btnSymbol" :symbol="btnSymbol" :className="iconClassName" />
   </button>
 </template>

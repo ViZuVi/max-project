@@ -20,7 +20,7 @@
       <AppButton btnSymbol="icon_diagram" @click="addToCompare" />
       <AppButton btnSymbol="icon_bag" @click="fastBuy" />
       <!-- TODO: delete test class -->
-      <v-dialog class="test" v-model="dialog" width="960">
+      <v-dialog class="test" v-model="dialog" width="968">
         <template v-slot:activator="{ on, attrs }">
           <!-- TODO: v-bind -->
           <AppButton v-bind="attrs" v-on="on" btnSymbol="icon_eye" />

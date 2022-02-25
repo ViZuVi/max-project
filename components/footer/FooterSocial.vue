@@ -1,6 +1,6 @@
 <template>
   <div class="footer-social">
-    <a href="" target="_blank" class="footer-social__link" v-for="icon in icons" :key="icon">
+    <a href="" target="_blank" class="footer-social__link" v-for="(icon, i) in icons" :key="i">
       <AppIcon :symbol="icon" className="footer-social__icon" />
     </a>
   </div>
