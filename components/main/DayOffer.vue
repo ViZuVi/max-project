@@ -9,8 +9,8 @@
       />
       <v-carousel>
         <!-- TODO: items from mocks; add cards and card components -->
-        <v-carousel-item v-for="(item, i) in items" :key="i">
-          <v-sheet> Cards</v-sheet>
+        <v-carousel-item v-for="product in dayProducts" :key="product.id">
+          <v-sheet> {{product.title}}</v-sheet>
         </v-carousel-item>
       </v-carousel>
     </div>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import AppSectionTitle from "~/components/ui/AppSectionTitle";
 
 export default {
@@ -25,11 +26,9 @@ export default {
   components: {
     AppSectionTitle,
   },
-  data() {
-    return {
-      items: [],
-    };
-  },
+  computed: {
+    ...mapState("products", ["dayProducts"]),
+  }
 };
 </script>
 

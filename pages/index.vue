@@ -4,8 +4,8 @@
     <BannerBottom />
     <FeaturesList />
     <PopularCategories />
-    <BestProducts />
-    <DayOffer />
+    <BestProducts v-if="popularProducts && popularProducts.length" />
+    <DayOffer v-if="dayProducts && dayProducts.length" />
     <AdsList />
     <SaleProducts />
     <div
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 import BannerTop from "~/components/main/BannerTop";
 import BannerBottom from "~/components/main/BannerBottom";
 import FeaturesList from "~/components/main/FeaturesList";
@@ -64,13 +65,31 @@ export default {
     Map,
     Company,
     Brands,
-    Instagram
+    Instagram,
   },
   layout: "hero",
   data() {
     return {
       promoImg: require("~/assets/img/promo.jpg"),
     };
+  },
+  computed: {
+    ...mapState("products", ["popularProducts", "dayProducts"]),
+  },
+  methods: {
+    ...mapActions(["getReviews", "getBlogPosts"]),
+    ...mapActions("products", [
+      "getPopularProducts",
+      "getDayProducts",
+      "getCollections",
+    ]),
+  },
+  async created() {
+    // TODO: delete after nuxtServerInit
+    await this.getPopularProducts();
+    await this.getDayProducts();
+    await this.getReviews();
+    await this.getBlogPosts();
   },
   // TODO: add ESLint and StyleLint
   // TODO: check build in the end

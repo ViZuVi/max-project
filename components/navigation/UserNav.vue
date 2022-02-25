@@ -128,6 +128,7 @@ export default {
   max-height: 500px;
   box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%);
   border-radius: 3px;
+  z-index: 3;
 
   .user-nav__phone {
     display: block;

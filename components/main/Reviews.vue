@@ -11,26 +11,26 @@
         <!-- <template #prev>
           <AppIcon symbol="icon_prev" className="review__icon" />
         </template> -->
-        <v-carousel-item v-for="(item, i) in items" :key="i">
+        <v-carousel-item v-for="review in reviews" :key="review.id">
           <v-sheet>
             <div class="reviews__item review">
               <div class="review__info">
                 <img
                   class="review__user-img"
-                  :src="item.image"
-                  :alt="item.name"
+                  :src="review.image"
+                  :alt="review.name"
                 />
                 <div class="review__title">
                   <!-- TODO: format date -->
-                  <span class="review__date">{{ item.published }}</span>
-                  <span class="review__name">{{ item.name }}</span>
+                  <span class="review__date">{{ review.published }}</span>
+                  <span class="review__name">{{ review.name }}</span>
                 </div>
                 <!-- TODO: format rating -->
-                <div class="review__rating">{{ item.raiting }}</div>
+                <div class="review__rating">{{ review.raiting }}</div>
               </div>
               <div class="review__text">
                 <AppIcon symbol="icon_quote" className="review__quote-icon" />
-                <span>{{ item.text }}</span>
+                <span>{{ review.text }}</span>
               </div>
               <AppButton
                 label="Отзыв полностью"
@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import AppButton from "~/components/ui/AppButton";
 import AppIcon from "~/components/ui/AppIcon";
@@ -59,34 +60,9 @@ export default {
     AppButton,
     AppIcon,
   },
-  data() {
-    return {
-      items: [
-        {
-          id: 1,
-          // TODO: Add in mocks - name, rating
-          name: "Анжелика Трофимова",
-          image:
-            "https://img.freepik.com/free-vector/neon-lights-background-theme_52683-44625.jpg?size=626&ext=jpg",
-          title: "Тестовый комметарий",
-          text: "Купили сыну телефон Nika 8 LITE в этом интернет-магазине. Всем рекомендую! Сейчас такой ритм жизни, что совсем нет времени ездить по магазинам. Сайт нашла в поиске. Понравились характеристики и адекватная цена за телефон. Выбирала подарок на день ро...",
-          published: "1997-01-01 00:00:01",
-          raiting: 5,
-        },
-        {
-          id: 2,
-          // TODO: Add in mocks - name, rating
-          name: "Анжелика Трофимова",
-          image:
-            "https://img.freepik.com/free-vector/neon-lights-background-theme_52683-44625.jpg?size=626&ext=jpg",
-          title: "Тестовый комметарий",
-          text: "Купили сыну телефон Nika 8 LITE в этом интернет-магазине. Всем рекомендую! Сейчас такой ритм жизни, что совсем нет времени ездить по магазинам. Сайт нашла в поиске. Понравились характеристики и адекватная цена за телефон. Выбирала подарок на день ро...",
-          published: "1997-01-01 00:00:01",
-          raiting: 5,
-        },
-      ],
-    };
-  },
+  computed: {
+    ...mapState(["reviews"]),
+  }
 };
 </script>
 
@@ -96,7 +72,7 @@ export default {
   background-color: #f8f8f8;
 
   .v-sheet {
-    background-color: app-button--transparent;
+    background-color: transparent;
   }
 }
 .reviews__wrapper {

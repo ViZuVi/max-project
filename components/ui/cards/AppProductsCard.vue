@@ -5,7 +5,7 @@
         <nuxt-link
           class="product-card__header-link"
           :to="`/catalog/${product.id}`"
-          >{{ product.name }}</nuxt-link
+          >{{ product.title }}</nuxt-link
         >
       </h2>
       <div class="product-card__header-controls">
@@ -117,7 +117,7 @@ import AppRating from "~/components/ui/AppRating";
 import AppIcon from "~/components/ui/AppIcon";
 
 export default {
-  name: "AppProductsCard",
+  title: "AppProductsCard",
   components: {
     AppButton,
     AppRating,

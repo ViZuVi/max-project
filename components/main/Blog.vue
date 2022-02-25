@@ -1,7 +1,6 @@
 <template>
   <section class="blog">
-    <!-- TODO: check all wrappers -->
-    <div class="blog__wrapper">
+    <div class="blog__posts-wrapper">
       <AppSectionTitle title="Блог" allName="Все статьи" allLink="/blog">
         <button class="blog__add-btn">
           <AppIcon symbol="icon_subscribe" className="blog__chat-icon" />
@@ -12,22 +11,22 @@
         <div
           class="blog__item"
           :class="{ 'blog__item--large': i % 3 === 0 }"
-          v-for="(item, i) in items"
-          :key="item.id"
+          v-for="(post, i) in blogPosts"
+          :key="post.id"
         >
           <div class="blog__item-wrapper">
             <nuxt-link
               class="blog__img-wrapper"
-              :style="{ backgroundImage: `url(${item.image})` }"
-              :to="`/blog/${item.id}`"
+              :style="{ backgroundImage: `url(${post.image})` }"
+              :to="`/blog/${post.id}`"
             ></nuxt-link>
             <div class="blog__item-info">
-              <span class="blog__item-category">{{ item.category }}</span>
-              <nuxt-link class="blog__item-title" :to="`/blog/${item.id}`">{{
-                item.title
+              <span class="blog__item-category">{{ post.category }}</span>
+              <nuxt-link class="blog__item-title" :to="`/blog/${post.id}`">{{
+                post.title
               }}</nuxt-link>
               <!-- TODO: format date -->
-              <span class="blog__item-date">{{ item.published }}</span>
+              <span class="blog__item-date">{{ post.published }}</span>
             </div>
           </div>
         </div>
@@ -38,6 +37,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import AppButton from "~/components/ui/AppButton";
 import AppIcon from "~/components/ui/AppIcon";
@@ -49,45 +49,9 @@ export default {
     AppButton,
     AppIcon,
   },
-  data() {
-    return {
-      items: [
-        {
-          id: 1,
-          title: "Тестовая запись",
-          // TODO: add category in mocks
-          category: "Советы покупателям",
-          code: "test_blog",
-          text: "Как ухаживать за полиэстером, чтобы сохранить цвет",
-          image:
-            "https://img.freepik.com/free-vector/neon-lights-background-theme_52683-44625.jpg?size=626&ext=jpg",
-          published: "2022-01-01 17:39",
-        },
-        {
-          id: 2,
-          title: "Тестовая запись",
-          // TODO: add category in mocks
-          category: "Советы покупателям",
-          code: "test_blog",
-          text: "Как ухаживать за полиэстером, чтобы сохранить цвет",
-          image:
-            "https://img.freepik.com/free-vector/neon-lights-background-theme_52683-44625.jpg?size=626&ext=jpg",
-          published: "2022-01-01 17:39",
-        },
-        {
-          id: 3,
-          title: "Тестовая запись",
-          // TODO: add category in mocks
-          category: "Советы покупателям",
-          code: "test_blog",
-          text: "Как ухаживать за полиэстером, чтобы сохранить цвет",
-          image:
-            "https://img.freepik.com/free-vector/neon-lights-background-theme_52683-44625.jpg?size=626&ext=jpg",
-          published: "2022-01-01 17:39",
-        },
-      ],
-    };
-  },
+  computed: {
+    ...mapState(["blogPosts"]),
+  }
 };
 </script>
 
@@ -98,7 +62,7 @@ export default {
     margin-right: 38px;
   }
 }
-.blog__wrapper {
+.blog__posts-wrapper {
   @include section-size;
 }
 .blog__add-btn {

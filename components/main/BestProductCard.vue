@@ -9,7 +9,7 @@
       </nuxt-link>
       <div class="best-product-card__info">
         <div class="best-product-card__rating">{{ product.rating }}</div>
-        <p>{{ product.name }}</p>
+        <p>{{ product.title }}</p>
         <span>{{ product.count }}</span>
         <span>{{ product.count }}</span>
         <p>{{ product.price }}</p>
@@ -37,7 +37,7 @@ import AppButton from "~/components/ui/AppButton";
 import AppProductsCard from "~/components/ui/cards/AppProductsCard";
 
 export default {
-  name: "BestProductCard",
+  title: "BestProductCard",
   components: {
     AppIcon,
     AppButton,

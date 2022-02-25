@@ -59,6 +59,7 @@ export default {
   },
   layout: "cart",
   data() {
+    // TODO: asyncData and delete cart?
     return {
       cart: [
         {

@@ -2,11 +2,11 @@
   <div class="collection-card">
     <nuxt-link
       class="collection-card__img-wrapper"
-      :to="`/collections/${card.id}`"
-      :style="{ backgroundImage: `url(${card.img})` }"
+      :to="`/collections/${collection.id}`"
+      :style="{ backgroundImage: `url(${collection.image})` }"
     ></nuxt-link>
-    <nuxt-link class="collection-card__link" :to="`/collections/${card.id}`">
-      {{ card.name }}
+    <nuxt-link class="collection-card__link" :to="`/collections/${collection.id}`">
+      {{ collection.link }}
     </nuxt-link>
   </div>
 </template>
@@ -15,7 +15,7 @@
 export default {
   name: "CollectionCard",
   props: {
-    card: {
+    collection: {
       type: Object,
       required: true,
       default: () => {},
