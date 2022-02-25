@@ -5,7 +5,7 @@
         <h1 class="product-details__title">{{ product.title }}</h1>
         <AppIcon symbol="icon_share" className="product-details__header-icon" />
       </div>
-      <div class="product-details__breadcrumps"></div>
+      <div class="product-details__breadcrumbs"></div>
     </div>
     <div class="product-details__main">
       <div class="product-details__info-wrapper">
@@ -111,7 +111,7 @@ export default {
     color: #365edc;
   }
 }
-.product-details__breadcrumps {
+.product-details__breadcrumbs {
   padding: 15px 40px;
 }
 // .product-details__main {

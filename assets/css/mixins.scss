@@ -19,4 +19,10 @@
   max-width: $max-width;
 }
 
+@mixin adapt-mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
 // TODO: add file with styles to sections and appropriate classnames

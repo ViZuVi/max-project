@@ -8,10 +8,10 @@ body {
   font-family: "Montserrat", "Arial", sans-serif;
   font-weight: 400;
   background-color: #ffffff;
-  color: $dark;
+  color: $text-black-5;
+  line-height: 25px;
   font-style: normal;
   font-size: 15px;
-  line-height: 1.2;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -32,4 +32,77 @@ a {
   font-family: inherit;
   text-decoration: none;
   color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  line-height: 1.126em;
+  color: $text-black-3;
+}
+
+h1 {
+  font-size: 2.133em;
+}
+
+h3 {
+  font-size: 1.6em;
+  margin: 33px 0 25px;
+}
+
+blockquote {
+  color: $text-black-3;
+  min-height: 40px;
+  padding: 2px 20px 2px 37px;
+  position: relative;
+  vertical-align: middle;
+  border: none;
+  font-weight: 700;
+  margin: 2.666rem 0;
+
+  &::before {
+    bottom: 5px;
+    content: " ";
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 5px;
+    width: 2px;
+    background-color: #285fdb;
+  }
+}
+
+.font_small {
+  font-size: 0.867em;
+  line-height: 1.692em;
+}
+
+.page-content {
+  width: calc(100% - 284px);
+  @media (max-width: $tablet-width) {
+    width: 100%;
+  }
+}
+
+.app-layout {
+  position: relative;
+}
+
+#__layout {
+  .v-application {
+    font-family: "Montserrat", "Arial", sans-serif !important;
+    color: $text-black-5 !important;
+    line-height: 25px !important;
+  }
+
+  .v-application p {
+    margin: 1.666rem 0;
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
 }
