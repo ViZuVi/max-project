@@ -109,6 +109,10 @@ export default {
 .company__page-title {
   padding-top: 42px;
   padding-bottom: 15px;
+  @include adapt-mobile {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
 }
 .company__sidebar-wrapper {
   width: 244px;

@@ -67,7 +67,11 @@ export default {
     max-width: $max-width;
     max-height: 100%;
     margin: 0 auto;
-    padding: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include adapt-mobile {
+    display: none;
   }
 }
 .main-nav__item {
@@ -90,6 +94,10 @@ export default {
     color: #ffffff;
     padding: 18px;
     height: 100%;
+
+    &:hover {
+      color: #ffffff;
+    }
   }
 }
 .main-nav__icon {
@@ -114,6 +122,7 @@ export default {
     font-weight: normal;
     text-align: left;
     &:hover {
+      color: #333333;
       background-color: #fafafa;
     }
   }

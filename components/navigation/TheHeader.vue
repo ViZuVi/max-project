@@ -1,10 +1,8 @@
 <template>
   <header class="app-header" :class="{ 'app-header--short': short }">
     <div class="app-header__navigation">
-      <v-main>
         <UserNav />
         <MainNav />
-      </v-main>
     </div>
   </header>
 </template>
@@ -37,6 +35,9 @@ export default {
   right: 0;
   margin: 0 auto;
   z-index: 2;
+  @include adapt-mobile {
+    height: 60px;
+  }
 
   &--short {
     position: relative;
@@ -60,5 +61,10 @@ export default {
   max-width: $max-width;
   margin: 0 auto;
   padding: 0 30px;
+
+  @include adapt-mobile {
+    border-bottom: $border;
+    height: 60px;
+  }
 }
 </style>

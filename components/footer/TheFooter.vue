@@ -1,12 +1,12 @@
 <template>
-  <footer class="footer">
+  <!-- <footer class="footer">
     <ViewedBefore v-if="viewed.length && !short" :cards="viewed" />
     <div class="footer__inner">
       <FooterMenu />
       <FooterSocial />
       <FooterCopy />
     </div>
-  </footer>
+  </footer> -->
 </template>
 
 <script>
