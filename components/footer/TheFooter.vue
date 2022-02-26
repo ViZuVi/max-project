@@ -1,4 +1,5 @@
 <template>
+<div>footer</div>
   <!-- <footer class="footer">
     <ViewedBefore v-if="viewed.length && !short" :cards="viewed" />
     <div class="footer__inner">
