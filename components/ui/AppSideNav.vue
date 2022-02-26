@@ -31,17 +31,20 @@ export default {
   border: 1px solid #ececec;
   width: 244px;
   margin-bottom: 26px;
-}
-.app-side-nav__link {
-  padding: 15px 30px 17px 15px;
-  border-radius: 2px;
-  font-size: 13px;
-  color: $text-black-3;
-  &:not(:last-child) {
-    border-bottom: 1px solid #ececec;
-  }
-  &:first-child {
-    font-weight: bold;
+  .app-side-nav__link {
+    padding: 15px 30px 17px 15px;
+    border-radius: 2px;
+    font-size: 13px;
+    color: $text-black-3;
+    &:not(:last-child) {
+      border-bottom: 1px solid #ececec;
+    }
+    &:first-child {
+      font-weight: bold;
+    }
+    &:hover {
+      color: $text-black-3;
+    }
   }
 }
 </style>

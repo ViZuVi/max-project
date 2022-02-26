@@ -76,9 +76,19 @@ blockquote {
   }
 }
 
-.font_small {
+.font-small {
   font-size: 0.867em;
   line-height: 1.692em;
+}
+.font_medium {
+  font-size: 1.0667em;
+  line-height: 1.5625em;
+}
+.font-upper {
+  font-size: 0.667em;
+  line-height: 1.3em;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
 
 .page-content {
@@ -92,17 +102,23 @@ blockquote {
   position: relative;
 }
 
-#__layout {
-  .v-application {
-    font-family: "Montserrat", "Arial", sans-serif !important;
-    color: $text-black-5 !important;
-    line-height: 25px !important;
-  }
+.v-application {
+  font-family: "Montserrat", "Arial", sans-serif !important;
+  color: $text-black-5 !important;
+  line-height: 25px !important;
+}
 
-  .v-application p {
-    margin: 1.666rem 0;
-    &:first-of-type {
-      margin-top: 0;
-    }
+.v-application p {
+  margin: 1.666rem 0;
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.v-application a {
+  color: inherit;
+
+  &:hover {
+    color: $text-link-hover;
   }
 }

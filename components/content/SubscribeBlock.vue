@@ -33,9 +33,11 @@ export default {
   transition: transform ease 0.2s, box-shadow ease 0.2s;
   border: $border;
   border-radius: 2px;
+  margin-bottom: 32px;
 
   &:hover {
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
+    transform: translateY(-1px);
 
     .subscribe-block__btn {
       background-color: $text-link-hover;

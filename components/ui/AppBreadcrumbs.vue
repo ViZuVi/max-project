@@ -1,7 +1,7 @@
 <template>
   <div class="app-breadcrumbs">
     <nuxt-link
-      class="app-breadcrumbs__link font_small"
+      class="app-breadcrumbs__link font-small"
       v-for="(item, i) in items"
       :key="item.title"
       :to="item.link"
