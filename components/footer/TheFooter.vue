@@ -1,13 +1,12 @@
 <template>
-<div>footer</div>
-  <!-- <footer class="footer">
+  <footer class="footer">
     <ViewedBefore v-if="viewed.length && !short" :cards="viewed" />
     <div class="footer__inner">
       <FooterMenu />
       <FooterSocial />
       <FooterCopy />
     </div>
-  </footer> -->
+  </footer>
 </template>
 
 <script>
@@ -60,9 +59,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.footer {
+  @include adapt-mobile {
+    padding-bottom: 68px;
+  }
+}
 .footer__inner {
   color: #555555;
   background-color: #333333;
   padding: 59px 0 64px;
+  @include adapt-mobile {
+    padding-top: 0;
+  }
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="footer-menu">
     <div class="footer-menu__wrapper">
       <nuxt-link
-        class="footer-menu__link"
+        class="footer-menu__link footer-menu__link--short"
         v-for="menuItem in menu.short"
         :key="menuItem.title"
         :to="menuItem.link"
@@ -10,21 +10,39 @@
       >
     </div>
     <div
-      class="footer-menu__wrapper"
+      class="footer-menu__wrapper footer-menu__wrapper--full"
       v-for="menuItem in menu.full"
       :key="menuItem.title"
     >
-      <nuxt-link class="footer-menu__link" :to="menuItem.link">{{
-        menuItem.title
-      }}</nuxt-link>
-      <div class="footer-menu__sub">
+      <div class="footer-menu__link-wrapper">
+        <nuxt-link class="footer-menu__link" :to="menuItem.link">
+          {{ menuItem.title }}
+        </nuxt-link>
+        <AppIcon
+          symbol="icon_footer_arrow"
+          class="footer-menu__link-arrow"
+          :class="{
+            'footer-menu__link-arrow--active': activeSubmenu.includes(
+              menuItem.link
+            ),
+          }"
+          @click="toggleSubmenu(menuItem.link)"
+        />
+      </div>
+      <div
+        class="footer-menu__sub"
+        :class="{
+          'footer-menu__sub--active': activeSubmenu.includes(menuItem.link),
+        }"
+      >
         <nuxt-link
           class="footer-menu__sub-link"
           v-for="subItem in menuItem.subMenu"
           :key="subItem.tittle"
           :to="subItem.link"
-          >{{ subItem.title }}</nuxt-link
         >
+          {{ subItem.title }}
+        </nuxt-link>
       </div>
     </div>
     <div class="footer-menu__wrapper">
@@ -55,7 +73,11 @@
           >info@msk.max-demo.ru</a
         >
       </div>
-      <div class="footer-menu__contacts-wrapper">
+      <div
+        class="
+          footer-menu__contacts-wrapper footer-menu__contacts-wrapper--address
+        "
+      >
         <AppIcon className="footer-menu__contacts-icon" symbol="icon_pin" />
         <span>Москва, ул. Пушкина 21, 3 этаж, офис 4</span>
       </div>
@@ -77,6 +99,7 @@ export default {
   data() {
     return {
       menuStatic,
+      activeSubmenu: [],
     };
   },
   computed: {
@@ -87,15 +110,78 @@ export default {
       };
     },
   },
+  methods: {
+    toggleSubmenu(e) {
+      if (this.activeSubmenu.includes(e)) {
+        const index = this.activeSubmenu.indexOf(e);
+        console.log(index);
+        this.activeSubmenu.splice(index, 1);
+      } else {
+        this.activeSubmenu.push(e);
+      }
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .footer-menu {
   max-width: $max-width;
   padding: 0 30px 70px;
   margin: 0 auto;
   display: flex;
+  @include adapt-mobile {
+    flex-direction: column;
+    padding: 0;
+  }
+  .footer-menu__link {
+    color: #ffffff;
+    font-size: 0.867em;
+    font-weight: 700;
+    line-height: 1.5385em;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    &--short:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    &:hover {
+      opacity: 0.5;
+      color: #ffffff;
+    }
+    @include adapt-mobile {
+      margin-bottom: 0;
+      &--short {
+        padding: 15px 16px;
+        border-bottom: 1px solid #434343;
+        margin-top: -1px;
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .footer-menu__sub-link {
+    color: #999999;
+    font-size: 0.867em;
+    line-height: 1.5385em;
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+    &:hover {
+      color: #999999;
+    }
+  }
+  .footer-menu__contacts-wrapper,
+  .footer-menu__contacts-link {
+    color: #ffffff;
+    line-height: 25px;
+    font-size: 15px;
+
+    &:hover:not(.footer-menu__contacts-wrapper--address) {
+      color: #ffffff;
+      opacity: 0.5;
+    }
+  }
 }
 .footer-menu__wrapper {
   display: flex;
@@ -103,10 +189,21 @@ export default {
   flex-basis: 25%;
   padding: 0 16px;
 
+  @include adapt-mobile {
+    padding: 0;
+
+    &--full {
+      border-top: 1px solid #434343;
+      border-bottom: 1px solid #434343;
+      margin-top: -1px;
+      padding: 15px 16px;
+    }
+  }
+
   .footer-menu__subscribe-btn {
     margin-bottom: 35px;
     margin-left: 0;
-    padding: 15px 45px 14px 18px;
+    padding: 14px 18px;
     background-color: #494949;
     color: #ffffff;
     border-color: #494949;
@@ -117,46 +214,75 @@ export default {
     font-size: 0.7333em;
     &:hover {
       border-color: #365edc;
+
+      .footer-menu__subscribe-icon {
+        opacity: 1;
+      }
+    }
+
+    .app-button__label {
+      margin-right: 38px;
+    }
+
+    @include adapt-mobile {
+      margin: 40px 32px 35px;
+      width: auto;
+      .app-button__label {
+        line-height: 1.428571429;
+        margin-right: 0;
+      }
     }
   }
   .footer-menu__subscribe-icon {
+    display: flex;
     opacity: 0.35;
+    svg {
+      opacity: 0.35;
+    }
   }
 }
 .footer-menu__sub {
   display: flex;
   flex-direction: column;
+
+  @include adapt-mobile {
+    display: none;
+    margin-top: 20px;
+    &--active {
+      display: flex;
+    }
+  }
 }
-.footer-menu__link {
-  color: #ffffff;
-  font-size: 0.867em;
-  font-weight: 700;
-  line-height: 1.5385em;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
+.footer-menu__link-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   &:not(:last-child) {
     margin-bottom: 20px;
   }
-  &:hover {
-    opacity: 0.5;
+
+  @include adapt-mobile {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+    .footer-menu__link {
+      border: 0;
+      padding: 0;
+    }
   }
 }
-.footer-menu__sub-link {
-  color: #999999;
-  font-size: 0.867em;
-  line-height: 1.5385em;
-  &:not(:last-child) {
-    margin-bottom: 8px;
-  }
-  &:hover {
-    color: #999999;
-  }
-}
-.footer-menu__contacts-wrapper,
-.footer-menu__contacts-link {
+
+.footer-menu__link-arrow {
+  display: none;
   color: #ffffff;
-  line-height: 25px;
-  font-size: 15px;
+  transition: transform 0.2s ease-in-out;
+  transform: rotate(-180deg);
+  &--active {
+    transform: none;
+  }
+  @include adapt-mobile {
+    display: block;
+  }
 }
 .footer-menu__contacts-wrapper {
   display: flex;
@@ -166,6 +292,13 @@ export default {
   position: relative;
   &:not(:last-child) {
     margin-bottom: 14px;
+  }
+  @include adapt-mobile {
+    align-self: center;
+    text-align: center;
+    margin-left: 36px;
+    margin-right: 36px;
+    margin-bottom: 40px;
   }
 }
 .footer-menu__contacts-link {

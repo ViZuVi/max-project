@@ -4,7 +4,7 @@
       <TheHeader :short="true" />
       <Nuxt />
       <TheFooter :short="true" />
-      <BottomNavPanel v-if="isMobile" />
+      <BottomNavPanel v-show="isMobile" />
     </div>
   </v-app>
 </template>
@@ -23,10 +23,7 @@ export default {
   },
   computed: {
     isMobile() {
-      // TODO: wtf if whithout if
-      if (process.client) {
-        return process.client ? window.innerWidth <= 375 : false;
-      }
+      return process.client ? window.innerWidth <= 375 : false;
     },
   },
 };
