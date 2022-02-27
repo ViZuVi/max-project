@@ -8,9 +8,10 @@
     <h2 class="section-title__name">{{ title }}</h2>
     <slot></slot>
     <slot name="link">
-      <nuxt-link class="section-title__link" :to="allLink">{{
-        allName
-      }}</nuxt-link>
+      <nuxt-link class="section-title__link" :to="allLink">
+        <span class="section-title__link-title">{{ allName }}</span>
+        <AppIcon symbol="icon_arrow" className="section-title__icon-next" />
+      </nuxt-link>
     </slot>
   </div>
 </template>
@@ -53,18 +54,33 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
   color: #333333;
   margin-bottom: 33px;
 }
 .section-title__name {
   @include section-title;
+  @include adapt-mobile {
+    margin-bottom: 20px;
+  }
 }
 .section-title__link {
   color: #999999;
   @include font-small-uppercase;
   &:hover {
     color: #356edc;
+  }
+  @include adapt-mobile {
+    .section-title__link-title {
+      display: none;
+    }
+    .section-title__icon-next {
+      display: block;
+    }
+  }
+  .section-title__icon-next {
+    display: none;
   }
 }
 .section-title__icon {

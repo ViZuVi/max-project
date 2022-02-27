@@ -96,7 +96,6 @@ export default {
 .app-header__navigation {
   max-width: $max-width;
   margin: 0 auto;
-  padding: 0 30px;
 
   @include adapt-mobile {
     border-bottom: $border;

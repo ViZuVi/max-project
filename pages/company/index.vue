@@ -77,8 +77,6 @@ export default {
     ActionsBlock,
     ManagerBlock,
   },
-  // TODO: change layout names
-  layout: "cart",
   data() {
     return {
       contentStatic,

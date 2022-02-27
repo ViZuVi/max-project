@@ -40,6 +40,15 @@ export default {
       categories,
     };
   },
+  // async fetch() {
+  //   const res = await this.$axios.$get(
+  //     "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/catalog/popular/sections"
+  //   );
+  //   console.log(res);
+  //   this.categories = res.items;
+
+  // TODO: link needed
+  // },
 };
 </script>
 
@@ -50,13 +59,8 @@ export default {
 }
 .popular-categories__list {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  background-color: #ececec;
-  grid-gap: 1px;
-  border: 1px solid #ececec;
-  border-right: 0ch;
+  display: flex;
+  flex-wrap: wrap;
 }
 .popular-categories__item {
   display: flex;
@@ -65,10 +69,20 @@ export default {
   justify-content: center;
   padding: 39px 10px 35px;
   background-color: #ffffff;
+  border: 1px solid #ececec;
+  flex-grow: 1;
+  min-width: 20%;
+  width: 270px;
+  margin-right: -1px;
+  margin-top: -1px;
   &:hover {
     transform: translateY(-1px);
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
     transition: transform ease 0.2s, box-shadow ease 0.2s;
+  }
+  @include adapt-mobile {
+    // max-width: 50%;
+    width: 50%;
   }
 }
 .popular-categories__link {

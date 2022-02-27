@@ -158,6 +158,9 @@ const icons = {
   `,
   icon_arrow_prev: `
     <svg xmlns="http://www.w3.org/2000/svg" width="15.969" height="12" viewBox="0 0 15.969 12" fill="currentColor"><path data-name="Rounded Rectangle 982 copy" d="M34,32H22.414l3.3,3.3A1,1,0,1,1,24.3,36.713l-4.978-4.978c-0.01-.01-0.024-0.012-0.034-0.022s-0.015-.041-0.03-0.058a0.974,0.974,0,0,1-.213-0.407,0.909,0.909,0,0,1-.024-0.123,0.982,0.982,0,0,1,.267-0.838c0.011-.011.025-0.014,0.036-0.024L24.3,25.287A1,1,0,0,1,25.713,26.7l-3.3,3.3H34A1,1,0,0,1,34,32Z" transform="translate(-19.031 -25)"></path></svg>
+  `,
+  icon_arrow: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="6.969" viewBox="0 0 12 6.969" fill="currentColor"><path id="Rounded_Rectangle_702_copy_24" data-name="Rounded Rectangle 702 copy 24" d="M361.691,401.707a1,1,0,0,1-1.414,0L356,397.416l-4.306,4.291a1,1,0,0,1-1.414,0,0.991,0.991,0,0,1,0-1.406l5.016-5a1.006,1.006,0,0,1,1.415,0l4.984,5A0.989,0.989,0,0,1,361.691,401.707Z" transform="translate(-350 -395.031)"/></svg>
   `
 }
 

@@ -87,10 +87,11 @@ export default {
   }
 }
 .user-nav__logo {
-  margin-right: auto;
+  margin-right: 30px;
   display: block;
   @include adapt-mobile {
     height: 100%;
+    margin-right: auto;
   }
 }
 .user-nav__logo-icon {

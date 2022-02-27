@@ -44,17 +44,24 @@ export default {
   font-size: 0.867em;
   line-height: 1.692em;
   color: #666666;
+  @include adapt-mobile {
+    margin-left: 0;
+    font-size: 12px;
+  }
 }
 .app-tabs__item {
   cursor: pointer;
   padding-bottom: 4px;
   &:not(:last-child) {
     margin-right: 26px;
+    @include adapt-mobile {
+      margin-right: 8px;
+    }
   }
   &--active {
     border-bottom: 2px solid #365edc;
-    // outline: ;
     cursor: text;
+    color: $text-black-3;
   }
 }
 </style>

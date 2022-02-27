@@ -40,6 +40,7 @@ export default {
 .features-list__wrapper {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   padding-top: 69px;
   padding-bottom: 33px;
   max-width: $max-width;
@@ -47,11 +48,12 @@ export default {
 }
 .features-list__item {
   flex-basis: 20%;
-  padding: 0 16px;
+  padding: 0 16px 32px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 186px;
 }
 .features-list__item-title {
   color: #333333;

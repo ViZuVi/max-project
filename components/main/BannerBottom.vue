@@ -1,29 +1,29 @@
 <template>
   <div class="banner-bottom">
-    <!-- TODO: v-for -->
     <div class="banner-bottom__wrapper banner-bottom__wrapper--service">
-      <nuxt-link to="#" class="banner-bottom__link">
-        <span class="banner-bottom__text-wrapper">
-          <span class="banner-bottom__section">Услуга</span>
-          <span class="banner-bottom__title">Настройка электроники</span>
-        </span>
+      <nuxt-link to="#" class="banner-bottom__link"> </nuxt-link>
+      <nuxt-link to="#" class="banner-bottom__text-wrapper">
+        <span class="banner-bottom__section font-upper">Услуга</span>
+        <span class="banner-bottom__title font-large"
+          >Настройка электроники</span
+        >
       </nuxt-link>
     </div>
     <div class="banner-bottom__wrapper banner-bottom__wrapper--blog">
-      <nuxt-link to="#" class="banner-bottom__link">
-        <span class="banner-bottom__text-wrapper">
-          <span class="banner-bottom__section">Блог</span>
-          <span class="banner-bottom__title">Топ-5 лучших смартфонов</span>
-        </span>
+      <nuxt-link to="#" class="banner-bottom__link"> </nuxt-link>
+      <nuxt-link to="#" class="banner-bottom__text-wrapper">
+        <span class="banner-bottom__section font-upper">Блог</span>
+        <span class="banner-bottom__title font-large"
+          >Топ-5 лучших смартфонов</span
+        >
       </nuxt-link>
     </div>
     <div class="banner-bottom__wrapper banner-bottom__wrapper--promo">
-      <nuxt-link to="#" class="banner-bottom__link">
-        <span class="banner-bottom__text-wrapper">
-          <span class="banner-bottom__section">Акция</span>
-          <span class="banner-bottom__title"
-            >Скидка 10% на любой товар по хэштегу</span
-          >
+      <nuxt-link to="#" class="banner-bottom__link"> </nuxt-link>
+      <nuxt-link to="#" class="banner-bottom__text-wrapper">
+        <span class="banner-bottom__section font-upper">Акция</span>
+        <span class="banner-bottom__title font-large">
+          Скидка 10% на любой товар по хэштегу
         </span>
       </nuxt-link>
     </div>
@@ -41,37 +41,68 @@ export default {
   display: flex;
   width: 100%;
   min-height: 275px;
+  flex-wrap: wrap;
 }
 .banner-bottom__wrapper {
   background-size: cover;
   background-position: center;
-  &:hover {
-    // TODO: fix scaling
-    transform: scale(1.05);
-    transition: transform 0.6s ease;
-  }
+  overflow: hidden;
+  position: relative;
+
   &--service {
-    background-image: url("~assets/img/banner-bottom-electronics.jpg");
-    flex-grow: 1;
+    width: 25%;
+    @include adapt-mobile {
+      width: 50%;
+    }
+    .banner-bottom__link {
+      background-image: url("~assets/img/banner-bottom-electronics.jpg");
+    }
   }
   &--blog {
-    background-image: url("~assets/img/banner-bottom-phones.jpg");
-    flex-grow: 1;
+    width: 25%;
+    @include adapt-mobile {
+      width: 50%;
+    }
+    .banner-bottom__link {
+      background-image: url("~assets/img/banner-bottom-phones.jpg");
+    }
   }
   &--promo {
-    background-image: url("~assets/img/banner-bottom-promo.jpg");
-    flex-grow: 2;
+    width: 50%;
+    @include adapt-mobile {
+      width: 100%;
+    }
+    .banner-bottom__link {
+      background-image: url("~assets/img/banner-bottom-promo.jpg");
+    }
+  }
+
+  &:hover {
+    .banner-bottom__link {
+      transform: scale(1.05);
+      &::before {
+        opacity: 1;
+      }
+    }
   }
 }
 .banner-bottom__link {
   display: flex;
   flex-direction: column;
   height: 100%;
-  opacity: 0;
-  &:hover {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.5);
+  transition: transform 0.6s ease;
+  position: relative;
+  &::before {
+    content: "";
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
     transition: opacity 0.3s ease;
+    opacity: 0;
   }
 }
 .banner-bottom__text-wrapper {
@@ -80,14 +111,16 @@ export default {
   margin-top: auto;
   padding: 33px 40px 34px;
   color: #ffffff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  &:hover {
+    color: #ffffff;
+  }
 }
-// TODO: check font styles
 .banner-bottom__section {
-  @include font-small-uppercase;
   opacity: 0.7;
-}
-.banner-bottom__title {
-  font-size: 1.3333em;
-  line-height: 1.4em;
 }
 </style>
