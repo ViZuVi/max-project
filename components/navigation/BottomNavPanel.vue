@@ -46,7 +46,7 @@ export default {
   background: #ffffff;
   overflow-x: auto;
   box-shadow: 0 -2px 8px rgb(0 0 0 / 15%);
-  z-index: 10;
+  z-index: 1;
 }
 .bottom-nav__item {
   display: flex;

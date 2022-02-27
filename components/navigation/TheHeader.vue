@@ -1,19 +1,31 @@
 <template>
   <header class="app-header" :class="{ 'app-header--short': short }">
     <div class="app-header__navigation">
-        <UserNav />
-        <MainNav />
+      <UserNav @show-menu-drawer="showMenuDrawer = true" />
+      <MainNav v-show="!isMobile" />
+      <AppNavDrawer
+        :menuItems="menuItems"
+        :value="showMenuDrawer"
+        :isMainMenu="isMainMenu"
+        :prevMenuItem="prevMenuItem"
+        @toggle-drawer="showMenuDrawer = $event"
+        @show-submenu="showSubmenu"
+        @nav-back="navBack"
+      />
     </div>
   </header>
 </template>
 
 <script>
+import AppNavDrawer from "~/components/ui/AppNavDrawer";
 import UserNav from "./UserNav";
 import MainNav from "./MainNav";
+import menuItems from "./menu-static";
 
 export default {
   name: "TheHeader",
   components: {
+    AppNavDrawer,
     UserNav,
     MainNav,
   },
@@ -23,6 +35,30 @@ export default {
       required: false,
       default: () => false,
     },
+    isMobile: {
+      type: Boolean,
+      required: false,
+    },
+  },
+  data() {
+    return {
+      menuItems,
+      showMenuDrawer: false,
+      isMainMenu: true,
+      prevMenuItem: null,
+    };
+  },
+  methods: {
+    showSubmenu(e) {
+      this.prevMenuItem = e;
+      this.isMainMenu = false;
+      this.menuItems = e.subMenu;
+    },
+    navBack() {
+      this.menuItems = menuItems;
+      this.isMainMenu = true;
+      this.prevMenuItem = null;
+    }
   },
 };
 </script>

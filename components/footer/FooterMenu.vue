@@ -45,8 +45,7 @@
         </nuxt-link>
       </div>
     </div>
-    <div class="footer-menu__wrapper">
-      <!-- TODO: fix button -->
+    <div class="footer-menu__wrapper footer-menu__wrapper--contacts">
       <AppButton
         label="Подписаться на рассылку"
         className="app-button--transparent footer-menu__subscribe-btn"
@@ -198,6 +197,11 @@ export default {
       margin-top: -1px;
       padding: 15px 16px;
     }
+
+    &--contacts {
+      padding-left: 36px;
+      padding-right: 36px;
+    }
   }
 
   .footer-menu__subscribe-btn {
@@ -225,7 +229,7 @@ export default {
     }
 
     @include adapt-mobile {
-      margin: 40px 32px 35px;
+      margin: 40px 0 35px;
       width: auto;
       .app-button__label {
         line-height: 1.428571429;
@@ -296,8 +300,6 @@ export default {
   @include adapt-mobile {
     align-self: center;
     text-align: center;
-    margin-left: 36px;
-    margin-right: 36px;
     margin-bottom: 40px;
   }
 }
@@ -319,10 +321,12 @@ export default {
   top: 2px;
 
   &--dropdown {
-    // TODO: check right
     right: 84px;
     left: unset;
     top: -2px;
+  }
+   @include adapt-mobile {
+    right: 0;
   }
 }
 </style>

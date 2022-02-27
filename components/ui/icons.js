@@ -91,7 +91,7 @@ const icons = {
   icon_download: `
     <svg class="svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5 14H14L14 6H11H10V5V2H5V6H7H9V8V10V12H7H5V14ZM13.6716 4L12 2.32843V4H13.6716ZM6 8H7V10H6H5H3H2V8H3H5H6ZM3 6H2H0V8V10V12H2H3V14V16H5H14H16V14V4.32843C16 3.79799 15.7893 3.28929 15.4142 2.91421L13.0858 0.585786C12.7107 0.210714 12.202 0 11.6716 0H5H3V2V6Z"></path></svg>
   `,
-  icon_print:  `
+  icon_print: `
     <svg class="svg svg-print" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path id="Rectangle_665_copy_4" data-name="Rectangle 665 copy 4" d="M1570,210h-2v3h-8v-3h-2a2,2,0,0,1-2-2v-5a2,2,0,0,1,2-2h2v-4h8v4h2a2,2,0,0,1,2,2v5A2,2,0,0,1,1570,210Zm-8,1h4v-4h-4v4Zm4-12h-4v2h4v-2Zm4,4h-12v5h2v-3h8v3h2v-5Z" transform="translate(-1556 -197)"></path></svg>
   `,
   icon_share_cart: `
@@ -152,6 +152,12 @@ const icons = {
   `,
   icon_footer_arrow: `
     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 8 5" fill="currentColor"><path data-name="Rounded Rectangle 890 copy 2" d="M517.778,610.8a0.721,0.721,0,0,1-1.016,0L514,607.769l-2.79,3.028a0.715,0.715,0,1,1-1.01-1.011l3.273-3.552c0.009-.009.012-0.021,0.021-0.03a0.723,0.723,0,0,1,1.017,0,0.022,0.022,0,0,1,0,0l3.265,3.577A0.712,0.712,0,0,1,517.778,610.8Z" transform="translate(-510 -606)"></path></svg>
+  `,
+  icon_arrow_right: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="3" height="5" viewBox="0 0 3 5" fill="currentColor"><path data-name="Rectangle 4 copy" d="M203,84V79l3,2.5Z" transform="translate(-203 -79)"></path></svg>
+  `,
+  icon_arrow_prev: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="15.969" height="12" viewBox="0 0 15.969 12" fill="currentColor"><path data-name="Rounded Rectangle 982 copy" d="M34,32H22.414l3.3,3.3A1,1,0,1,1,24.3,36.713l-4.978-4.978c-0.01-.01-0.024-0.012-0.034-0.022s-0.015-.041-0.03-0.058a0.974,0.974,0,0,1-.213-0.407,0.909,0.909,0,0,1-.024-0.123,0.982,0.982,0,0,1,.267-0.838c0.011-.011.025-0.014,0.036-0.024L24.3,25.287A1,1,0,0,1,25.713,26.7l-3.3,3.3H34A1,1,0,0,1,34,32Z" transform="translate(-19.031 -25)"></path></svg>
   `
 }
 

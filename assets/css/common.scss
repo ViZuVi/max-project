@@ -122,3 +122,7 @@ blockquote {
     color: $text-link-hover;
   }
 }
+
+.v-overlay__scrim {
+  height: 100vh !important;
+}

@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div class="app-layout">
-      <TheHeader :short="true" />
+      <TheHeader :short="true" :isMobile="isMobile" />
       <Nuxt />
       <TheFooter :short="true" />
       <BottomNavPanel v-show="isMobile" />

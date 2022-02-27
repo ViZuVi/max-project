@@ -1,6 +1,6 @@
 <template>
   <nav class="user-nav">
-    <AppIcon symbol="icon_burger" className="user-nav__burger-icon" />
+    <AppIcon symbol="icon_burger" className="user-nav__burger-icon" @click.stop="$emit('show-menu-drawer')" />
     <nuxt-link class="user-nav__logo" to="/">
       <AppIcon symbol="icon_logo" className="user-nav__logo-icon" />
     </nuxt-link>

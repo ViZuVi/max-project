@@ -5,9 +5,9 @@
     </div>
     <div class="footer-copy__item footer-copy__item--pay">
       <AppIcon
-        v-for="icon in icons"
+        v-for="(icon, i) in icons"
         :symbol="icon"
-        :key="icon"
+        :key="i"
         className="footer-copy__text-icon"
       />
     </div>
