@@ -48,10 +48,22 @@ export default {
   border: 1px solid #ececec;
   background-color: #ffffff;
   transition: transform ease 0.2s, box-shadow ease 0.2s;
-
   &:hover {
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
     transform: translateY(-1px);
+  }
+  &:not(:last-child) {
+    margin-right: 32px;
+    @include adapt-mobile {
+      margin-right: 0;
+      margin-bottom: 26px;
+    }
+  }
+  @include adapt-mobile {
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    margin-right: 0;
   }
 }
 .sale-card__info {
@@ -76,6 +88,10 @@ export default {
   &:hover {
     color: #365edc;
   }
+  @include adapt-mobile {
+    font-size: 14px;
+    line-height: 21px;
+  }
 }
 .sale-card__decription {
   font-size: 0.867em;
@@ -86,6 +102,7 @@ export default {
 .sale-card__timer,
 .sale-card__discount {
   padding: 5px 9px;
+  background-color: #ffffff;
   border: 1px solid #eee;
   font-weight: bold;
   font-size: 13px;
@@ -103,5 +120,12 @@ export default {
   background-size: cover;
   background-position: center;
   border-radius: 50%;
+  @include adapt-mobile {
+    width: 90px;
+    height: 90px;
+    order: -1;
+    flex-shrink: 0;
+    margin-right: 15px;
+  }
 }
 </style>

@@ -161,6 +161,9 @@ const icons = {
   `,
   icon_arrow: `
     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="6.969" viewBox="0 0 12 6.969" fill="currentColor"><path id="Rounded_Rectangle_702_copy_24" data-name="Rounded Rectangle 702 copy 24" d="M361.691,401.707a1,1,0,0,1-1.414,0L356,397.416l-4.306,4.291a1,1,0,0,1-1.414,0,0.991,0.991,0,0,1,0-1.406l5.016-5a1.006,1.006,0,0,1,1.415,0l4.984,5A0.989,0.989,0,0,1,361.691,401.707Z" transform="translate(-350 -395.031)"/></svg>
+  `,
+  icon_clock: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path data-name="Rounded Rectangle 970" d="M380,435a10,10,0,1,1,10-10A10,10,0,0,1,380,435Zm0-18a8,8,0,1,0,8,8A8,8,0,0,0,380,417Zm2.264,11.7-1.745-1.781A1.973,1.973,0,0,1,380,427a1.994,1.994,0,0,1-1-3.723V420a1,1,0,0,1,2,0v3.277A1.994,1.994,0,0,1,382,425a1.958,1.958,0,0,1-.074.51l1.761,1.8a0.974,0.974,0,0,1,0,1.4A1.019,1.019,0,0,1,382.264,428.7Z" transform="translate(-370 -415)"></path></svg>
   `
 }
 

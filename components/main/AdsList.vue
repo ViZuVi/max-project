@@ -54,6 +54,10 @@ export default {
 <style lang="scss" scoped>
 .adds-list {
   border-bottom: 1px solid #ececec;
+  @include adapt-mobile {
+    width: 100%;
+    overflow-y: auto;
+  }
 }
 .adds-list__wrapper {
   padding: 60px 30px 27px;

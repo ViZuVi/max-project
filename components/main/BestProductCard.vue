@@ -37,6 +37,7 @@
             className="best-product-cart_menu-btn"
             @click="fastBuy"
           />
+          <!-- TODO: from UI -->
           <v-dialog v-model="dialog" width="968">
             <template v-slot:activator="{ on, attrs }">
               <AppButton
@@ -59,7 +60,7 @@
           />
           <nuxt-link
             class="best-product-card__title"
-            :to="`/catalog/popular/${product.id}`"
+            :to="`/catalog/${product.id}`"
             >{{ product.title }}</nuxt-link
           >
           <span class="best-product-card__availability">{{

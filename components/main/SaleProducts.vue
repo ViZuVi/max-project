@@ -62,9 +62,10 @@ export default {
   @include section-size;
 }
 .sale-products__list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 32px;
+  display: flex;
   margin-bottom: 32px;
+  @include adapt-mobile {
+    flex-direction: column;
+  }
 }
 </style>

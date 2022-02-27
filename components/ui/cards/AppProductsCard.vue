@@ -26,9 +26,9 @@
         <AppRating :rating="product.rating" />
         <nuxt-link
           class="product-card__brand-link"
-          :to="`/info/brands/${product.brand.link}`"
+          :to="`#`"
         >
-          <img :src="product.brand.image" :alt="product.brand.title" />
+          <img :src="product.image" :alt="product.vendor_code" />
         </nuxt-link>
       </div>
     </div>
@@ -36,7 +36,7 @@
       <div class="product-card__img-wrapper">
         <div class="product-card__tags"></div>
         <div class="product-card__images">
-          <img :src="product.images[0]" alt="" />
+          <img :src="product.image" alt="" />
         </div>
       </div>
       <div class="product-card__info">
@@ -57,6 +57,7 @@
           </span>
         </div>
         <div class="product-card__main-btn-wrapper">
+          <!-- TODO: Add quantity -->
           <AppButton
             :label="inCart ? 'В корзине' : 'В корзину'"
             className="app-button--transparent product-card__main-btn product-card__main-btn--cart"
