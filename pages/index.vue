@@ -4,7 +4,7 @@
     <BannerBottom />
     <FeaturesList />
     <PopularCategories />
-    <BestProducts v-if="popularProducts && popularProducts.length" />
+    <BestProducts v-if="popularProducts && popularProducts.length" :isMobile="isMobile" />
     <DayOffer v-if="dayProducts && dayProducts.length" />
     <AdsList />
     <SaleProducts />
@@ -75,6 +75,10 @@ export default {
   },
   computed: {
     ...mapState("products", ["popularProducts", "dayProducts"]),
+    isMobile() {
+      // TODO: To helpers? (+from layout)
+      return process.client ? window.innerWidth <= 375 : false;
+    },
   },
   methods: {
     ...mapActions(["getReviews", "getBlogPosts"]),

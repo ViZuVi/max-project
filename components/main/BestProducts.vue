@@ -13,10 +13,14 @@
           v-for="(product, i) in popularProducts"
           :key="product.id"
           :product="product"
+          :isMobile="isMobile"
           :index="i"
         />
       </div>
-      <AppButton label="Загрузить еще" className="app-button--transparent" />
+      <AppButton
+        label="Загрузить еще"
+        className="best-products__load-btn app-button--transparent"
+      />
     </div>
   </section>
 </template>
@@ -36,6 +40,13 @@ export default {
     AppButton,
     BestProductCard,
   },
+  props: {
+    isMobile: {
+      type: Boolean,
+      required: false,
+      default: () => false,
+    },
+  },
   computed: {
     ...mapState("products", ["popularProducts"]),
   },
@@ -53,7 +64,10 @@ export default {
   @include section-size;
 }
 .best-products__list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+}
+.best-products__load-btn {
+  margin-top: 33px;
 }
 </style>

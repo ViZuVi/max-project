@@ -23,7 +23,7 @@
 
         <!-- TODO: news&blog to ui card (+styles) -->
         <div class="news-block">
-          <nuxt-link class="news-block__link font_medium" to="/company/news"
+          <nuxt-link class="news-block__link font-medium" to="/company/news"
             >Новости</nuxt-link
           >
           <div class="news-block__card">
@@ -37,7 +37,7 @@
         </div>
 
         <div class="blog-block">
-          <nuxt-link class="blog-block__link font_medium" to="/company/blog"
+          <nuxt-link class="blog-block__link font-medium" to="/company/blog"
             >Статьи</nuxt-link
           >
           <div class="blog-block__card">

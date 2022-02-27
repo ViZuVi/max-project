@@ -53,7 +53,6 @@ export const actions = {
         code: "test_product",
         covendor_code: "aezakmi",
         rating: 3.8,
-        code: "A36955R7",
         price: 36000,
         images: [
           require("~/assets/img/best-product-phone-1.jpg"),
@@ -106,9 +105,9 @@ export const actions = {
         ],
         tags: [
           {
-            "id": 1,
-            "title": "хит",
-            "color": "yellow"
+            id: 1,
+            title: "хит",
+            color: "yellow"
           }
         ],
       },
