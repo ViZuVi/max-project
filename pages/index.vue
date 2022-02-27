@@ -1,10 +1,10 @@
 <template>
   <div class="main-page">
     <BannerTop />
-    <BannerBottom />
-    <FeaturesList />
+    <BannerBottom /> <!-- TODO: is banner needed -->
+    <FeaturesList /> <!-- TODO: api needed -->
     <PopularCategories />
-    <BestProducts v-if="popularProducts && popularProducts.length" :isMobile="isMobile" />
+    <BestProducts :isMobile="isMobile" />
     <DayOffer v-if="dayProducts && dayProducts.length" />
     <AdsList />
     <SaleProducts />
@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
 import BannerTop from "~/components/main/BannerTop";
 import BannerBottom from "~/components/main/BannerBottom";
 import FeaturesList from "~/components/main/FeaturesList";
@@ -74,23 +73,10 @@ export default {
     };
   },
   computed: {
-    ...mapState("products", ["popularProducts", "dayProducts"]),
     isMobile() {
       // TODO: To helpers? (+from layout)
       return process.client ? window.innerWidth <= 375 : false;
     },
-  },
-  methods: {
-    ...mapActions(["getBlogPosts"]),
-    ...mapActions("products", [
-      "getPopularProducts",
-      "getCollections",
-    ]),
-  },
-  async created() {
-    // TODO: delete after nuxtServerInit
-    await this.getPopularProducts();
-    await this.getBlogPosts();
   },
   // TODO: add ESLint and StyleLint
   // TODO: check build in the end

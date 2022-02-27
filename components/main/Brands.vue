@@ -3,7 +3,7 @@
     <div class="brands__wrapper">
       <div class="brand" v-for="brand in brands" :key="brand.id">
         <nuxt-link class="brand__link" :to="`brands/${brand.id}`">
-          <img class="brand__img" :src="brand.src" alt="" />
+          <img class="brand__img" :src="brand.image" :alt="brand.title" />
         </nuxt-link>
       </div>
     </div>
@@ -15,21 +15,14 @@ export default {
   name: "Brands",
   data() {
     return {
-      brands: [
-        { id: 1, src: require("~/assets/img/brands-1.png") },
-        { id: 2, src: require("~/assets/img/brands-1.png") },
-        { id: 3, src: require("~/assets/img/brands-1.png") },
-        { id: 4, src: require("~/assets/img/brands-1.png") },
-        { id: 5, src: require("~/assets/img/brands-1.png") },
-        { id: 6, src: require("~/assets/img/brands-1.png") },
-        { id: 7, src: require("~/assets/img/brands-1.png") },
-        { id: 8, src: require("~/assets/img/brands-1.png") },
-        { id: 9, src: require("~/assets/img/brands-1.png") },
-        { id: 10, src: require("~/assets/img/brands-1.png") },
-        { id: 11, src: require("~/assets/img/brands-1.png") },
-        { id: 12, src: require("~/assets/img/brands-1.png") },
-      ],
+      brands: [],
     };
+  },
+  async fetch() {
+    const brands = await this.$axios.$get(
+      "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/vendors"
+    );
+    this.brands = brands.item;
   },
 };
 </script>
@@ -54,7 +47,7 @@ export default {
   height: 90px;
   opacity: 0.5;
   filter: grayscale(1);
-  transition: all ease-out .2s;
+  transition: all ease-out 0.2s;
 
   &:hover {
     opacity: 1;

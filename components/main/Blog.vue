@@ -37,7 +37,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import AppButton from "~/components/ui/AppButton";
 import AppIcon from "~/components/ui/AppIcon";
@@ -49,9 +48,17 @@ export default {
     AppButton,
     AppIcon,
   },
-  computed: {
-    ...mapState(["blogPosts"]),
-  }
+  data() {
+    return {
+      blogPosts: {},
+    };
+  },
+  async fetch() {
+    const blog = await this.$axios.$get(
+      "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/blog"
+    );
+    this.blogPosts = blog.item;
+  },
 };
 </script>
 

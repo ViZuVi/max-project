@@ -11,12 +11,12 @@
         v-for="category in categories"
         :key="category.title"
       >
-        <nuxt-link class="popular-categories__link" :to="category.link">
+        <nuxt-link class="popular-categories__link" to="#">
           <img
             width="80"
             height="80"
             class="popular-categories__img"
-            :src="category.img"
+            :src="category.image"
             :alt="category.title"
           />
           {{ category.title }}
@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import categories from "./categories-static";
 import AppSectionTitle from "~/components/ui/AppSectionTitle";
 
 export default {
@@ -37,18 +36,16 @@ export default {
   },
   data() {
     return {
-      categories,
+      categories: [],
     };
   },
-  // async fetch() {
-  //   const res = await this.$axios.$get(
-  //     "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/catalog/popular/sections"
-  //   );
-  //   console.log(res);
-  //   this.categories = res.items;
-
-  // TODO: link needed
-  // },
+  async fetch() {
+    const categories = await this.$axios.$get(
+      "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/blog"
+    );
+    this.categories = categories.item;
+    // TODO: api - link needed
+  },
 };
 </script>
 
@@ -73,6 +70,7 @@ export default {
   flex-grow: 1;
   min-width: 20%;
   width: 270px;
+  max-width: 270px;
   margin-right: -1px;
   margin-top: -1px;
   &:hover {
@@ -81,7 +79,7 @@ export default {
     transition: transform ease 0.2s, box-shadow ease 0.2s;
   }
   @include adapt-mobile {
-    // max-width: 50%;
+    max-width: 50%;
     width: 50%;
   }
 }
