@@ -81,18 +81,15 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["getReviews", "getBlogPosts"]),
+    ...mapActions(["getBlogPosts"]),
     ...mapActions("products", [
       "getPopularProducts",
-      "getDayProducts",
       "getCollections",
     ]),
   },
   async created() {
     // TODO: delete after nuxtServerInit
     await this.getPopularProducts();
-    await this.getDayProducts();
-    await this.getReviews();
     await this.getBlogPosts();
   },
   // TODO: add ESLint and StyleLint

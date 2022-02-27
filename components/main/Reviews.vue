@@ -1,7 +1,11 @@
 <template>
   <section class="reviews">
     <div class="reviews__wrapper">
-      <AppSectionTitle title="О нас пишут" allName="Все отзывы" allLink="/reviews">
+      <AppSectionTitle
+        title="О нас пишут"
+        allName="Все отзывы"
+        allLink="/reviews"
+      >
         <button class="reviews__add-btn">
           <AppIcon symbol="icon_chat" className="review__chat-icon" />
           <span>Оставить отзыв</span>
@@ -48,7 +52,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import AppButton from "~/components/ui/AppButton";
 import AppIcon from "~/components/ui/AppIcon";
@@ -60,9 +63,17 @@ export default {
     AppButton,
     AppIcon,
   },
-  computed: {
-    ...mapState(["reviews"]),
-  }
+  data() {
+    return {
+      reviews: {},
+    };
+  },
+  async fetch() {
+    const reviews = await this.$axios.$get(
+      "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/comments"
+    );
+    this.reviews = reviews.item;
+  },
 };
 </script>
 
@@ -144,7 +155,6 @@ export default {
   &:hover {
     color: #007aff;
   }
-
 }
 .review__chat-icon {
   margin-right: 12px;
