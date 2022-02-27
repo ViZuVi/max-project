@@ -324,9 +324,10 @@ export default {
     right: 84px;
     left: unset;
     top: -2px;
-  }
-   @include adapt-mobile {
-    right: 0;
+    @include adapt-mobile {
+      right: 0;
+      left: unset;
+    }
   }
 }
 </style>

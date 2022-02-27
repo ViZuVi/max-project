@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import CollectionCard from "./CollectionCard";
 
@@ -28,8 +27,16 @@ export default {
     AppSectionTitle,
     CollectionCard,
   },
-  computed: {
-    ...mapState("products", ["collections"]),
+  data() {
+    return {
+      collections: [],
+    }
+  },
+  async fetch() {
+    const collections = await this.$axios.$get(
+      "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/catalog/index/collections"
+    );
+    this.collections = collections.item;
   },
 };
 </script>
@@ -42,8 +49,10 @@ export default {
   @include section-size;
 }
 .collections__list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
+  display: flex;
+  @include adapt-mobile {
+    width: 100%;
+    overflow-y: auto;
+  }
 }
 </style>

@@ -1,4 +1,5 @@
 <template>
+<!-- TODO: check class -->
   <div
     class="best-product-card"
     :class="index === 0 && !isMobile ? 'best-product-card--prime' : ''"
@@ -19,22 +20,26 @@
           :to="`/catalog/${product.id}`"
           class="best-product-card__link"
         >
-          <img class="best-product-card__img" :src="product.image" alt="" />
+          <img
+            class="best-product-card__img"
+            :src="product.image"
+            :alt="product.title"
+          />
         </nuxt-link>
         <div class="best-product-card__menu">
           <AppButton
             btnSymbol="icon_heart"
-            className="best-product-cart_menu-btn"
+            className="best-product-card_menu-btn"
             @click="addToFavourite"
           />
           <AppButton
             btnSymbol="icon_diagram"
-            className="best-product-cart_menu-btn"
+            className="best-product-card_menu-btn"
             @click="addToCompare"
           />
           <AppButton
             btnSymbol="icon_bag"
-            className="best-product-cart_menu-btn"
+            className="best-product-card_menu-btn best-product-card_menu-btn--cart"
             @click="fastBuy"
           />
           <!-- TODO: from UI -->
@@ -44,7 +49,7 @@
                 v-bind="attrs"
                 v-on="on"
                 btnSymbol="icon_eye"
-                className="best-product-cart_menu-btn"
+                className="best-product-card_menu-btn best-product-card_menu-btn--eye"
               />
             </template>
             <AppProductsCard :product="product" />
@@ -169,8 +174,17 @@ export default {
   right: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
+  @include adapt-mobile {
+    opacity: 1;
+    display: flex;
+    align-items: flex-end;
+    top: unset;
+    left: unset;
+    right: 0;
+    bottom: 0;
+  }
 }
-.best-product-cart_menu-btn {
+.best-product-card_menu-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,9 +194,19 @@ export default {
   padding: 0;
   padding-top: 2px;
   padding-top: 6px;
+  background-color: #ffffff;
   &:hover {
     color: #ffffff;
     background-color: $text-link-hover;
+  }
+  @include adapt-mobile {
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+    &--cart,
+    &--eye {
+      display: none;
+    }
   }
 }
 .best-product-card__info-wrapper {
@@ -228,6 +252,16 @@ export default {
     color: $text-black-9;
   }
 }
+.best-product-card__tags {
+  @include adapt-mobile {
+    display: none;
+  }
+}
+.best-product-card__title {
+  @include adapt-mobile {
+    font-size: 13px;
+  }
+}
 .best-product-card__details-btn {
   display: none;
   position: absolute;
@@ -238,6 +272,15 @@ export default {
   z-index: 2;
   left: 0;
   right: 0;
+
+  @include adapt-mobile {
+    display: block;
+    position: static;
+    padding: 8px 5px 7px;
+    margin-top: 15px;
+    transform: unset;
+    width: 100%;
+  }
 }
 .best-product-card--prime {
   padding: 0;
@@ -288,6 +331,11 @@ export default {
   }
   .best-product-card__code {
     display: block;
+  }
+}
+.best-product-card__rating {
+  @include adapt-mobile {
+    display: none;
   }
 }
 </style>

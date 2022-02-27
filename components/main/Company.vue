@@ -51,7 +51,9 @@ export default {
 .company {
   display: flex;
   border-bottom: 1px solid #ececec;
-  // min-height: 59.7%;
+  @include adapt-mobile {
+    flex-direction: column;
+  }
 .company__details-btn {
   margin-left: 0;
   background-color: #365edc;
@@ -62,6 +64,10 @@ export default {
 .company__video-wrapper {
   flex-basis: 50%;
   padding-right: 16px;
+  @include adapt-mobile {
+    order: -1;
+    flex-basis: unset;
+  }
 }
 .company__about {
   max-width: 687px;

@@ -10,7 +10,7 @@
       </AppSectionTitle>
       <div class="best-products__list">
         <BestProductCard
-          v-for="(product, i) in popularProducts"
+          v-for="(product, i) in products"
           :key="product.id"
           :product="product"
           :isMobile="isMobile"
@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import AppTabs from "~/components/ui/AppTabs";
 import AppButton from "~/components/ui/AppButton";
@@ -47,8 +46,16 @@ export default {
       default: () => false,
     },
   },
-  computed: {
-    ...mapState("products", ["popularProducts"]),
+  data() {
+    return {
+      products: [],
+    }
+  },
+  async fetch() {
+    const products = await this.$axios.$get(
+      "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/catalog/popular/products"
+    );
+    this.products = products.items;
   },
 };
 </script>

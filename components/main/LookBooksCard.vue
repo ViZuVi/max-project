@@ -14,8 +14,14 @@
             class="lookbook-card__title"
             >{{ card.title }}</nuxt-link
           >
-          <p class="lookbook-card__description">{{ card.description }}</p>
-          <div class="lookbook-card__props-list">
+          <button
+            class="lookbook-card__info-toggle font-small"
+            @click="infoVisible = !infoVisible"
+          >
+            {{ !infoVisible ? "Посмотреть описание" : "Скрыть описание" }}
+          </button>
+          <p class="lookbook-card__description" v-show="infoVisible">{{ card.description }}</p>
+          <div class="lookbook-card__props-list" v-show="infoVisible">
             <div
               class="lookbook-card__props-item"
               v-for="prop in card.props"
@@ -60,7 +66,10 @@
     </div>
     <nuxt-link class="lookbook-card__details" :to="`lookbooks/${card.id}`">
       <span>Подробнее об образе</span>
-      <AppIcon symbol="icon_next_arrow" className="lookbook-card__details-icon" />
+      <AppIcon
+        symbol="icon_next_arrow"
+        className="lookbook-card__details-icon"
+      />
     </nuxt-link>
   </div>
 </template>
@@ -71,7 +80,7 @@ import AppIcon from "~/components/ui/AppIcon";
 export default {
   name: "LookBooksCard",
   components: {
-    AppIcon
+    AppIcon,
   },
   props: {
     card: {
@@ -79,6 +88,11 @@ export default {
       required: true,
       default: () => {},
     },
+  },
+  data() {
+    return {
+      infoVisible: true,
+    };
   },
 };
 </script>
@@ -92,13 +106,24 @@ export default {
   display: flex;
   padding: 3.266rem;
   flex-basis: 75%;
+  @include adapt-mobile {
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+  }
 }
 .lookbook-card__wrapper {
   display: flex;
   border: 1px solid #ececec;
+  @include adapt-mobile {
+    flex-direction: column;
+  }
 }
 .lookbook-card__link {
   flex-basis: 50%;
+  @include adapt-mobile {
+    margin-bottom: 2rem;
+  }
 }
 .lookbook-card__img {
   display: block;
@@ -107,6 +132,10 @@ export default {
 .lookbook-card__info {
   flex-basis: 50%;
   padding: 0 3.266rem;
+  @include adapt-mobile {
+    width: 100%;
+    padding: 0;
+  }
 }
 .lookbook-card__items-goods {
   flex-basis: 25%;
@@ -155,6 +184,10 @@ export default {
     .lookbook-card__items-info-title {
       color: #356edc;
     }
+  }
+  @include adapt-mobile {
+    border-bottom: 0;
+    border-top: 1px solid #ececec;
   }
 }
 .lookbook-card__items-img-link {
@@ -206,5 +239,13 @@ export default {
 }
 .lookbook-card__details-icon {
   margin-left: 15px;
+}
+.lookbook-card__info-toggle {
+  display: none;
+  border-bottom: 1px dotted;
+  margin-bottom: 24px;
+  @include adapt-mobile {
+    display: block;
+  }
 }
 </style>

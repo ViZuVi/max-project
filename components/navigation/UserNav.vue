@@ -74,6 +74,7 @@ export default {
   @include adapt-mobile {
     min-height: 100%;
     padding: 0;
+    background-color: #ffffff;
   }
 }
 .user-nav__burger-icon {

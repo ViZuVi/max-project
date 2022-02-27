@@ -2,26 +2,26 @@
   <div class="main-page">
     <BannerTop />
     <BannerBottom /> <!-- TODO: is banner needed -->
-    <FeaturesList /> <!-- TODO: api needed -->
+    <FeaturesList /> <!-- TODO: api - needed ? -->
     <PopularCategories />
     <BestProducts :isMobile="isMobile" />
-    <DayOffer v-if="dayProducts && dayProducts.length" />
-    <AdsList />
-    <SaleProducts />
+    <DayOffer />
+    <AdsList /> <!-- TODO: api - needed ? -->
+    <SaleProducts /> <!-- TODO: api - needed ? -->
     <div
       class="main-page__promo"
       :style="{ backgroundImage: `url(${promoImg})` }"
-    ></div>
-    <CollectionsList />
-    <LookBooks />
-    <Stories />
+    ></div> <!-- TODO: api - needed ? -->
+    <CollectionsList /> 
+    <LookBooks /> <!-- TODO: api - needed ? -->
+    <!-- <Stories /> --> <!-- TODO: api - needed ? -->
     <Reviews />
-    <BannersMiddle />
+    <!-- <BannersMiddle />  --> <!-- TODO: api - needed ? -->
     <Blog />
     <Map />
     <Company />
     <Brands />
-    <Instagram />
+    <!-- <Instagram /> --><!-- TODO: api - needed ? -->
   </div>
 </template>
 

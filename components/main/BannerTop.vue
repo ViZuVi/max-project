@@ -1,12 +1,11 @@
 <template>
   <div class="banner-top">
-    <v-carousel height="631" show-arrows-on-hover>
+    <v-carousel height="631" show-arrows-on-hover hide-delimiter-background light>
       <v-carousel-item
-        v-for="(item, i) in carouselItems"
-        :key="i"
-        :src="require('~/assets/img/header-background.jpg')"
+        v-for="item in carouselItems"
+        :key="item.id"
+        :src="item.image"
       >
-        <!-- require('~/assets/img/header-background.jpg') -->
         <v-sheet>
           <div class="banner-top__info">
             <!-- TODO: category in api? -->
@@ -33,8 +32,6 @@ export default {
   components: {
     AppButton,
   },
-  // TODO: fetchOnServer: false - find other decision
-  fetchOnServer: false,
   data() {
     return {
       carouselItems: [],
@@ -57,6 +54,27 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     background-color: transparent;
+    @include adapt-mobile {
+      width: 100%;
+      padding: 27px 20px;
+      background-color: #ffffff;
+    }
   }
+}
+.banner-top__title {
+  display: block;
+  font-size: 2.2666em;
+  line-height: 1.15em;
+  margin-bottom: 23px;
+}
+.banner-top__description {
+  color: $text-black-3;
+  line-height: 1.8em;
+  margin-bottom: 29px;
+}
+.banner-top__btn {
+  margin-left: 0;
+  background-color: $text-link-hover;
+  color: #ffffff;
 }
 </style>

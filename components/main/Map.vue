@@ -84,6 +84,9 @@ export default {
 }
 .map__contacts-wrapper {
   display: flex;
+  @include adapt-mobile {
+    flex-direction: column;
+  }
 }
 .map__contacts {
   width: 312px;
@@ -93,6 +96,11 @@ export default {
   padding: 29px 34px;
   display: flex;
   flex-direction: column;
+
+  @include adapt-mobile {
+    width: 100%;
+    box-shadow: unset;
+  }
 }
 .map__address {
   font-size: 1.2em;
@@ -129,6 +137,9 @@ export default {
 }
 .map__frame {
   background-color: #ececec;
+  @include adapt-mobile {
+    width: 100%;
+  }
 }
 .map__contact-btn {
   margin-left: 0;

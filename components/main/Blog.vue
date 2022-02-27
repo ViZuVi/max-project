@@ -4,7 +4,7 @@
       <AppSectionTitle title="Блог" allName="Все статьи" allLink="/blog">
         <button class="blog__add-btn">
           <AppIcon symbol="icon_subscribe" className="blog__chat-icon" />
-          <span>Подписаться</span>
+          <span class="blog__subscribe-text">Подписаться</span>
         </button>
       </AppSectionTitle>
       <div class="blog__list">
@@ -71,6 +71,14 @@ export default {
 }
 .blog__posts-wrapper {
   @include section-size;
+  @include adapt-mobile {
+    overflow: hidden;
+  }
+}
+.blog__subscribe-text {
+  @include adapt-mobile {
+    display: none;
+  }
 }
 .blog__add-btn {
   font-size: 0.667em;
@@ -97,26 +105,21 @@ export default {
   }
 }
 .blog__list {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-gap: 36px;
+  display: flex;
   margin-bottom: 36px;
+  overflow-x: auto;
 }
 .blog__item {
   min-height: 458px;
-  border: 1px solid #ececec;
   border-radius: 3px;
   position: relative;
   overflow: hidden;
-  transition: transform ease 0.2s, box-shadow ease 0.2s;
-  &:hover {
-    box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
-    transform: translateY(-1px);
-    .blog__item-title {
-      color: #365edc;
-    }
-  }
+  width: 25%;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 32px;
   &--large {
+    width: 50%;
     .blog__img-wrapper {
       flex-grow: 1;
     }
@@ -127,13 +130,38 @@ export default {
       bottom: 0;
       min-height: 250px;
       min-width: 313px;
+      @include adapt-mobile {
+        background-color: transparent;
+        min-width: unset;
+        left: 0;
+      }
     }
+    .blog__item-title,
+    .blog__item-date {
+      @include adapt-mobile {
+        color: #ffffff;
+      }
+    }
+  }
+  @include adapt-mobile {
+    width: 277px;
+    flex-shrink: 0;
   }
 }
 .blog__item-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
+  border: 1px solid #ececec;
+  transition: transform ease 0.2s, box-shadow ease 0.2s;
+  &:hover {
+    box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
+    transform: translateY(-1px);
+    .blog__item-title {
+      color: #365edc;
+    }
+  }
 }
 .blog__img-wrapper {
   height: 208px;

@@ -7,10 +7,10 @@
         :style="{ backgroundImage: `url(${card.img})` }"
       >
       </nuxt-link>
-      <div class="ads-list-card__link-text">
-        <span class="ads-list-card__title">{{ card.title }}</span>
-        <span class="ads-list-card__category">{{ card.category }}</span>
-      </div>
+    </div>
+    <div class="ads-list-card__link-text">
+      <span class="ads-list-card__title">{{ card.title }}</span>
+      <span class="ads-list-card__category">{{ card.category }}</span>
     </div>
   </div>
 </template>
@@ -35,6 +35,8 @@ export default {
   align-items: center;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
+  padding-bottom: 65px;
   &:not(:last-child) {
     margin-right: 32px;
   }
@@ -59,7 +61,12 @@ export default {
 }
 .ads-list-card__link-text {
   position: absolute;
-  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .ads-list-card__title {
   margin-bottom: 6px;

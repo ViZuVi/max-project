@@ -1,6 +1,7 @@
 <template>
   <footer class="footer">
-    <ViewedBefore v-if="viewed.length && !short" :cards="viewed" />
+    <!-- TODO: api - needed ? -->
+    <!-- <ViewedBefore v-if="viewed.length && !short" :cards="viewed" /> -->
     <div class="footer__inner">
       <FooterMenu />
       <FooterSocial />

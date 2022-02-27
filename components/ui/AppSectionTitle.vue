@@ -60,10 +60,10 @@ export default {
   margin-bottom: 33px;
 }
 .section-title__name {
-  margin-right: auto;
   @include section-title;
   @include adapt-mobile {
     margin-right: 45px;
+    margin-bottom: 20px;
   }
 }
 .section-title__link {

@@ -34,16 +34,22 @@ export default {
 .brands__wrapper {
   @include section-size;
   padding-top: 79px;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   row-gap: 32px;
+}
+.brand {
+  padding: 0 26px;
+  width: 230px;
+
+  @include adapt-mobile {
+    width: 50%;
+  }
 }
 .brand__link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 230px;
   height: 90px;
   opacity: 0.5;
   filter: grayscale(1);

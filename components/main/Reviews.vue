@@ -86,10 +86,19 @@ export default {
     background-color: transparent;
   }
 }
+.reviews__carousel {
+  @include adapt-mobile {
+    padding: 25px 29px;
+    background-color: #ffffff;
+  }
+}
 .reviews__wrapper {
   padding: 60px 30px 70px;
   max-width: $max-width;
   margin: 0 auto;
+  @include adapt-mobile {
+    padding: 16px 30px;
+  }
 }
 .reviews__item {
   max-width: 902px;
@@ -154,6 +163,10 @@ export default {
 
   &:hover {
     color: #007aff;
+  }
+
+  @include adapt-mobile {
+    display: none;
   }
 }
 .review__chat-icon {

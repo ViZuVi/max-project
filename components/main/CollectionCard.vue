@@ -5,8 +5,8 @@
       :to="`/collections/${collection.id}`"
       :style="{ backgroundImage: `url(${collection.image})` }"
     ></nuxt-link>
-    <nuxt-link class="collection-card__link" :to="`/collections/${collection.id}`">
-      {{ collection.link }}
+    <nuxt-link class="collection-card__link" :to="collection.link">
+      {{ collection.title }}
     </nuxt-link>
   </div>
 </template>
@@ -43,6 +43,12 @@ export default {
 
     .collection-card__link {
       color: #365edc;
+    }
+  }
+  @include adapt-mobile {
+    width: 277px;
+    &:not(:last-child) {
+      margin-right: 16px;
     }
   }
 }
