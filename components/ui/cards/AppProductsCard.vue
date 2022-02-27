@@ -157,6 +157,7 @@ export default {
 }
 .product-card__header-controls {
   display: flex;
+  align-items: center;
 }
 .product-card__header-btn-wrapper {
   display: flex;

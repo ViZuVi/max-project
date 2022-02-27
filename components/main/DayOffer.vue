@@ -7,13 +7,12 @@
         allLink="/catalog"
         iconSymbol="icon_hot"
       />
-      <v-carousel hide-delimiters height="auto">
-        <!-- TODO: items from mocks; add cards and card components -->
-        <v-carousel-item v-for="product in dayProducts" :key="product.id">
-          <v-sheet>
             <div class="day-offer-card">
               <div class="day-offer-card__img-wrapper">
-                <AppProductTag class="day-offer-card__tags" :tags="product.tags" />
+                <AppProductTag
+                  class="day-offer-card__tags"
+                  :tags="product.tags"
+                />
                 <nuxt-link
                   class="day-offer-card__link"
                   :to="`/catalog/${product.id}`"
@@ -60,15 +59,11 @@
                 />
               </div>
             </div>
-          </v-sheet>
-        </v-carousel-item>
-      </v-carousel>
     </div>
   </section>
 </template>
 
 <script>
-import { mapState } from "vuex";
 import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import AppProductTag from "~/components/ui/cards/AppProductTag";
 import AppProductMenu from "~/components/ui/cards/AppProductMenu";
@@ -86,8 +81,16 @@ export default {
     AppRating,
     AppButton,
   },
-  computed: {
-    ...mapState("products", ["dayProducts"]),
+  data() {
+    return {
+      product: {},
+    };
+  },
+  async fetch() {
+    const dayProduct = await this.$axios.$get(
+      "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/catalog/day/products"
+    );
+    this.product = dayProduct.item;
   },
 };
 </script>
@@ -118,11 +121,13 @@ export default {
 .day-offer-card__info-wrapper {
   position: relative;
   flex-basis: 50%;
-  padding: 0 16px;
+  margin: 0 16px;
 }
 .day-offer-card__img-wrapper {
-  max-width: 350px;
-  padding: 30px 29px 26px;
+  @include adapt-mobile {
+    margin: 30px 16px 26px;
+    max-width: 350px;
+  }
 }
 .day-offer-card__info-wrapper {
   display: flex;
@@ -136,8 +141,8 @@ export default {
 }
 .day-offer-card__menu {
   @include adapt-mobile {
-    left: 26px;
-    bottom: 29px;
+    left: 0;
+    bottom: 0;
     right: unset;
     top: unset;
     display: flex;

@@ -19,7 +19,7 @@
           :to="`/catalog/${product.id}`"
           class="best-product-card__link"
         >
-          <img class="best-product-card__img" :src="product.images[0]" alt="" />
+          <img class="best-product-card__img" :src="product.image" alt="" />
         </nuxt-link>
         <div class="best-product-card__menu">
           <AppButton

@@ -1,6 +1,5 @@
 export const state = () => ({
   popularProducts: [],
-  dayProducts: [],
   collections: [],
   selectedProduct: null,
 })
@@ -8,9 +7,6 @@ export const state = () => ({
 export const mutations = {
   setPopularProducts(state, payload) {
     state.popularProducts = payload;
-  },
-  setDayProducts(state, payload) {
-    state.dayProducts = payload;
   },
   setCollections(state, payload) {
     state.collections = payload;
@@ -32,7 +28,7 @@ export const actions = {
         rating: 4.4,
         code: "A36955R7",
         price: 16800,
-        images: [require("~/assets/img/best-product-prime.jpg")],
+        image: require("~/assets/img/best-product-prime.jpg"),
         brand: {
           id: 1,
           title: "vrand",
@@ -54,11 +50,7 @@ export const actions = {
         covendor_code: "aezakmi",
         rating: 3.8,
         price: 36000,
-        images: [
-          require("~/assets/img/best-product-phone-1.jpg"),
-          require("~/assets/img/best-product-phone-2.jpg"),
-          require("~/assets/img/best-product-phone-3.jpg"),
-        ],
+        image: require("~/assets/img/best-product-phone-1.jpg"),
         brand: {
           id: 2,
           title: "vrand",
@@ -119,11 +111,7 @@ export const actions = {
         rating: 0,
         code: "A36955R7",
         price: 36000,
-        images: [
-          require("~/assets/img/best-product-phone-1.jpg"),
-          require("~/assets/img/best-product-phone-2.jpg"),
-          require("~/assets/img/best-product-phone-3.jpg"),
-        ],
+        image: require("~/assets/img/best-product-phone-1.jpg"),
         brand: {
           id: 3,
           title: "vrand",
@@ -146,11 +134,7 @@ export const actions = {
         rating: 0,
         code: "A36955R7",
         price: 36000,
-        images: [
-          require("~/assets/img/best-product-phone-1.jpg"),
-          require("~/assets/img/best-product-phone-2.jpg"),
-          require("~/assets/img/best-product-phone-3.jpg"),
-        ],
+        image: require("~/assets/img/best-product-phone-1.jpg"),
         brand: {
           id: 4,
           title: "vrand",
@@ -173,11 +157,7 @@ export const actions = {
         rating: 0,
         code: "A36955R7",
         price: 36000,
-        images: [
-          require("~/assets/img/best-product-phone-1.jpg"),
-          require("~/assets/img/best-product-phone-2.jpg"),
-          require("~/assets/img/best-product-phone-3.jpg"),
-        ],
+        image: require("~/assets/img/best-product-phone-1.jpg"),
         brand: {
           id: 5,
           title: "vrand",
@@ -200,11 +180,7 @@ export const actions = {
         rating: 0,
         code: "A36955R7",
         price: 36000,
-        images: [
-          require("~/assets/img/best-product-phone-1.jpg"),
-          require("~/assets/img/best-product-phone-2.jpg"),
-          require("~/assets/img/best-product-phone-3.jpg"),
-        ],
+        image: require("~/assets/img/best-product-phone-1.jpg"),
         brand: {
           id: 6,
           title: "vrand",
@@ -223,72 +199,6 @@ export const actions = {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(commit('setPopularProducts', mockProds));
-      }, 100);
-    });
-  },
-  getDayProducts({ commit }) {
-    // TODO: to nuxtServerInit?
-    const mockProds = [
-      {
-        id: 1,
-        image:
-          "https://img.freepik.com/free-vector/neon-lights-background-theme_52683-44625.jpg?size=626&ext=jpg",
-        title: "Тестовый товар",
-        code: "test_product",
-        vendor_code: "aezakmi",
-        availability: "Много",
-        price: 100500.5,
-        rating: 4.6,
-        tags: [
-          {
-            id: 1,
-            title: "хит",
-            color: "yellow",
-          },
-        ],
-        properties: [
-          {
-            id: 1,
-            title: "Стоимость",
-            code: "price",
-            type: "range",
-            value: "500",
-            measure: "мг.",
-          },
-        ],
-      },
-      {
-        id: 2,
-        image:
-          "https://img.freepik.com/free-vector/neon-lights-background-theme_52683-44625.jpg?size=626&ext=jpg",
-        title: "Тестовый товар",
-        code: "test_product",
-        vendor_code: "aezakmi",
-        availability: "Много",
-        price: 100500.5,
-        rating: 4.6,
-        tags: [
-          {
-            id: 1,
-            title: "хит",
-            color: "yellow",
-          },
-        ],
-        properties: [
-          {
-            id: 1,
-            title: "Стоимость",
-            code: "price",
-            type: "range",
-            value: "500",
-            measure: "мг.",
-          },
-        ],
-      },
-    ]
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(commit('setDayProducts', mockProds));
       }, 100);
     });
   },
