@@ -49,7 +49,7 @@
                   >
                 </div>
                 <p class="day-offer-card__price font-medium">
-                  {{ product.price }} ₽/шт
+                  {{ product.price.toLocaleString }} ₽/шт
                 </p>
                 <!-- TODO: saving? - api -->
                 <AppButton
@@ -97,7 +97,7 @@ export default {
 
 <style lang="scss" scoped>
 .day-offer {
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
 }
 .day-offer__title {
   margin-right: auto;

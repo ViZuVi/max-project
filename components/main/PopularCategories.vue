@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 .popular-categories {
   @include section-size;
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
 }
 .popular-categories__list {
   width: 100%;
@@ -66,7 +66,7 @@ export default {
   justify-content: center;
   padding: 39px 10px 35px;
   background-color: #ffffff;
-  border: 1px solid #ececec;
+  border: $border;
   flex-grow: 1;
   min-width: 20%;
   width: 270px;

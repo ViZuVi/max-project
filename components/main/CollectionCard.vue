@@ -42,7 +42,7 @@ export default {
     }
 
     .collection-card__link {
-      color: #365edc;
+      color: $text-link-hover;
     }
   }
   @include adapt-mobile {
@@ -80,7 +80,7 @@ export default {
 .collection-card__link {
   font-size: 15px;
   line-height: 25px;
-  color: #333333;
+  color: $text-black-3;
   text-align: center;
 }
 </style>

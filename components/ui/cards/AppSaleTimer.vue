@@ -87,7 +87,7 @@ export default {
 .app-sale-timer__title {
   font-size: 0.6667em;
   line-height: 1.2;
-  color: #666666;
+  color: $text-black-6;
   margin-top: -3px;
 }
 </style>

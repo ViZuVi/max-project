@@ -74,7 +74,7 @@ export default {
 
 <style lang="scss" scoped>
 .banners-middle {
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
 }
 .banners-middle__wrapper {
   @include section-size;
@@ -104,19 +104,19 @@ export default {
   line-height: 1.3em;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: #555555;
+  color: $text-black-5;
   margin-bottom: 12px;
 }
 .banners-middle__item-title {
   font-size: 1.6em;
   line-height: 1.25em;
-  color: #333333;
+  color: $text-black-3;
   margin-bottom: 16px;
 }
 .banners-middle__item-description {
   font-size: 0.867em;
   line-height: 1.692em;
-  color: #555555;
+  color: $text-black-5;
 }
 .banners-middle__item-img-link {
   transition: opacity 0.3s;

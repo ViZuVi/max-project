@@ -47,7 +47,7 @@ export default {
   line-height: 1.454em;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #333333;
+  color: $text-black-3;
 }
 .product-card-price__availability-wrapper {
   display: flex;
@@ -80,13 +80,13 @@ export default {
   line-height: 15px;
   display: flex;
   align-items: center;
-  color: #666666;
+  color: $text-black-6;
 }
 .product-card-price__question-text {
   border-bottom: 1px dotted;
 }
 .product-card-price__wallet-icon {
   margin-right: 7px;
-  color: #999999;
+  color: $text-black-9;
 }
 </style>

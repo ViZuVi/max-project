@@ -50,13 +50,13 @@ export default {
 <style lang="scss" scoped>
 .company {
   display: flex;
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
   @include adapt-mobile {
     flex-direction: column;
   }
 .company__details-btn {
   margin-left: 0;
-  background-color: #365edc;
+  background-color: $text-link-hover;
   color: #ffffff;
 }
 }
@@ -85,11 +85,11 @@ export default {
   line-height: 1.3em;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: #999999;
+  color: $text-black-9;
   margin-bottom: 20px;
 
   &:hover {
-    color: #365edc;
+    color: $text-link-hover;
   }
 }
 .company__title {
@@ -97,6 +97,6 @@ export default {
 }
 .company__text {
   margin-bottom: 1.666rem;
-  color: #555555;
+  color: $text-black-5;
 }
 </style>

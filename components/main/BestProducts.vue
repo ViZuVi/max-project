@@ -55,7 +55,7 @@ export default {
 <style lang="scss" scoped>
 .best-products {
   // TODO: border - variable?
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
   background-color: #f8f8f8;
   width: 100%;
 }

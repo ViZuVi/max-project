@@ -31,7 +31,7 @@ export default {
 <style lang="scss" scoped>
 .product-card-props__title {
   display: block;
-  color: #333333;
+  color: $text-black-3;
   margin-bottom: 11px;
   font-size: 0.933em;
   line-height: 1.501em;
@@ -45,6 +45,6 @@ export default {
   color: #999;
 }
 .product-card-props__value {
-  color: #333333;
+  color: $text-black-3;
 }
 </style>

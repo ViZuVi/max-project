@@ -43,22 +43,32 @@
         </div>
         <div class="cart-items__quantity">
           <div class="cart-items__quantity-btns">
-            <button class="cart-items__decrease-btn">-</button>
+            <button class="cart-items__decrease-btn">
+              <AppIcon
+                symbol="icon_minus"
+                className="cart-items__btn-icon"
+              />
+            </button>
             <input
               class="cart-items__quantity-input"
               type="text"
               :value="product.quantity"
             />
-            <!-- TODO: + - to icons? -->
-            <button class="cart-items__increase-btn">+</button>
+            <!-- TODO: add actions -->
+            <button class="cart-items__increase-btn">
+              <AppIcon
+                symbol="icon_plus"
+                className="cart-items__btn-icon"
+              />
+            </button>
           </div>
           <span class="cart-items__quantity-price">
-            {{ product.userPrice }} ₽/шт
+            {{ product.userPrice.toLocaleString() }} ₽/шт
           </span>
         </div>
         <div class="cart-items__total-wrapper">
           <span class="cart-items__total-user-price">{{
-            product.userPrice * product.quantity
+            (product.userPrice * product.quantity).toLocaleString()
           }}</span>
           <span class="cart-items__total-price">{{
             product.price * product.quantity
@@ -68,7 +78,7 @@
             {{
               ((product.price - product.userPrice) * product.quantity).toFixed(
                 2
-              )
+              ).toLocaleString()
             }}
             ₽</span
           >
@@ -83,13 +93,11 @@
 </template>
 
 <script>
-// import AppButton from "~/components/ui/AppButton";
 import AppIcon from "~/components/ui/AppIcon";
 
 export default {
   name: "CartProducts",
   components: {
-    // AppBtton,
     AppIcon,
   },
   data() {
@@ -102,7 +110,6 @@ export default {
           hit: true,
           discount: 10,
           quantity: 1,
-          // TODO: format price
           userPrice: 35820.28,
           price: 36000,
           category: "electronics",
@@ -137,7 +144,7 @@ export default {
   }
 }
 .cart-items__header-title {
-  box-shadow: 0px 2px 0px #365edc;
+  box-shadow: 0px 2px 0px $text-link-hover;
   font-size: 13px;
   cursor: pointer;
 }
@@ -148,10 +155,10 @@ export default {
   letter-spacing: 0.8px;
 
   &:hover {
-    color: #365edc;
+    color: $text-link-hover;
 
     .cart-items__clear-icon {
-      color: #365edc;
+      color: $text-link-hover;
     }
   }
 }
@@ -228,17 +235,17 @@ export default {
 }
 .cart-items__title {
   font-size: 1em;
-  color: #333333;
+  color: $text-black-3;
   margin-bottom: 5px;
 
   &:hover {
-    color: #365edc;
+    color: $text-link-hover;
   }
 }
 .cart-items__prop {
   font-size: 13px;
   padding-top: 6px;
-  color: #333333;
+  color: $text-black-3;
 }
 .cart-items__prop-name {
   margin-right: 5px;
@@ -262,7 +269,7 @@ export default {
   width: 32px;
   color: #979797;
   &:hover {
-    color: #365edc;
+    color: $text-link-hover;
   }
 }
 .cart-items__quantity-input {
@@ -272,11 +279,11 @@ export default {
   font-family: inherit;
   font-size: 13px;
   line-height: 13px;
-  color: #333333;
+  color: $text-black-3;
 }
 .cart-items__quantity-price {
   font-size: 13px;
-  color: #999999;
+  color: $text-black-9;
 }
 .cart-items__total-wrapper {
   display: flex;
@@ -290,14 +297,14 @@ export default {
   }
 }
 .cart-items__total-user-price {
-  color: #333333;
+  color: $text-black-3;
   letter-spacing: -0.33px;
   font-size: 16px;
   line-height: 24px;
   font-weight: bold;
 }
 .cart-items__total-price {
-  color: #999999;
+  color: $text-black-9;
   text-decoration: line-through;
   font-size: 15px;
   line-height: 12px;
@@ -311,5 +318,10 @@ export default {
   border-radius: 3px;
   white-space: nowrap;
   margin: 7px 0 0;
+}
+.cart-items__btn-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

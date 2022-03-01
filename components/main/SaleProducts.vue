@@ -55,7 +55,7 @@ export default {
 
 <style lang="scss" scoped>
 .sale-products {
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
   background-color: #f8f8f8;
 }
 .sale-products__wrapper {

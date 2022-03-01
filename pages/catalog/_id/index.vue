@@ -11,5 +11,6 @@ export default {
   components: {
     ProductDetails,
   },
+  // TODO: async data
 };
 </script>

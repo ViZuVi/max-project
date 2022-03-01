@@ -65,7 +65,7 @@ export default {
   margin-bottom: 18px;
 }
 .manager-block__text-title {
-  color: #999999;
+  color: $text-black-9;
   margin-bottom: 5px;
 }
 .manager-block__info {

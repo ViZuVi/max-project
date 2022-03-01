@@ -8,7 +8,6 @@ export default {
   quantity: 1,
   rating: 0,
   comments: [],
-  // TODO: format price
   documents: [{ title: "Обзор товара", id: 1, size: "15,4 кб", link: "#" }],
   userPrice: 35820.28,
   price: 36000,

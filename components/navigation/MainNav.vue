@@ -58,7 +58,7 @@ export default {
 .main-nav {
   max-width: $max-width;
   margin: 0 auto;
-  background-color: #365edc;
+  background-color: $text-link-hover;
   color: #ffffff;
   border-radius: 3px;
   height: 53px;
@@ -115,14 +115,14 @@ export default {
     padding: 14px 27px 13px 20px;
     text-transform: capitalize;
     font-size: 14px;
-    color: #333333;
+    color: $text-black-3;
     display: block;
     max-width: 200px;
     width: 100%;
     font-weight: normal;
     text-align: left;
     &:hover {
-      color: #333333;
+      color: $text-black-3;
       background-color: #fafafa;
     }
   }

@@ -45,7 +45,7 @@ export default {
 .sale-card {
   display: flex;
   padding: 32px 40px 36px 37px;
-  border: 1px solid #ececec;
+  border: $border;
   background-color: #ffffff;
   transition: transform ease 0.2s, box-shadow ease 0.2s;
   &:hover {
@@ -70,7 +70,7 @@ export default {
   max-width: 369px;
 }
 .sale-card__due-date-wrapper {
-  color: #999999;
+  color: $text-black-9;
   font-size: 0.867em;
   line-height: 1.692em;
   margin-bottom: 13px;
@@ -83,10 +83,10 @@ export default {
   display: block;
   font-size: 1.2em;
   line-height: 1.454em;
-  color: #333333;
+  color: $text-black-3;
   margin-bottom: 16px;
   &:hover {
-    color: #365edc;
+    color: $text-link-hover;
   }
   @include adapt-mobile {
     font-size: 14px;

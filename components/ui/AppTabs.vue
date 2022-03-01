@@ -43,7 +43,7 @@ export default {
   margin-left: auto;
   font-size: 0.867em;
   line-height: 1.692em;
-  color: #666666;
+  color: $text-black-6;
   @include adapt-mobile {
     margin-left: 0;
     font-size: 12px;
@@ -59,7 +59,7 @@ export default {
     }
   }
   &--active {
-    border-bottom: 2px solid #365edc;
+    border-bottom: 2px solid $text-link-hover;
     cursor: text;
     color: $text-black-3;
   }

@@ -35,7 +35,7 @@ export default {
 .features-list {
   width: 100%;
   background-color: #f8f8f8;
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
 }
 .features-list__wrapper {
   display: flex;
@@ -56,14 +56,14 @@ export default {
   min-width: 186px;
 }
 .features-list__item-title {
-  color: #333333;
+  color: $text-black-3;
   margin-bottom: 6px;
   // TODO: CHECK all font properties
   font-size: 1.0667em;
   line-height: 1.5625em;
 }
 .features-list__item-text {
-  color: #666666;
+  color: $text-black-6;
   margin-bottom: 6px;
   // TODO: CHECK all font properties
   font-size: 0.867em;

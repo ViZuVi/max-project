@@ -160,14 +160,14 @@ export default {
     }
   }
   .footer-menu__sub-link {
-    color: #999999;
+    color: $text-black-9;
     font-size: 0.867em;
     line-height: 1.5385em;
     &:not(:last-child) {
       margin-bottom: 8px;
     }
     &:hover {
-      color: #999999;
+      color: $text-black-9;
     }
   }
   .footer-menu__contacts-wrapper,
@@ -217,7 +217,7 @@ export default {
     justify-content: space-between;
     font-size: 0.7333em;
     &:hover {
-      border-color: #365edc;
+      border-color: $text-link-hover;
 
       .footer-menu__subscribe-icon {
         opacity: 1;

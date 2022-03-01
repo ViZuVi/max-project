@@ -80,7 +80,7 @@ export default {
 
 <style lang="scss" scoped>
 .map {
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
 }
 .map__wrapper {
   @include section-size;
@@ -94,7 +94,7 @@ export default {
 .map__contacts {
   width: 312px;
   height: 500px;
-  border: 1px solid #ececec;
+  border: $border;
   box-shadow: 12px 0 12px -12px rgb(0 0 0 / 20%);
   padding: 29px 34px;
   display: flex;
@@ -108,7 +108,7 @@ export default {
 .map__address {
   font-size: 1.2em;
   line-height: 1.454em;
-  color: #333333;
+  color: $text-black-3;
   margin-bottom: 26px;
   &:hover {
     color: #356edc;
@@ -124,10 +124,10 @@ export default {
   text-transform: uppercase;
   letter-spacing: 0.8px;
   margin-bottom: 3px;
-  color: #666666;
+  color: $text-black-6;
 }
 .contacts__text {
-  color: #333333;
+  color: $text-black-3;
   &--link:hover {
     color: #356edc;
   }

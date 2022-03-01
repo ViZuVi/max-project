@@ -74,7 +74,7 @@
           <span class="best-product-card__code">Арт.: {{ product.code }}</span>
         </div>
         <p class="best-product-card__price font-medium">
-          {{ product.price }} ₽/шт
+          {{ product.price.toLocaleString }} ₽/шт
         </p>
       </div>
     </div>

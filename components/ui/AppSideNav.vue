@@ -28,7 +28,7 @@ export default {
 .app-side-nav {
   display: flex;
   flex-direction: column;
-  border: 1px solid #ececec;
+  border: $border;
   width: 244px;
   margin-bottom: 26px;
   .app-side-nav__link {
@@ -37,7 +37,7 @@ export default {
     font-size: 13px;
     color: $text-black-3;
     &:not(:last-child) {
-      border-bottom: 1px solid #ececec;
+      border-bottom: $border;
     }
     &:first-child {
       font-weight: bold;

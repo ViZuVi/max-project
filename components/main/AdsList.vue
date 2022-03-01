@@ -53,7 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 .adds-list {
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
   @include adapt-mobile {
     width: 100%;
     overflow-y: auto;

@@ -7,7 +7,7 @@
       <nuxt-link :to="`/catalog/${product.id}`" class="product-card-small__title">{{
         product.title
       }}</nuxt-link>
-      <span class="product-card-small__price">{{ product.price }} ₽/шт</span>
+      <span class="product-card-small__price">{{ product.price.toLocaleString() }} ₽/шт</span>
     </div>
   </div>
 </template>
@@ -33,7 +33,7 @@ export default {
   padding: 14px;
   background-color: #ffffff;
   width: 261.6px;
-  border: 1px solid #ececec;
+  border: $border;
   transition: transform ease 0.2s, box-shadow ease 0.2s;
   width: 100%;
   &:not(:last-child) {
@@ -54,16 +54,16 @@ export default {
   height: 54px;
   font-size: 0.867em;
   line-height: 1.385em;
-  color: #333333;
+  color: $text-black-3;
   &:hover {
-    color: #365edc;
+    color: $text-link-hover;
   }
 }
 .product-card-small__price {
   font-weight: bold;
   font-size: 0.933em;
   line-height: 1.501em;
-  color: #333333;
+  color: $text-black-3;
 }
 .product-card-small__img-link {
   display: block;

@@ -37,8 +37,8 @@ export default {
   }
 }
 .footer__inner {
-  color: #555555;
-  background-color: #333333;
+  color: $text-black-5;
+  background-color: $text-black-3;
   padding: 59px 0 64px;
   @include adapt-mobile {
     padding-top: 0;

@@ -2,11 +2,11 @@
   <div class="cart-total">
     <div class="cart-total__price-wrapper">
       <div class="cart-total__title">Итого:</div>
-      <div class="cart-total__price">{{ total }} ₽</div>
+      <div class="cart-total__price">{{ total.toLocaleString() }} ₽</div>
     </div>
     <div class="cart-total__saving-wrapper">
       <span class="cart-total__saving-text">Экономия</span>
-      <span class="cart-total__saving">{{ saving }} ₽</span>
+      <span class="cart-total__saving">{{ saving.toLocaleString() }} ₽</span>
     </div>
     <div class="cart-total__input-wrapper">
       <input
@@ -78,13 +78,13 @@ export default {
     }
   }
   .cart-total__checkout-btn {
-    background-color: #365edc;
+    background-color: $text-link-hover;
     color: #ffffff;
   }
 }
 .cart-total__price-wrapper {
-  color: #333333;
-  font-size: 15px;
+  color: $text-black-3;
+  font-size: 1.2em;
   line-height: 25px;
   font-weight: bold;
   display: flex;
@@ -114,7 +114,7 @@ export default {
   z-index: 1;
 }
 .cart-total__saving-text {
-  color: #555555;
+  color: $text-black-5;
   padding-right: 10px;
 }
 .cart-total__saving {
@@ -131,7 +131,7 @@ export default {
   line-height: 25px;
   padding: 9px 35px 9px 12px;
   width: 100%;
-  border: 1px solid #ececec;
+  border: $border;
   border-radius: 3px;
   background-color: #fafafa;
   &:focus {

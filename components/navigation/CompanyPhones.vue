@@ -76,7 +76,7 @@ export default {
 
   .company-phones__block {
     padding: 18px 22px 18px;
-    color: #222222;
+    color: $text-black-2;
     font-size: 1.0666em;
     line-height: 25px;
     white-space: nowrap;
@@ -86,7 +86,7 @@ export default {
       border-top: 1px solid #f2f2f2;
     }
     &:hover {
-      color: #222222;
+      color: $text-black-2;
       background-color: #fafafa;
     }
 

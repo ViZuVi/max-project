@@ -33,7 +33,7 @@ export default {
   margin-right: 38px;
   .product-card-controls__icon {
     order: -1;
-    color: #999999;
+    color: $text-black-9;
     margin-right: 8px;
     display: flex;
   }
@@ -41,7 +41,7 @@ export default {
     display: flex;
     margin-left: 0;
     border-color: #eeeeee;
-    color: #333333;
+    color: $text-black-3;
     display: flex;
     align-items: center;
     &:first-child {

@@ -90,18 +90,18 @@ export default {
   }
 }
 .cart-page__title {
-  color: #333333;
+  color: $text-black-3;
   font-weight: normal;
   font-size: 2.133em;
   line-height: 1.126em;
   margin-bottom: 17px;
 }
 .cart-page__header-link {
-  color: #999999;
+  color: $text-black-9;
   font-size: 0.867em;
   line-height: 1.692em;
   &:hover {
-    color: #365edc;
+    color: $text-link-hover;
   }
 }
 .cart-page__header-actions {
@@ -114,7 +114,7 @@ export default {
 .cart-page__header-btn {
   display: flex;
   align-items: center;
-  color: #555555;
+  color: $text-black-5;
   font-size: 0.734em;
   text-transform: uppercase;
   line-height: 1.181em;
@@ -137,7 +137,7 @@ export default {
 }
 
 .cart-page__empty-title {
-  color: #333333;
+  color: $text-black-3;
   font-size: 1.6em;
   margin: 2.2rem 0 1.2rem;
 }
@@ -147,9 +147,9 @@ export default {
   line-height: 1.714em;
 }
 .cart-page__empty-link {
-  color: #365edc;
+  color: $text-link-hover;
   &:hover {
-    color: #333333;
+    color: $text-black-3;
   }
 }
 .cart-page__main {

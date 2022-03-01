@@ -59,12 +59,12 @@ export default {
   margin-right: auto;
 
   &--transparent {
-    border: 1px solid #365edc;
-    color: #365edc;
+    border: 1px solid $text-link-hover;
+    color: $text-link-hover;
     background-color: transparent;
 
     &:hover {
-      background-color: #365edc;
+      background-color: $text-link-hover;
       color: #ffffff;
     }
   }

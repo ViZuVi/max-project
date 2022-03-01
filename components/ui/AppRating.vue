@@ -61,7 +61,7 @@ export default {
 .app-rating__value {
   font-size: 0.8em;
   line-height: 1.692em;
-  color: #555555;
+  color: $text-black-5;
   margin-left: 10px;
 }
 </style>

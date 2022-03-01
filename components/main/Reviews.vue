@@ -79,7 +79,7 @@ export default {
 
 <style lang="scss">
 .reviews {
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
   background-color: #f8f8f8;
 
   .v-sheet {
@@ -136,7 +136,7 @@ export default {
   margin-left: auto;
 }
 .review__text {
-  color: #555555;
+  color: $text-black-5;
   margin-bottom: 30px;
   position: relative;
 }
@@ -145,7 +145,7 @@ export default {
 }
 .review__quote-icon {
   position: absolute;
-  color: #999999;
+  color: $text-black-9;
   opacity: 0.35;
   left: -67px;
   top: 7px;
@@ -155,7 +155,7 @@ export default {
   line-height: 1.3em;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: #999999;
+  color: $text-black-9;
   margin-right: 37px;
   margin-left: auto;
   display: flex;

@@ -56,7 +56,7 @@ export default {
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  color: #333333;
+  color: $text-black-3;
   margin-bottom: 33px;
 }
 .section-title__name {
@@ -67,7 +67,7 @@ export default {
   }
 }
 .section-title__link {
-  color: #999999;
+  color: $text-black-9;
   @include font-small-uppercase;
   &:hover {
     color: #356edc;

@@ -164,7 +164,7 @@ export default {
 }
 .product-availability__map {
   display: flex;
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
   @include adapt-mobile {
     flex-direction: column;
   }
@@ -178,7 +178,7 @@ export default {
 .product-availability__contacts {
   width: 312px;
   height: 500px;
-  border: 1px solid #ececec;
+  border: $border;
   box-shadow: 12px 0 12px -12px rgb(0 0 0 / 20%);
   padding: 29px 34px;
   display: flex;
@@ -192,7 +192,7 @@ export default {
 .product-availability__address {
   font-size: 1.2em;
   line-height: 1.454em;
-  color: #333333;
+  color: $text-black-3;
   margin-bottom: 26px;
   &:hover {
     color: #356edc;
@@ -204,10 +204,10 @@ export default {
 .product-availability__label {
   display: block;
   margin-bottom: 3px;
-  color: #666666;
+  color: $text-black-6;
 }
 .product-availability__text {
-  color: #333333;
+  color: $text-black-3;
 }
 .map__frame {
   background-color: #ececec;

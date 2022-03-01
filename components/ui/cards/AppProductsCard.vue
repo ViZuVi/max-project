@@ -115,9 +115,9 @@ export default {
   margin-bottom: 19px;
 }
 .product-card__header-link {
-  color: #333333;
+  color: $text-black-3;
   &:hover {
-    color: #365edc;
+    color: $text-link-hover;
   }
 }
 .product-card__header-controls {
@@ -146,11 +146,11 @@ export default {
   border: 1px solid #f2f2f2;
   letter-spacing: 0.8px;
   background-color: #fafafa;
-  color: #333333;
+  color: $text-black-3;
   transition: background-color 0.3s ease;
   &:hover {
-    background-color: #365edc;
-    border-color: #365edc;
+    background-color: $text-link-hover;
+    border-color: $text-link-hover;
     color: #ffffff;
   }
 }
@@ -166,7 +166,7 @@ export default {
   line-height: 15px;
   display: flex;
   align-items: center;
-  color: #666666;
+  color: $text-black-6;
 }
 .product-card__delivery {
   margin-bottom: 9px;
@@ -177,7 +177,7 @@ export default {
 .product-card__truck-icon,
 .product-card__exclamation-icon {
   margin-right: 7px;
-  color: #999999;
+  color: $text-black-9;
 }
 .product-card__exclamation-icon {
   align-self: flex-start;
@@ -197,7 +197,7 @@ export default {
   letter-spacing: 0.8px;
 
   &--cart {
-    background-color: #365edc;
+    background-color: $text-link-hover;
     color: #ffffff;
     margin-bottom: 12px;
   }
@@ -205,7 +205,7 @@ export default {
 .product-card__description {
   font-size: 0.867em;
   line-height: 1.692em;
-  color: #666666;
+  color: $text-black-6;
   margin-bottom: 13px;
 }
 </style>

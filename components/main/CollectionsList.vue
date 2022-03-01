@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 .collections {
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
 }
 .collections__wrapper {
   @include section-size;

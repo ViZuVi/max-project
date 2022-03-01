@@ -70,7 +70,7 @@ export default {
   font-family: inherit;
   font-size: 13px;
   line-height: 13px;
-  color: #333333;
+  color: $text-black-3;
   height: 100%;
   width: 100px;
   &:focus {

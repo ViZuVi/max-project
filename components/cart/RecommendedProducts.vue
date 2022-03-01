@@ -30,7 +30,7 @@
                   >{{ product.title }}</nuxt-link
                 >
                 <span class="recommended-products__price"
-                  >{{ product.price }} ₽</span
+                  >{{ product.price.toLocaleString() }} ₽</span
                 >
               </div>
             </div>
@@ -89,7 +89,7 @@ export default {
   display: flex;
 }
 .recommended-products__title {
-  color: #333333;
+  color: $text-black-3;
   margin-bottom: 19px;
   font-size: 1.333em;
   line-height: 1.5625em;
@@ -100,7 +100,7 @@ export default {
 }
 .recommended-products__card {
   padding: 19px;
-  border: 1px solid #ececec;
+  border: $border;
   width: 337.75px;
   margin-right: -1px;
   @include adapt-mobile {
@@ -124,9 +124,9 @@ export default {
 .recommended-products__card-title {
   line-height: 1.385em;
   font-size: 0.867em;
-  color: #333333;
+  color: $text-black-3;
   &:hover {
-    color: #365edc;
+    color: $text-link-hover;
   }
 }
 .recommended-products__price {

@@ -28,7 +28,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .brands {
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
   background-color: #f8f8f8;
 }
 .brands__wrapper {

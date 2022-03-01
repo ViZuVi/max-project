@@ -64,7 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 .blog {
-  border-bottom: 1px solid #ececec;
+  border-bottom: $border;
   .section-title__name {
     margin-right: 38px;
   }
@@ -85,14 +85,14 @@ export default {
   line-height: 1.3em;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: #999999;
+  color: $text-black-9;
   margin-left: 37px;
   margin-right: auto;
   display: flex;
   align-items: center;
 
   &:hover {
-    color: #365edc;
+    color: $text-link-hover;
   }
 }
 .blog__chat-icon {
@@ -153,13 +153,13 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
-  border: 1px solid #ececec;
+  border: $border;
   transition: transform ease 0.2s, box-shadow ease 0.2s;
   &:hover {
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
     transform: translateY(-1px);
     .blog__item-title {
-      color: #365edc;
+      color: $text-link-hover;
     }
   }
 }
@@ -183,14 +183,14 @@ export default {
   line-height: 1.3em;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: #999999;
+  color: $text-black-9;
 }
 .blog__item-title {
-  color: #333333;
+  color: $text-black-3;
   font-size: 0.9334em;
 }
 .blog__item-date {
-  color: #555555;
+  color: $text-black-5;
   font-size: 0.867em;
   line-height: 1.692em;
 }
