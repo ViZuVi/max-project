@@ -2,7 +2,7 @@
   <header class="app-header" :class="{ 'app-header--short': short }">
     <div class="app-header__navigation">
       <UserNav @show-menu-drawer="showMenuDrawer = true" />
-      <MainNav v-show="!isMobile" />
+      <MainNav v-show="!$device.isMobileOrTablet" />
       <AppNavDrawer
         :menuItems="menuItems"
         :value="showMenuDrawer"
@@ -34,10 +34,6 @@ export default {
       type: Boolean,
       required: false,
       default: () => false,
-    },
-    isMobile: {
-      type: Boolean,
-      required: false,
     },
   },
   data() {

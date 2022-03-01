@@ -13,7 +13,6 @@
           v-for="(product, i) in products"
           :key="product.id"
           :product="product"
-          :isMobile="isMobile"
           :index="i"
         />
       </div>
@@ -38,13 +37,6 @@ export default {
     AppTabs,
     AppButton,
     BestProductCard,
-  },
-  props: {
-    isMobile: {
-      type: Boolean,
-      required: false,
-      default: () => false,
-    },
   },
   data() {
     return {

@@ -2,7 +2,7 @@
 <!-- TODO: check class -->
   <div
     class="best-product-card"
-    :class="index === 0 && !isMobile ? 'best-product-card--prime' : ''"
+    :class="index === 0 && !$device.isMobileOrTablet ? 'best-product-card--prime' : ''"
   >
     <div class="best-product-card__wrapper">
       <div class="best-product-card__img-wrapper">
@@ -109,11 +109,6 @@ export default {
     index: {
       type: Number,
       required: false,
-    },
-    isMobile: {
-      type: Boolean,
-      required: false,
-      default: () => false,
     },
   },
   data() {

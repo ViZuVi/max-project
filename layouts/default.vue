@@ -1,10 +1,10 @@
 <template>
   <v-app>
     <div class="app-layout">
-      <TheHeader :short="true" :isMobile="isMobile" />
+      <TheHeader :short="true" />
       <Nuxt />
       <TheFooter :short="true" />
-      <BottomNavPanel v-show="isMobile" />
+      <BottomNavPanel v-show="$device.isMobileOrTablet" />
     </div>
   </v-app>
 </template>
@@ -20,11 +20,6 @@ export default {
     TheHeader,
     TheFooter,
     BottomNavPanel,
-  },
-  computed: {
-    isMobile() {
-      return process.client ? window.innerWidth <= 375 : false;
-    },
   },
 };
 </script>
