@@ -21,7 +21,9 @@ module.exports = {
     '@nuxtjs/style-resources',
     '@nuxtjs/vuetify',
     '@nuxtjs/device',
-    '@nuxtjs/moment'
+    '@nuxtjs/moment',
+    '@nuxtjs/stylelint-module',
+    '@nuxtjs/eslint-module',
   ],
   moment: {
     locales: ['ru']
