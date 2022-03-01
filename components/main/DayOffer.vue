@@ -49,7 +49,7 @@
                   >
                 </div>
                 <p class="day-offer-card__price font-medium">
-                  {{ product.price.toLocaleString }} ₽/шт
+                  {{ (product.price).toLocaleString() }} ₽/шт
                 </p>
                 <!-- TODO: saving? - api -->
                 <AppButton

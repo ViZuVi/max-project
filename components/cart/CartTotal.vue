@@ -16,7 +16,6 @@
         name=""
         id=""
       />
-      <!-- TODO: other icon -->
       <AppIcon
         symbol="icon_next_arrow"
         className="cart-total__input-arrow-icon"

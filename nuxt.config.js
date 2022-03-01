@@ -21,7 +21,11 @@ module.exports = {
     '@nuxtjs/style-resources',
     '@nuxtjs/vuetify',
     '@nuxtjs/device',
+    '@nuxtjs/moment'
   ],
+  moment: {
+    locales: ['ru']
+  },
   styleResources: {
     scss: [
       "~assets/css/variables.scss",

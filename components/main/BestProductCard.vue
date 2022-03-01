@@ -1,8 +1,10 @@
 <template>
-<!-- TODO: check class -->
+  <!-- TODO: check class -->
   <div
     class="best-product-card"
-    :class="index === 0 && !$device.isMobileOrTablet ? 'best-product-card--prime' : ''"
+    :class="
+      index === 0 && !$device.isMobileOrTablet ? 'best-product-card--prime' : ''
+    "
   >
     <div class="best-product-card__wrapper">
       <div class="best-product-card__img-wrapper">
@@ -74,7 +76,7 @@
           <span class="best-product-card__code">Арт.: {{ product.code }}</span>
         </div>
         <p class="best-product-card__price font-medium">
-          {{ product.price.toLocaleString }} ₽/шт
+          {{ product.price.toLocaleString() }} ₽/шт
         </p>
       </div>
     </div>
@@ -294,6 +296,7 @@ export default {
     right: 25px;
   }
   .best-product-card__img {
+    width: 100%;
     display: block;
   }
   .best-product-card__info {

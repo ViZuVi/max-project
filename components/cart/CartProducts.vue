@@ -2,7 +2,6 @@
   <div class="cart-items">
     <div class="cart-items__header">
       <div class="cart-items__header-title">Товары в корзине</div>
-      <!-- <AppButton label="Очистить" /> -->
       <button class="cart-items__header-clear-btn">
         <span>Очистить</span>
         <AppIcon symbol="icon_close" className="cart-items__clear-icon" />
@@ -213,7 +212,6 @@ export default {
     display: none;
   }
 }
-// TODO: tags to oui
 .cart-items__tag {
   line-height: 20px;
   font-weight: 500;
