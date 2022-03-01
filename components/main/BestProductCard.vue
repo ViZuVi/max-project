@@ -108,7 +108,7 @@ export default {
     },
     index: {
       type: Number,
-      required: true,
+      required: false,
     },
     isMobile: {
       type: Boolean,

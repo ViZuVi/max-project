@@ -13,9 +13,6 @@
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in tabs" :key="item.value">
         <component :is="activeTabComponent" :product="product" />
-        <!-- <v-card flat>
-          <v-card-text>{{ item.value }}</v-card-text>
-        </v-card> -->
       </v-tab-item>
     </v-tabs-items>
   </div>

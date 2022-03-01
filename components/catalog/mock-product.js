@@ -13,7 +13,11 @@ export default {
   subCategory: "phones",
   image: require("~/assets/img/best-product-phone-1.jpg"),
   saving: "127",
-  brand: {},
+  brand: {
+    image: require("~/assets/img/brands-1.png"),
+    title: "Линдрос",
+    text: "Актуальная техника, продвинутые модели и современный дизайн — все это сочетают в себе товары от известной компании."
+  },
   tags: [
     {
       id: 1,
