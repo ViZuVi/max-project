@@ -165,6 +165,9 @@ export default {
 .product-availability__map {
   display: flex;
   border-bottom: 1px solid #ececec;
+  @include adapt-mobile {
+    flex-direction: column;
+  }
 }
 .product-availability__contacts-wrapper {
   display: flex;

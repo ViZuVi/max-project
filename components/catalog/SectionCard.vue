@@ -4,7 +4,9 @@
       <img class="section-card__img" v-if="image" :src="image" />
       <div v-if="content" class="section-card__info">
         <span class="section-card__name font-upper">{{ content.name }}</span>
-        <nuxt-link class="section-card__title" :to="content.link">{{ content.title }}</nuxt-link>
+        <nuxt-link class="section-card__title font-medium" :to="content.link">{{
+          content.title
+        }}</nuxt-link>
         <p>{{ content.text }}</p>
       </div>
       <slot> </slot>
@@ -65,6 +67,9 @@ export default {
     height: 38px;
     border: $border;
     color: $text-black-9;
+    @include adapt-mobile {
+      display: none;
+    }
   }
 
   &--shadow:hover {
@@ -82,11 +87,19 @@ export default {
 .section-card__content {
   flex-grow: 1;
   display: flex;
+  @include adapt-mobile {
+    flex-direction: column;
+  }
 }
 .section-card__img {
   width: 150px;
   min-height: 100px;
   margin-right: 35px;
+
+  @include adapt-mobile {
+    width: 100%;
+    margin-bottom: 39px;
+  }
 }
 .section-card__info {
   display: flex;
@@ -96,6 +109,6 @@ export default {
   margin-bottom: 10px;
 }
 .section-card__title {
-      margin-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 </style>

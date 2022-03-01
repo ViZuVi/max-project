@@ -1,21 +1,30 @@
 <template>
   <div class="product-description">
-    <div>{{ product.description }}</div>
+    <p>{{ product.description }}</p>
     <div class="product-description__docs">
       <div class="product-description__title font-large">Документы</div>
       <SectionCard>
-        <div
-          class="product-description__doc"
-          v-for="doc in product.documents"
-          :key="doc.id"
-        >
-          <AppIcon symbol="icon_pdf" className="product-description__doc-icon" />
-          <span class="product-description__doc-wrapper">
-            <nuxt-link :to="doc.link" class="product-description__doc-title">{{
-              doc.title
-            }}</nuxt-link>
-            <span class="product-description__doc-size font-small">{{ doc.size }}</span>
-          </span>
+        <div class="product-description__docs-wrapper">
+          <div
+            class="product-description__doc"
+            v-for="doc in product.documents"
+            :key="doc.id"
+          >
+            <AppIcon
+              symbol="icon_pdf"
+              className="product-description__doc-icon"
+            />
+            <span class="product-description__doc-wrapper">
+              <nuxt-link
+                :to="doc.link"
+                class="product-description__doc-title"
+                >{{ doc.title }}</nuxt-link
+              >
+              <span class="product-description__doc-size font-small">{{
+                doc.size
+              }}</span>
+            </span>
+          </div>
         </div>
       </SectionCard>
     </div>
@@ -45,6 +54,9 @@ export default {
 <style lang="scss" scoped>
 .product-description__docs {
   margin: 3.133rem 0 3.133rem;
+}
+.product-description__docs-wrapper {
+  flex-wrap: wrap;
 }
 .product-description__title {
   padding-bottom: 1.933rem;

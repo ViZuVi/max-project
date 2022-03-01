@@ -55,9 +55,15 @@ export default {
   display: flex;
   align-items: center;
   padding-bottom: 16px;
+  @include adapt-mobile {
+    flex-wrap: wrap;
+  }
 }
 .product-comments__title {
   margin-right: auto;
+  @include adapt-mobile {
+    width: 100%;
+  }
 }
 .product-comments__rating-wrapper {
   display: flex;
@@ -67,6 +73,9 @@ export default {
 .product-comments__rating-empty {
   font-size: 13px;
   font-weight: bold;
+  @include adapt-mobile {
+    display: none;
+  }
 }
 .product-comments__rating {
   margin-right: 14px;
@@ -76,5 +85,8 @@ export default {
   padding: 10px 14px 8px;
   background-color: $text-link-hover;
   color: #ffffff;
+  @include adapt-mobile {
+    margin-left: auto;
+  }
 }
 </style>

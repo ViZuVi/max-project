@@ -129,6 +129,9 @@ export default {
 }
 .bottom-info__left {
   width: calc(100% - 305px);
+  @include adapt-mobile {
+    width: 100%;
+  }
 }
 .bottom-info__left-section {
   margin: 3.133rem 0 3.133rem;
@@ -143,6 +146,9 @@ export default {
   position: sticky;
   top: 0;
   align-self: flex-start;
+  @include adapt-mobile {
+    display: none;
+  }
 }
 .bottom-info__brand {
   border: $border;

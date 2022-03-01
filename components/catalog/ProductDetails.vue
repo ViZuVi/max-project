@@ -185,6 +185,11 @@ export default {
   align-items: center;
   padding: 42px 30px 0;
   line-height: 25px;
+
+  @include adapt-mobile {
+    width: 100%;
+    align-items: flex-start;
+  }
 }
 .product-details__header-icon {
   width: 41px;
@@ -193,17 +198,29 @@ export default {
     color: $text-link-hover;
   }
 }
+.product-details__breadcrumbs {
+  @include adapt-mobile {
+    text-align: center;
+  }
+}
 .product-details__title {
   margin-bottom: 17px;
 }
 .product-details__img-wrapper {
   position: relative;
   width: 42%;
+  @include adapt-mobile {
+    width: 100%;
+    margin-bottom: 40px;
+  }
 }
 .product-details__img-link {
   display: block;
   padding-top: 4.133rem;
   width: 377px;
+  @include adapt-mobile {
+    width: 300px;
+  }
 }
 .product-details__img {
   display: block;
@@ -215,6 +232,11 @@ export default {
   margin: 0 auto;
   padding: 2.2rem 30px;
   border-bottom: $border;
+
+  @include adapt-mobile {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 .product-details__header-controls {
   display: flex;
@@ -223,12 +245,18 @@ export default {
   padding-bottom: 27px;
   margin-bottom: 38px;
   border-bottom: $border;
+  @include adapt-mobile {
+    flex-wrap: wrap;
+  }
 }
 .product-details__info {
   flex-grow: 1;
 }
 .product-details__header-btns {
   margin-right: auto;
+  @include adapt-mobile {
+    margin-bottom: 19px;
+  }
 }
 .product-details__brand-link {
   padding: 5px;
@@ -238,9 +266,13 @@ export default {
 }
 .product-details__main-actions {
   display: flex;
+  @include adapt-mobile {
+    flex-direction: column;
+  }
 }
 .product-details__props {
   margin-right: 60px;
+  margin-bottom: 10px;
 }
 .product-details__actions-card-wrapper {
   flex-basis: 50%;
@@ -262,10 +294,19 @@ export default {
   border-radius: 0;
   width: 50%;
 }
+
+.product-details__cart-quantity {
+  @include adapt-mobile {
+    display: none;
+  }
+}
 .product-details__cart-btn {
   background-color: $text-link-hover;
   color: #ffffff;
   font-size: 0.7333em;
+  @include adapt-mobile {
+    display: none;
+  }
 }
 .product-details__ocb-btn {
   // TODO: to button class?

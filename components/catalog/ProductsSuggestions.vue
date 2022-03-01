@@ -1,6 +1,6 @@
 <template>
   <div class="product-suggestions">
-    <v-tabs v-model="tab">
+    <v-tabs v-model="tab" show-arrows>
       <v-tab
         v-for="item in tabs"
         :key="item.value"
@@ -79,11 +79,19 @@ export default {
       content: initial;
     }
   }
+  .v-slide-group__prev--disabled,
+  .v-slide-group__next--disabled {
+    display: none !important;
+  }
 }
 .product-suggestions__list {
   display: flex;
 }
 .product-suggestions__item {
   flex-basis: 25%;
+
+  @include adapt-mobile {
+    min-width: 50%;
+  }
 }
 </style>

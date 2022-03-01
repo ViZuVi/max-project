@@ -55,7 +55,7 @@ export default {
       tabs: tabsStatic,
       tab: "",
       activeTabComponent: "ProductDescription",
-    }
+    };
   },
 };
 </script>
@@ -86,7 +86,7 @@ export default {
   }
   .v-slide-group__prev--disabled,
   .v-slide-group__next--disabled {
-    display: none;
+    display: none !important;
   }
   .v-tabs-slider-wrapper {
     top: 3px;

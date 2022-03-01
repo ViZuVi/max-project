@@ -22,10 +22,16 @@ export default {
 <style lang="scss" scoped>
 .product-video {
   display: flex;
+  @include adapt-mobile {
+    flex-direction: column;
+  }
 }
 .product-video__wrapper {
   padding: 0 16px;
   width: 50%;
+  @include adapt-mobile {
+    width: 100%;
+  }
 }
 .product-video__frame {
   height: 457px;

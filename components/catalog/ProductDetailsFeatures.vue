@@ -28,7 +28,7 @@ import features from "./features-static";
 export default {
   name: "ProductDetailsFeatures",
   components: {
-    AppIcon
+    AppIcon,
   },
   data() {
     return {
@@ -45,16 +45,28 @@ export default {
   max-width: $max-width;
   margin: 0 auto;
   padding: 31px 32px 27px;
+  @include adapt-mobile {
+    width: 100%;
+    flex-wrap: wrap;
+  }
 }
 .product-details-features__item {
   width: 25%;
   display: flex;
+  @include adapt-mobile {
+    width: 50%;
+    flex-wrap: wrap;
+    padding-bottom: 27px;
+  }
 }
 .product-details-features__item-title {
   padding-left: 20px;
   display: flex;
   flex-direction: column;
   color: $text-black-6;
+  @include adapt-mobile {
+    padding-left: 0;
+  }
 }
 .product-details-features__item-icon svg {
   width: 32px;
