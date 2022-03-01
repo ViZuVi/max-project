@@ -20,6 +20,7 @@ module.exports = {
   buildModules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/vuetify',
+    '@nuxtjs/device',
   ],
   styleResources: {
     scss: [
@@ -27,4 +28,7 @@ module.exports = {
       "~assets/css/mixins.scss"
     ],
   },
+  build: {
+    loaders: { imgUrl: { esModule: false } },
+  }
 }

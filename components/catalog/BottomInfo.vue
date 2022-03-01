@@ -40,6 +40,9 @@ export default {
       default: () => {},
     },
   },
+  created() {
+    // this.$device.isMobileOrTablet ? "yes" : "no"
+  }
 };
 </script>
 
