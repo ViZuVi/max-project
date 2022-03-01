@@ -1,9 +1,34 @@
 <template>
-  <div>video</div>
+  <div class="product-video">
+    <div class="product-video__wrapper" v-for="video in product.video" :key="video.id">
+      <iframe class="product-video__frame" :src="video.link" frameborder="0"></iframe>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "ProductVideo"
+  name: "ProductVideo",
+  props: {
+    product: {
+      type: Object,
+      required: true,
+      default: () => {},
+    },
+  },
 }
 </script>
+
+<style lang="scss" scoped>
+.product-video {
+  display: flex;
+}
+.product-video__wrapper {
+  padding: 0 16px;
+  width: 50%;
+}
+.product-video__frame {
+  height: 457px;
+  width: 100%;
+}
+</style>

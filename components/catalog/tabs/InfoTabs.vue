@@ -28,6 +28,7 @@ import ProductBuy from "./ProductBuy";
 import ProductPay from "./ProductPay";
 import ProductDeliver from "./ProductDeliver";
 import ProductAdditional from "./ProductAdditional";
+import ProductProperties from "./ProductProperties";
 
 export default {
   name: "InfoTabs",
@@ -40,6 +41,7 @@ export default {
     ProductPay,
     ProductDeliver,
     ProductAdditional,
+    ProductProperties,
   },
   props: {
     product: {
@@ -53,7 +55,7 @@ export default {
       tabs: tabsStatic,
       tab: "",
       activeTabComponent: "ProductDescription",
-    };
+    }
   },
 };
 </script>
@@ -81,6 +83,10 @@ export default {
       background-color: #ffffff;
       color: $text-black-6;
     }
+  }
+  .v-slide-group__prev--disabled,
+  .v-slide-group__next--disabled {
+    display: none;
   }
   .v-tabs-slider-wrapper {
     top: 3px;

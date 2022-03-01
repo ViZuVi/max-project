@@ -28,13 +28,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.product-card-small__card {
+.product-card-small {
   display: flex;
   padding: 14px;
   background-color: #ffffff;
   width: 261.6px;
   border: 1px solid #ececec;
   transition: transform ease 0.2s, box-shadow ease 0.2s;
+  width: 100%;
   &:not(:last-child) {
     margin-right: 10px;
   }

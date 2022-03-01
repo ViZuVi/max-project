@@ -6,12 +6,21 @@
 
         <div class="bottom-info__left-section">
           <div class="bottom-info__left-title font-large">Услуги</div>
-          <SectionCard link="/services"></SectionCard>
+          <SectionCard
+            link="/services"
+            image="https://img.freepik.com/free-vector/neon-lights-background-theme_52683-44625.jpg?size=626&ext=jpg"
+            :content="product.service"
+          />
         </div>
         <div class="bottom-info__left-section">
           <div class="bottom-info__left-title font-large">Статьи</div>
-          <SectionCard link="/blog/1"></SectionCard>
-          <SectionCard link="/blog/2"></SectionCard>
+          <SectionCard
+            v-for="article in product.articles"
+            :key="article.title"
+            class="bottom-info__article"
+            image="https://img.freepik.com/free-vector/neon-lights-background-theme_52683-44625.jpg?size=626&ext=jpg"
+            :content="article"
+          />
         </div>
         <div class="bottom-info__left-additional-goods">
           <!-- TODO: products from api -->
@@ -108,21 +117,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.product-card-small {
-  display: flex;
-  padding: 14px;
-  background-color: #ffffff;
-  width: 261.6px;
-  border: 1px solid #ececec;
-  transition: transform ease 0.2s, box-shadow ease 0.2s;
-  width: 100%;
-  &:not(:last-child) {
-    margin-right: 10px;
-  }
-  &:hover {
-    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 15%);
-  }
-}
 .bottom-info {
   border-top: $border;
   position: relative;
@@ -130,7 +124,11 @@ export default {
 .bottom-info__wrapper {
   max-width: $max-width;
   margin: 3.133rem auto 50px;
+  padding: 0 30px;
   display: flex;
+}
+.bottom-info__left {
+  width: calc(100% - 305px);
 }
 .bottom-info__left-section {
   margin: 3.133rem 0 3.133rem;
@@ -229,5 +227,8 @@ export default {
     height: 1px;
     background-color: #ececec;
   }
+}
+.bottom-info__article {
+  margin-top: -1px;
 }
 </style>

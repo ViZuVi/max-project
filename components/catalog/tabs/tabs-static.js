@@ -1,5 +1,6 @@
 export default [
   { title: "Описание", value: "text", component: "ProductDescription" },
+  { title: "Характеристики", value: "props", component: "ProductProperties" },
   { title: "Наличие", value: "availability", component: "ProductAvailability" },
   { title: "Видео", value: "video", component: "ProductVideo" },
   { title: "Отзывы", value: "comments", component: "ProductComments" },

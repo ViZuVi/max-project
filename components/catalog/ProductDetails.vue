@@ -46,7 +46,7 @@
           <div class="product-details__main-actions">
             <AppProductProps
               class="product-details__props"
-              :properties="product.characteristics"
+              :properties="product.properties"
             />
             <div class="product-details__actions-card--wrapper">
               <div class="product-details__actions-card">

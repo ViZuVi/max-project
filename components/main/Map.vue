@@ -36,7 +36,10 @@
               >{{ contacts.email }}</a
             >
           </div>
-          <AppButton label="Написать сообщение" className="app-button--transparent map__contact-btn" />
+          <AppButton
+            label="Написать сообщение"
+            className="app-button--transparent map__contact-btn"
+          />
         </div>
         <iframe
           class="map__frame"
@@ -128,12 +131,6 @@ export default {
   &--link:hover {
     color: #356edc;
   }
-}
-.map__list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 32px;
-  margin-bottom: 32px;
 }
 .map__frame {
   background-color: #ececec;
