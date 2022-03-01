@@ -9,7 +9,8 @@
     >
     <!-- TODO: customize arrows -->
       <v-carousel-item v-for="product in products" :key="product.id">
-        <v-sheet>
+        <v-sheet class="recommended-products__list">
+          <!-- TODO: check cards mobile -->
           <div class="recommended-products__card">
             <div class="recommended-products__img-wrapper">
               <nuxt-link
@@ -77,18 +78,35 @@ export default {
 <style lang="scss" scoped>
 .recommended-products {
   padding-bottom: 50px;
+
+  .reviews__carousel {
+    @include adapt-mobile {
+    padding: 0;
+  }
+  }
+}
+.recommended-products__list {
+  display: flex;
 }
 .recommended-products__title {
   color: #333333;
   margin-bottom: 19px;
   font-size: 1.333em;
   line-height: 1.5625em;
+  @include adapt-mobile {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 .recommended-products__card {
   padding: 19px;
   border: 1px solid #ececec;
   width: 337.75px;
   margin-right: -1px;
+  @include adapt-mobile {
+    width: 100%;
+    // border: 0;
+  }
 }
 .recommended-products__img-wrapper {
   display: flex;

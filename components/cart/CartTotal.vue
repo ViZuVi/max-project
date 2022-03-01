@@ -9,13 +9,26 @@
       <span class="cart-total__saving">{{ saving }} ₽</span>
     </div>
     <div class="cart-total__input-wrapper">
-      <input placeholder="Есть промокод?" class="cart-total__input" type="text" name="" id="" />
+      <input
+        placeholder="Есть промокод?"
+        class="cart-total__input"
+        type="text"
+        name=""
+        id=""
+      />
       <!-- TODO: other icon -->
-      <AppIcon symbol="icon_next_arrow" className="cart-total__input-arrow-icon" />
+      <AppIcon
+        symbol="icon_next_arrow"
+        className="cart-total__input-arrow-icon"
+      />
     </div>
     <div class="cart-total__btns-wrapper">
       <AppButton label="Купить в 1 клик" className="app-button--transparent" />
-      <AppButton label="Перейти к оформлению" className="cart-total__checkout-btn" @click="$router.push('/order')" />
+      <AppButton
+        label="Перейти к оформлению"
+        className="cart-total__checkout-btn"
+        @click="$router.push('/order')"
+      />
     </div>
   </div>
 </template>
@@ -48,6 +61,14 @@ export default {
   margin-bottom: 15px;
   border: 1px solid #e2dfdf;
   border-radius: 3px;
+
+  @include adapt-mobile {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .app-button {
     width: 100%;
     padding: 16px 26px;

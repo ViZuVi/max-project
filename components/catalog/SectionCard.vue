@@ -87,6 +87,7 @@ export default {
 .section-card__content {
   flex-grow: 1;
   display: flex;
+  align-items: flex-start;
   @include adapt-mobile {
     flex-direction: column;
   }

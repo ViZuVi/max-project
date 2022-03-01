@@ -29,20 +29,16 @@
               >Хит</span
             >
           </div>
-          <nuxt-link
-            class="cart-items__title"
-            :to="`/catalog/${product.id}`"
-            >{{ product.title }}</nuxt-link
-          >
+          <nuxt-link class="cart-items__title" :to="`/catalog/${product.id}`">{{
+            product.title
+          }}</nuxt-link>
           <span class="cart-items__prop" v-if="product.discount">
             <span class="cart-items__prop-name">Скидка: </span>
             <span class="cart-items__prop-value">{{ product.discount }}</span>
           </span>
           <span class="cart-items__prop" v-if="product.discount">
             <span class="cart-items__prop-name">Тип цены: </span>
-            <span class="cart-items__prop-value">{{
-              product.priceType
-            }}</span>
+            <span class="cart-items__prop-value">{{ product.priceType }}</span>
           </span>
         </div>
         <div class="cart-items__quantity">
@@ -125,6 +121,9 @@ export default {
   border: 1px solid #e2dfdf;
   margin-bottom: 15px;
   flex-grow: 1;
+  @include adapt-mobile {
+    width: 100%;
+  }
 }
 .cart-items__header {
   border-bottom: 1px solid #e2dfdf;
@@ -133,6 +132,9 @@ export default {
   justify-content: space-between;
   align-items: center;
   line-height: 25px;
+  @include adapt-mobile {
+    padding: 11px 16px 12px;
+  }
 }
 .cart-items__header-title {
   box-shadow: 0px 2px 0px #365edc;
@@ -166,6 +168,10 @@ export default {
     position: absolute;
     top: 30px;
     right: -11px;
+    @include adapt-mobile {
+      top: 0;
+      right: 8px;
+    }
   }
 }
 .cart-items__product {
@@ -176,6 +182,11 @@ export default {
   position: relative;
   &:not(:last-child) {
     border-bottom: 1px solid #e2dfdf;
+  }
+  @include adapt-mobile {
+    padding: 16px 16px 10px;
+    margin: 0;
+    flex-wrap: wrap;
   }
 }
 .cart-items__product-img-wrapper {
@@ -191,6 +202,9 @@ export default {
 }
 .cart-items__tags {
   margin-bottom: 7px;
+  @include adapt-mobile {
+    display: none;
+  }
 }
 // TODO: tags to oui
 .cart-items__tag {
@@ -267,8 +281,13 @@ export default {
 .cart-items__total-wrapper {
   display: flex;
   flex-direction: column;
-  // width: 208px;
   margin-right: 36px;
+  @include adapt-mobile {
+    margin-right: 0;
+    line-height: 12px;
+    padding: 2px 4px 2px;
+    align-items: flex-end;
+  }
 }
 .cart-items__total-user-price {
   color: #333333;

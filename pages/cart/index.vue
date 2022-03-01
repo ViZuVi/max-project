@@ -76,11 +76,18 @@ export default {
   width: $max-width;
   margin: 0 auto;
   padding: 42px 30px 0;
+  @include adapt-mobile {
+    width: 100%;
+    padding: 0;
+  }
 }
 .cart-page__header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+  @include adapt-mobile {
+    padding: 18px 16px 0;
+  }
 }
 .cart-page__title {
   color: #333333;
@@ -100,6 +107,9 @@ export default {
 .cart-page__header-actions {
   display: flex;
   align-items: center;
+  @include adapt-mobile {
+    display: none;
+  }
 }
 .cart-page__header-btn {
   display: flex;
@@ -147,5 +157,8 @@ export default {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 53px;
+  @include adapt-mobile {
+    flex-direction: column;
+  }
 }
 </style>
