@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import features from "./features-static";
 import AppIcon from "~/components/ui/AppIcon";
+import features from "./features-static";
 
 export default {
   name: "FeaturesList",

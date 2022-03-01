@@ -9,25 +9,9 @@
         >
       </h2>
       <div class="product-card__header-controls">
-        <div class="product-card__header-btn-wrapper">
-          <AppButton
-            label="Отложить"
-            className="app-button--transparent product-card__header-btn app-button--small"
-            btnSymbol="icon_heart"
-            iconClassName="product-card__header-icon"
-          />
-          <AppButton
-            label="Сравнить"
-            className="app-button--transparent product-card__header-btn app-button--small"
-            btnSymbol="icon_diagram"
-            iconClassName="product-card__header-icon"
-          />
-        </div>
+        <AppProductHeaderControls />
         <AppRating :rating="product.rating" />
-        <nuxt-link
-          class="product-card__brand-link"
-          :to="`#`"
-        >
+        <nuxt-link class="product-card__brand-link" :to="`#`">
           <img :src="product.image" :alt="product.vendor_code" />
         </nuxt-link>
       </div>
@@ -40,22 +24,10 @@
         </div>
       </div>
       <div class="product-card__info">
-        <div class="product-card__price">
-          {{ product.price.toLocaleString() }} ₽/шт
-        </div>
-        <div class="product-card__availability-wrapper">
-          <!-- TODO: availability modal? -->
-          <span class="product-card__availability">{{
-            product.availability
-          }}</span>
-          <span class="product-card__question" v-if="product.price">
-            <AppIcon
-              symbol="icon_wallet"
-              className="product-card__wallet-icon"
-            />
-            <button class="product-card__question-text">Нашли дешевле?</button>
-          </span>
-        </div>
+        <AppProductPrice
+          :price="product.price"
+          :availability="product.availability"
+        />
         <div class="product-card__main-btn-wrapper">
           <!-- TODO: Add quantity -->
           <AppButton
@@ -84,20 +56,7 @@
           </span>
         </span>
         <div class="product-card__description">{{ product.description }}</div>
-        <div>
-          <span class="product-card__properties">Характеристики</span>
-          <div
-            class="product-card__property"
-            v-for="prop in product.properties"
-            :key="prop.id"
-          >
-            <span class="product-card__property-title">{{ prop.title }}</span>
-            <span class="product-card__property-measure" v-if="prop.measure"
-              >, {{ prop.measure }}</span
-            >
-            <span class="product-card__property-value"> - {{ prop.value }}</span>
-          </div>
-        </div>
+        <AppProductProps :properties="product.properties" />
       </div>
     </div>
     <div class="product-card__footer">
@@ -116,6 +75,9 @@
 import AppButton from "~/components/ui/AppButton";
 import AppRating from "~/components/ui/AppRating";
 import AppIcon from "~/components/ui/AppIcon";
+import AppProductHeaderControls from "~/components/ui/cards/AppProductHeaderControls";
+import AppProductProps from "~/components/ui/cards/AppProductProps";
+import AppProductPrice from "~/components/ui/cards/AppProductPrice";
 
 export default {
   title: "AppProductsCard",
@@ -123,6 +85,9 @@ export default {
     AppButton,
     AppRating,
     AppIcon,
+    AppProductHeaderControls,
+    AppProductProps,
+    AppProductPrice
   },
   props: {
     product: {
@@ -159,27 +124,6 @@ export default {
   display: flex;
   align-items: center;
 }
-.product-card__header-btn-wrapper {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 38px;
-}
-.product-card__header-icon {
-  order: -1;
-  color: #999999;
-}
-.product-card__header-btn {
-  display: flex;
-  margin-left: 0;
-  border-color: #eeeeee;
-  color: #333333;
-  &:first-child {
-    margin-right: 8px;
-  }
-}
-// .app-button__label {
-//   order: 2;
-// }
 .product-card__img-wrapper {
   border-right: 1px solid #f2f2f2;
 }
@@ -216,40 +160,6 @@ export default {
   margin-left: auto;
   max-width: 70px;
 }
-.product-card__price {
-  font-size: 1.733em;
-  line-height: 1.454em;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #333333;
-}
-.product-card__availability-wrapper {
-  display: flex;
-  margin-bottom: 20px;
-}
-.product-card__availability {
-  font-size: 0.8em;
-  line-height: 15px;
-  margin-right: 24px;
-  margin-left: 15px;
-  color: #5fa800;
-  border-bottom: 1px dotted #5fa800;
-  position: relative;
-
-  &::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    left: -15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: #5fa800;
-  }
-}
-.product-card__question,
 .product-card__delivery,
 .product-card__pickup {
   font-size: 0.8em;
@@ -261,11 +171,9 @@ export default {
 .product-card__delivery {
   margin-bottom: 9px;
 }
-.product-card__question-text,
 .product-card__delivery-text {
   border-bottom: 1px dotted;
 }
-.product-card__wallet-icon,
 .product-card__truck-icon,
 .product-card__exclamation-icon {
   margin-right: 7px;
@@ -299,22 +207,5 @@ export default {
   line-height: 1.692em;
   color: #666666;
   margin-bottom: 13px;
-}
-.product-card__properties {
-  color: #333333;
-  margin-bottom: 11px;
-  font-size: 0.933em;
-  line-height: 1.501em;
-}
-.product-card__property {
-  font-size: 0.867em;
-  line-height: 1.692em;
-}
-.product-card__property-title,
-.product-card__property-measure {
-  color: #999;
-}
-.product-card__property-value {
-  color: #333333;
 }
 </style>

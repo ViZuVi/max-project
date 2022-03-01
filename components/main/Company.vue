@@ -94,10 +94,6 @@ export default {
 }
 .company__title {
   margin-bottom: 32px;
-  font-weight: normal;
-  // TODO: common for h3
-  font-size: 1.6em;
-  line-height: 1.126em;
 }
 .company__text {
   margin-bottom: 1.666rem;

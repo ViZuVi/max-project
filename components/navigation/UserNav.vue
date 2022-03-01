@@ -24,6 +24,7 @@
     </div>
     <div class="user-nav__auth-wrapper">
       <button class="user-nav__main-button">
+        <!-- TODO: search modal -->
         <AppIcon symbol="icon_search" className="user-nav__main-icon" />
         <span class="user-nav__icon-label">Поиск</span>
       </button>

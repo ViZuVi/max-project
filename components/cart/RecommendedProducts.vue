@@ -14,7 +14,7 @@
             <div class="recommended-products__img-wrapper">
               <nuxt-link
                 class="recommended-products__img-link"
-                :to="`/catalog/${product.category}/${product.subCategory}/${product.id}`"
+                :to="`/catalog/${product.id}`"
               >
                 <img
                   class="recommended-products__img"
@@ -25,7 +25,7 @@
               <div class="recommended-products__info-wrapper">
                 <nuxt-link
                   class="recommended-products__card-title"
-                  :to="`/catalog/${product.category}/${product.subCategory}/${product.id}`"
+                  :to="`/catalog/${product.id}`"
                   >{{ product.title }}</nuxt-link
                 >
                 <span class="recommended-products__price"
@@ -38,7 +38,7 @@
               className="app-button--transparent app-button--small recommended-products__details"
               @click="
                 $router.push(
-                  `/catalog/${product.category}/${product.subCategory}/${product.id}`
+                  `/catalog/${product.id}`
                 )
               "
             />

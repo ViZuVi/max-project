@@ -29,7 +29,7 @@
                   <span class="review__date">{{ review.published }}</span>
                   <span class="review__name">{{ review.name }}</span>
                 </div>
-                <!-- TODO: format rating -->
+                <!-- TODO: format rating; api - rating ? -->
                 <div class="review__rating">{{ review.raiting }}</div>
               </div>
               <div class="review__text">

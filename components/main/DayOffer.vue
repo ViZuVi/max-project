@@ -51,7 +51,7 @@
                 <p class="day-offer-card__price font-medium">
                   {{ product.price }} ₽/шт
                 </p>
-                <!-- TODO: saving? -->
+                <!-- TODO: saving? - api -->
                 <AppButton
                   label="Подробнее"
                   className="day-offer-card__details-btn app-button--transparent"

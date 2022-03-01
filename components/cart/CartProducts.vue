@@ -31,7 +31,7 @@
           </div>
           <nuxt-link
             class="cart-items__title"
-            :to="`/catalog/${product.category}/${product.subCategory}/${product.id}`"
+            :to="`/catalog/${product.id}`"
             >{{ product.title }}</nuxt-link
           >
           <span class="cart-items__prop" v-if="product.discount">

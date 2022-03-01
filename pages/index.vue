@@ -2,7 +2,7 @@
   <div class="main-page">
     <BannerTop />
     <BannerBottom /> <!-- TODO: is banner needed -->
-    <FeaturesList /> <!-- TODO: api - needed ? -->
+    <FeaturesList /> <!-- TODO: icons color -->
     <PopularCategories />
     <BestProducts :isMobile="isMobile" />
     <DayOffer />

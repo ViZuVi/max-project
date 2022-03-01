@@ -8,7 +8,6 @@
       >
         <v-sheet>
           <div class="banner-top__info">
-            <!-- TODO: category in api? -->
             <span class="banner-top__title">{{ item.title }}</span>
             <div class="banner-top__description">{{ item.text }}</div>
             <AppButton
