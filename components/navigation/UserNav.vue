@@ -1,17 +1,27 @@
 <template>
   <nav class="user-nav">
-    <AppIcon symbol="icon_burger" className="user-nav__burger-icon" @click.stop="$emit('show-menu-drawer')" />
+    <AppIcon
+      symbol="icon_burger"
+      className="user-nav__burger-icon"
+      @click.stop="$emit('show-menu-drawer')"
+    />
     <nuxt-link class="user-nav__logo" to="/">
       <AppIcon symbol="icon_logo" className="user-nav__logo-icon" />
     </nuxt-link>
     <span class="user-nav__site-description">
       Интернет-магазин представительского класса
     </span>
-    <!-- TODO: add modal -->
-    <button class="user-nav__city-btn">
-      <span>Москва</span>
-      <AppIcon symbol="icon_dropdown" className="user-nav__dropdown-icon" />
-    </button>
+
+    <v-dialog class="cities-modal" v-model="showCities" width="900">
+      <template v-slot:activator="{ on, attrs }">
+        <button class="user-nav__city-btn" v-on="on" v-bind="attrs">
+          <span>Москва</span>
+          <AppIcon symbol="icon_dropdown" className="user-nav__dropdown-icon" />
+        </button>
+      </template>
+      <CitiesModal @close-modal="showCities = false" />
+    </v-dialog>
+
     <div class="user-nav__phones-wrapper" @mouseover.stop="showPhones = true">
       <AppIcon class="user-nav__phone-icon" symbol="icon_header_phone" />
       <a class="user-nav__phone-main" href="tel:+70000000000">
@@ -45,16 +55,19 @@
 import { mapGetters } from "vuex";
 import AppIcon from "~/components/ui/AppIcon";
 import CompanyPhones from "./CompanyPhones";
+import CitiesModal from "./CitiesModal";
 
 export default {
   name: "UserNav",
   components: {
     AppIcon,
     CompanyPhones,
+    CitiesModal,
   },
   data() {
     return {
       showPhones: false,
+      showCities: false,
     };
   },
   computed: {

@@ -62,7 +62,7 @@
     <div class="product-card__footer">
       <nuxt-link
         class="product-card__footer-details-btn"
-        :to="`/catalog/${product.category}/${product.subCategory}/${product.id}`"
+        :to="`/catalog/${product.id}`"
       >
         <span>Больше информации о товаре</span>
         <AppIcon symbol="" />

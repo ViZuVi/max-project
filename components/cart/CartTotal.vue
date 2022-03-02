@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import AppIcon from "~/components/ui/AppIcon";
 import AppButton from "~/components/ui/AppButton";
 
@@ -42,12 +43,9 @@ export default {
     AppIcon,
     AppButton,
   },
-  data() {
-    return {
-      total: 89709,
-      saving: 1000,
-    };
-  },
+  computed: {
+    ...mapState("cart", ["total", "saving"])
+  }
 };
 </script>
 
