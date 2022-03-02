@@ -11,28 +11,27 @@
           <nuxt-link to="/contacts" class="map__address">{{
             contacts.address
           }}</nuxt-link>
-          <!-- TODO: rename -->
-          <div class="contacts__details">
-            <span class="contacts__label font-upper">Метро</span>
-            <span class="contacts__text">{{ contacts.sub }}</span>
+          <div class="map__contacts-details">
+            <span class="map__contacts-label font-upper">Метро</span>
+            <span class="map__contacts-text">{{ contacts.sub }}</span>
           </div>
-          <div class="contacts__details">
-            <span class="contacts__label font-upper">Режим работы</span>
-            <span class="contacts__text">{{ contacts.schedule }}</span>
+          <div class="map__contacts-details">
+            <span class="map__contacts-label font-upper">Режим работы</span>
+            <span class="map__contacts-text">{{ contacts.schedule }}</span>
           </div>
-          <div class="contacts__details">
-            <span class="contacts__label font-upper">Телефон</span>
+          <div class="map__contacts-details">
+            <span class="map__contacts-label font-upper">Телефон</span>
             <a
               :href="`tel:${contacts.phone}`"
-              class="contacts__text contacts__text--link"
+              class="map__contacts-text map__contacts-text--link"
               >{{ contacts.phone }}</a
             >
           </div>
-          <div class="contacts__details">
-            <span class="contacts__label font-upper">e-mail</span>
+          <div class="map__contacts-details">
+            <span class="map__contacts-label font-upper">e-mail</span>
             <a
               :href="`mailto:${contacts.email}`"
-              class="contacts__text contacts__text--link"
+              class="map__contacts-text map__contacts-text--link"
               >{{ contacts.email }}</a
             >
           </div>
@@ -70,7 +69,7 @@ export default {
         address: "г. Москва, ул. Большая, 7/10",
         sub: "Охотный ряд",
         schedule: "Пн - Пт: 9.00 - 18.00 Сб - Вс: выходные",
-        phone: "+7 000 000-00-00",
+        phone: "+70000000000",
         email: "info@site.ru",
       },
     };
@@ -114,15 +113,15 @@ export default {
     color: #356edc;
   }
 }
-.contacts__details {
+.map__contacts-details {
   margin-bottom: 29px;
 }
-.contacts__label {
+.map__contacts-label {
   display: block;
   margin-bottom: 3px;
   color: $text-black-6;
 }
-.contacts__text {
+.map__contacts-text {
   color: $text-black-3;
   &--link:hover {
     color: #356edc;

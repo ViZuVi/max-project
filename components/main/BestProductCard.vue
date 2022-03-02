@@ -275,6 +275,10 @@ export default {
   left: 0;
   right: 0;
   width: 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding: 20px 5px 19px;
+  font-size: .7333em;
 
   @include adapt-mobile {
     display: block;

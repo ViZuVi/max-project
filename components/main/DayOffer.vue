@@ -2,6 +2,7 @@
   <section class="day-offer">
     <div class="day-offer__wrapper">
       <AppSectionTitle
+        class="day-offer__section-title"
         title="Товар дня"
         allName="Весь каталог"
         allLink="/catalog"
@@ -174,5 +175,10 @@ export default {
   background-color: $text-link-hover;
   color: #ffffff;
   margin: 30px 0 10px;
+}
+.day-offer__section-title {
+  .section-title__name {
+    margin-left: 0;
+  }
 }
 </style>

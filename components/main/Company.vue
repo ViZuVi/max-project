@@ -78,7 +78,6 @@ export default {
 }
 .company__video-wrapper {
   min-width: 50%;
-  // padding-top: 59.7%;
 }
 .company__section-name {
   color: $text-black-9;

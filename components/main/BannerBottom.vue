@@ -1,30 +1,15 @@
 <template>
   <div class="banner-bottom">
-    <div class="banner-bottom__wrapper banner-bottom__wrapper--service">
-      <nuxt-link to="#" class="banner-bottom__link"> </nuxt-link>
-      <nuxt-link to="#" class="banner-bottom__text-wrapper">
-        <span class="banner-bottom__section font-upper">Услуга</span>
-        <span class="banner-bottom__title font-large"
-          >Настройка электроники</span
-        >
+    <div class="banner-bottom__wrapper" v-for="item in items" :key="item.id">
+      <nuxt-link
+        to="#"
+        class="banner-bottom__link"
+        :style="{ backgroundImage: `url(${item.image})` }"
+      >
       </nuxt-link>
-    </div>
-    <div class="banner-bottom__wrapper banner-bottom__wrapper--blog">
-      <nuxt-link to="#" class="banner-bottom__link"> </nuxt-link>
       <nuxt-link to="#" class="banner-bottom__text-wrapper">
-        <span class="banner-bottom__section font-upper">Блог</span>
-        <span class="banner-bottom__title font-large"
-          >Топ-5 лучших смартфонов</span
-        >
-      </nuxt-link>
-    </div>
-    <div class="banner-bottom__wrapper banner-bottom__wrapper--promo">
-      <nuxt-link to="#" class="banner-bottom__link"> </nuxt-link>
-      <nuxt-link to="#" class="banner-bottom__text-wrapper">
-        <span class="banner-bottom__section font-upper">Акция</span>
-        <span class="banner-bottom__title font-large">
-          Скидка 10% на любой товар по хэштегу
-        </span>
+        <span class="banner-bottom__section font-upper">{{ item.code }}</span>
+        <span class="banner-bottom__title font-large">{{ item.title }}</span>
       </nuxt-link>
     </div>
   </div>
@@ -33,6 +18,17 @@
 <script>
 export default {
   name: "BannerBottom",
+  data() {
+    return {
+      items: [],
+    };
+  },
+  async fetch() {
+    const blog = await this.$axios.$get(
+      "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/blog"
+    );
+    this.items = blog.item;
+  },
 };
 </script>
 
@@ -48,32 +44,15 @@ export default {
   background-position: center;
   overflow: hidden;
   position: relative;
+  width: 25%;
+  @include adapt-mobile {
+    width: 50%;
+  }
 
-  &--service {
-    width: 25%;
-    @include adapt-mobile {
-      width: 50%;
-    }
-    .banner-bottom__link {
-      background-image: url("~assets/img/banner-bottom-electronics.jpg");
-    }
-  }
-  &--blog {
-    width: 25%;
-    @include adapt-mobile {
-      width: 50%;
-    }
-    .banner-bottom__link {
-      background-image: url("~assets/img/banner-bottom-phones.jpg");
-    }
-  }
-  &--promo {
+  &:last-child {
     width: 50%;
     @include adapt-mobile {
       width: 100%;
-    }
-    .banner-bottom__link {
-      background-image: url("~assets/img/banner-bottom-promo.jpg");
     }
   }
 
@@ -92,6 +71,7 @@ export default {
   height: 100%;
   transition: transform 0.6s ease;
   position: relative;
+  background-size: cover;
   &::before {
     content: "";
     content: "";
@@ -122,5 +102,6 @@ export default {
 }
 .banner-bottom__section {
   opacity: 0.7;
+  margin-bottom: 11px;
 }
 </style>

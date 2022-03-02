@@ -1,13 +1,16 @@
 <template>
   <div class="product-availability">
-    <v-tabs v-model="tab" hide-slider >
+    <v-tabs v-model="tab" hide-slider>
       <v-tab
-      :ripple="false"
+        :ripple="false"
         v-for="item in tabs"
         :key="item.value"
         @change="activeTabComponent = item.component"
       >
-        <AppIcon :symbol="item.icon" className="product-availability__tab-icon" />
+        <AppIcon
+          :symbol="item.icon"
+          className="product-availability__tab-icon"
+        />
         <span class="product-availability__tab-title">{{ item.title }}</span>
       </v-tab>
     </v-tabs>
@@ -15,7 +18,6 @@
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in tabs" :key="item.value">
         <div v-if="item.icon === 'icon_pin'">
-          <!-- TODO: to UI -->
           <div class="product-availability__map">
             <div class="product-availability__contacts">
               <nuxt-link to="/contacts" class="product-availability__address"

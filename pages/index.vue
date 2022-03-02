@@ -8,7 +8,7 @@
     <DayOffer />
     <SaleProducts /> <!-- TODO: api - needed ? -->
     <CollectionsList /> 
-    <!-- <Stories /> --> <!-- TODO: api - needed ? -->
+    <Stories />
     <Reviews />
     <Blog />
     <Map />
@@ -51,11 +51,6 @@ export default {
     Brands,
   },
   layout: "hero",
-  data() {
-    return {
-      promoImg: require("~/assets/img/promo.jpg"),
-    };
-  },
   // TODO: add ESLint and StyleLint
   // TODO: check build in the end
 };
