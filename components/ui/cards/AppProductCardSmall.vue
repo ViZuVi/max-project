@@ -7,7 +7,7 @@
       <nuxt-link :to="`/catalog/${product.id}`" class="product-card-small__title">{{
         product.title
       }}</nuxt-link>
-      <span class="product-card-small__price">{{ product.price.toLocaleString() }} ₽/шт</span>
+      <span class="product-card-small__price">{{ product.price }} ₽/шт</span>
     </div>
   </div>
 </template>

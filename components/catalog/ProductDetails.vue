@@ -63,6 +63,8 @@
                     :quantity="product.quantity"
                     :value="1"
                     @change="changeProductQuantity"
+                    @decrease="changeProductQuantity"
+                    @increase="changeProductQuantity"
                   />
                   <AppButton
                     :label="inCart ? 'В корзине' : 'В корзину'"
@@ -120,6 +122,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import AppIcon from "~/components/ui/AppIcon";
 import AppButton from "~/components/ui/AppButton";
 import AppBreadcrumbs from "~/components/ui/AppBreadcrumbs";
@@ -160,9 +163,10 @@ export default {
     },
   },
   methods: {
-    changeProductQuantity(e) {
-      // TODO: dispatch action in cart
-    },
+    ...mapActions("cart", ["changeProductQuantity"]),
+    // changeProductQuantity(e) {
+    //   // TODO: dispatch action in cart
+    // },
     addToCart() {
       // TODO: dispatch action in cart
     },

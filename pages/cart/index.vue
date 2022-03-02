@@ -1,6 +1,5 @@
 <template>
   <div class="cart-page">
-    <!-- TODO: layot with personal recomendations -->
     <!-- TODO: to componnent -->
     <div class="cart-page__header">
       <div class="cart-page__title-wrapper">
@@ -19,13 +18,16 @@
           <span>Версия для печати</span>
         </button>
         <button class="cart-page__header-btn">
-          <AppIcon symbol="icon_share_cart" className="cart-page__header-icon" />
+          <AppIcon
+            symbol="icon_share_cart"
+            className="cart-page__header-icon"
+          />
           <span>Поделиться корзиной</span>
         </button>
       </div>
     </div>
     <div>
-      <div class="cart-page__main" v-if="cart && cart.length">
+      <div class="cart-page__main" v-if="products.length">
         <CartProducts />
         <CartTotal />
       </div>
@@ -45,6 +47,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import RecommendedProducts from "~/components/cart/RecommendedProducts";
 import CartProducts from "~/components/cart/CartProducts";
 import CartTotal from "~/components/cart/CartTotal";
@@ -57,16 +60,8 @@ export default {
     CartTotal,
     AppIcon,
   },
-  data() {
-    // TODO: asyncData and delete cart?
-    return {
-      cart: [
-        {
-          id: 1,
-          image: require("~/assets/img/recommended-1.jpg"),
-        },
-      ],
-    };
+  computed: {
+    ...mapState("cart", ["products"]),
   },
 };
 </script>

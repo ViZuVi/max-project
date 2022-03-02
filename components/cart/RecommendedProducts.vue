@@ -30,7 +30,7 @@
                   >{{ product.title }}</nuxt-link
                 >
                 <span class="recommended-products__price"
-                  >{{ product.price.toLocaleString() }} ₽</span
+                  >{{ product.price }} ₽</span
                 >
               </div>
             </div>

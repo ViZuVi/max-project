@@ -1,7 +1,7 @@
 <template>
   <div class="product-card-price">
     <div class="product-card-price__price">
-      {{ price.toLocaleString() }} ₽/шт
+      {{ price }} ₽/шт
     </div>
     <div class="product-card-price__availability-wrapper">
       <!-- TODO: availability modal? -->

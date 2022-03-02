@@ -14,6 +14,7 @@ module.exports = {
     ],
     // link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
+  plugins: ['~/plugins/directives.js'],
   modules: [
     '@nuxtjs/axios',
   ],
@@ -22,8 +23,8 @@ module.exports = {
     '@nuxtjs/vuetify',
     '@nuxtjs/device',
     '@nuxtjs/moment',
-    '@nuxtjs/stylelint-module',
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/stylelint-module',
+    // '@nuxtjs/eslint-module',
   ],
   moment: {
     locales: ['ru']

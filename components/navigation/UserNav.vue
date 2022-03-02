@@ -112,7 +112,7 @@ export default {
   padding-right: 10px;
   font-size: 0.867em;
   line-height: 20px;
-  color: $text-black-3;
+  color: #333333;
   &:hover {
     color: $text-link-hover;
   }
@@ -126,7 +126,7 @@ export default {
   bottom: 2px;
 }
 .user-nav__site-description {
-  color: $text-black-3;
+  color: #333333;
   max-width: 200px;
   font-size: 0.867em;
   line-height: 20px;
@@ -149,7 +149,7 @@ export default {
 
   .user-nav__phone-main {
     position: relative;
-    color: $text-black-3;
+    color: #333333;
     font-size: 1.0666em;
     line-height: 25px;
     font-weight: bold;
@@ -186,7 +186,7 @@ export default {
   letter-spacing: 0.8px;
   color: $text-link-hover;
   &:hover {
-    color: $text-black-3;
+    color: #333333;
   }
   @include adapt-mobile {
     display: none;
@@ -201,7 +201,7 @@ export default {
   }
 }
 .user-nav__main-button {
-  color: $text-black-3;
+  color: #333333;
   font-size: 0.6667em;
   line-height: 1.2em;
   text-transform: uppercase;

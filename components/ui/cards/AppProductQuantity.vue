@@ -4,7 +4,7 @@
     :class="{ 'product-card-quantity--small': small }"
   >
     <div class="product-card-quantity__btns">
-      <button class="product-card-quantity__btn">
+      <button class="product-card-quantity__btn" @click="$emit('decrease')">
         <AppIcon symbol="icon_minus" className="product-card-quantity__btn-icon" />
       </button>
       <input
@@ -14,7 +14,7 @@
         min="1"
         @change="$emit('change', $event.target.value)"
       />
-      <button class="product-card-quantity__btn">
+      <button class="product-card-quantity__btn" @click="$emit('increase')">
         <AppIcon symbol="icon_plus" className="product-card-quantity__btn-icon" />
       </button>
     </div>

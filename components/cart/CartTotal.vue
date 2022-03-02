@@ -2,11 +2,11 @@
   <div class="cart-total">
     <div class="cart-total__price-wrapper">
       <div class="cart-total__title">Итого:</div>
-      <div class="cart-total__price">{{ total.toLocaleString() }} ₽</div>
+      <div class="cart-total__price">{{ total }} ₽</div>
     </div>
     <div class="cart-total__saving-wrapper">
       <span class="cart-total__saving-text">Экономия</span>
-      <span class="cart-total__saving">{{ saving.toLocaleString() }} ₽</span>
+      <span class="cart-total__saving">{{ saving }} ₽</span>
     </div>
     <div class="cart-total__input-wrapper">
       <input
