@@ -1,5 +1,10 @@
 <template>
-  <button :type="type" class="app-button" :class="className" @click="$emit('click', $event)">
+  <button
+    :type="type"
+    class="app-button"
+    :class="[{ 'app-button--transparent': transparent }, className]"
+    @click="$emit('click', $event)"
+  >
     <span>{{ label }}</span>
     <AppIcon v-if="btnSymbol" :symbol="btnSymbol" :className="iconClassName" />
   </button>
@@ -11,7 +16,7 @@ import AppIcon from "~/components/ui/AppIcon";
 export default {
   name: "AppButton",
   components: {
-    AppIcon
+    AppIcon,
   },
   props: {
     type: {
@@ -38,7 +43,12 @@ export default {
       type: String,
       required: false,
       default: () => "",
-    }
+    },
+    transparent: {
+      type: Boolean,
+      required: false,
+      default: () => true,
+    },
   },
 };
 </script>
@@ -69,7 +79,7 @@ export default {
     }
   }
 
-  &--small{
+  &--small {
     padding: 10px 14px 8px;
     font-size: 9px;
   }

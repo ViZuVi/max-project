@@ -10,7 +10,7 @@
     </div>
     <div class="ads-list-card__link-text">
       <span class="ads-list-card__title">{{ card.title }}</span>
-      <span class="ads-list-card__category">{{ card.category }}</span>
+      <span class="ads-list-card__category font-small">{{ card.category }}</span>
     </div>
   </div>
 </template>
@@ -81,8 +81,6 @@ export default {
 }
 .ads-list-card__category {
   margin-bottom: 20px;
-  font-size: 0.867em;
-  line-height: 1.692em;
   color: #777777;
 }
 </style>

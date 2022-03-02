@@ -68,12 +68,12 @@
                   />
                   <AppButton
                     :label="inCart ? 'В корзине' : 'В корзину'"
-                    className="app-button--transparent product-details__cart-btn"
+                    className="product-details__cart-btn"
                     @click="addToCart"
                   />
                   <AppButton
                     label="Купить в 1 клик"
-                    className="app-button--transparent product-details__ocb-btn"
+                    className="product-details__ocb-btn"
                     @click="buy"
                   />
                 </div>

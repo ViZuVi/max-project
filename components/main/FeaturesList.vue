@@ -7,8 +7,8 @@
         :key="feature.title"
       >
         <AppIcon :symbol="feature.icon" className="features-list__icon" />
-        <span class="features-list__item-title">{{ feature.title }}</span>
-        <span class="features-list__item-text">{{ feature.text }}</span>
+        <span class="features-list__item-title font-medium">{{ feature.title }}</span>
+        <span class="features-list__item-text font-small">{{ feature.text }}</span>
       </div>
     </div>
   </section>
@@ -58,16 +58,10 @@ export default {
 .features-list__item-title {
   color: $text-black-3;
   margin-bottom: 6px;
-  // TODO: CHECK all font properties
-  font-size: 1.0667em;
-  line-height: 1.5625em;
 }
 .features-list__item-text {
   color: $text-black-6;
   margin-bottom: 6px;
-  // TODO: CHECK all font properties
-  font-size: 0.867em;
-  line-height: 1.692em;
 }
 .features-list__icon {
   width: 40px;

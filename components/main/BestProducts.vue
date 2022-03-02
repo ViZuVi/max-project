@@ -18,7 +18,7 @@
       </div>
       <AppButton
         label="Загрузить еще"
-        className="best-products__load-btn app-button--transparent"
+        className="best-products__load-btn"
       />
     </div>
   </section>

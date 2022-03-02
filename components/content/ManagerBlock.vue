@@ -18,7 +18,7 @@
     </div>
     <AppButton
       label="Задать вопрос"
-      className="app-button--transparent manager-block__btn"
+      className="manager-block__btn"
     />
   </div>
 </template>

@@ -2,13 +2,13 @@
   <div class="product-card-controls">
     <AppButton
       label="Отложить"
-      className="app-button--transparent product-card-controls__btn app-button--small"
+      className="product-card-controls__btn app-button--small"
       btnSymbol="icon_heart"
       iconClassName="product-card-controls__icon"
     />
     <AppButton
       label="Сравнить"
-      className="app-button--transparent product-card-controls__btn app-button--small"
+      className="product-card-controls__btn app-button--small"
       btnSymbol="icon_diagram"
       iconClassName="product-card-controls__icon"
     />

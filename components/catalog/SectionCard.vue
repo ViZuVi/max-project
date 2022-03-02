@@ -13,7 +13,7 @@
     </div>
     <AppButton
       v-if="link"
-      className="app-button--transparent section-card__btn"
+      className="section-card__btn"
       btnSymbol="icon_button_arrow"
       @click="$router.push(link)"
     />

@@ -4,7 +4,7 @@
     <div class="cart-page__header">
       <div class="cart-page__title-wrapper">
         <h1 class="cart-page__title">Корзина</h1>
-        <nuxt-link class="cart-page__header-link" to="/catalog"
+        <nuxt-link class="cart-page__header-link font-small" to="/catalog"
           >Вернуться в каталог</nuxt-link
         >
       </div>
@@ -93,8 +93,6 @@ export default {
 }
 .cart-page__header-link {
   color: $text-black-9;
-  font-size: 0.867em;
-  line-height: 1.692em;
   &:hover {
     color: $text-link-hover;
   }

@@ -2,7 +2,7 @@
   <section class="blog">
     <div class="blog__posts-wrapper">
       <AppSectionTitle title="Блог" allName="Все статьи" allLink="/blog">
-        <button class="blog__add-btn">
+        <button class="blog__add-btn font-upper">
           <AppIcon symbol="icon_subscribe" className="blog__chat-icon" />
           <span class="blog__subscribe-text">Подписаться</span>
         </button>
@@ -21,17 +21,17 @@
               :to="`/blog/${post.id}`"
             ></nuxt-link>
             <div class="blog__item-info">
-              <span class="blog__item-category">{{ post.category }}</span>
+              <span class="blog__item-category font-upper">{{ post.category }}</span>
               <nuxt-link class="blog__item-title" :to="`/blog/${post.id}`">{{
                 post.title
               }}</nuxt-link>
               <!-- TODO: format date -->
-              <span class="blog__item-date">{{ post.published }}</span>
+              <span class="blog__item-date font-small">{{ post.published }}</span>
             </div>
           </div>
         </div>
       </div>
-      <AppButton label="Загрузить еще" className="app-button--transparent" />
+      <AppButton label="Загрузить еще" />
     </div>
   </section>
 </template>
@@ -81,10 +81,6 @@ export default {
   }
 }
 .blog__add-btn {
-  font-size: 0.667em;
-  line-height: 1.3em;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
   color: $text-black-9;
   margin-left: 37px;
   margin-right: auto;
@@ -179,10 +175,6 @@ export default {
 }
 .blog__item-category {
   margin-bottom: 11px;
-  font-size: 0.667em;
-  line-height: 1.3em;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
   color: $text-black-9;
 }
 .blog__item-title {
@@ -191,7 +183,5 @@ export default {
 }
 .blog__item-date {
   color: $text-black-5;
-  font-size: 0.867em;
-  line-height: 1.692em;
 }
 </style>

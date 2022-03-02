@@ -32,16 +32,19 @@
           <AppButton
             btnSymbol="icon_heart"
             className="best-product-card_menu-btn"
+            :transparent="false"
             @click="addToFavourite"
           />
           <AppButton
             btnSymbol="icon_diagram"
             className="best-product-card_menu-btn"
+            :transparent="false"
             @click="addToCompare"
           />
           <AppButton
             btnSymbol="icon_bag"
             className="best-product-card_menu-btn best-product-card_menu-btn--cart"
+            :transparent="false"
             @click="fastBuy"
           />
           <!-- TODO: from UI -->
@@ -52,6 +55,7 @@
                 v-on="on"
                 btnSymbol="icon_eye"
                 className="best-product-card_menu-btn best-product-card_menu-btn--eye"
+                :transparent="false"
               />
             </template>
             <AppProductsCard :product="product" />
@@ -83,6 +87,7 @@
     <AppButton
       label="Подробнее"
       className="best-product-card__details-btn"
+      :transparent="false"
       @click="$router.push(`/catalog/${product.id}`)"
     />
   </div>

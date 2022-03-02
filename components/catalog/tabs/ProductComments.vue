@@ -10,7 +10,7 @@
         />
         <span class="product-comments__rating-empty" v-if="!product.rating">Нет оценок</span>
       </div>
-      <AppButton label="Оставить отзыв" class="product-comments__btn" />
+      <AppButton label="Оставить отзыв" class="product-comments__btn" :transparent="false" />
     </div>
     <SectionCard>
       <div v-if="product.comments.length" class="product-comments__item">

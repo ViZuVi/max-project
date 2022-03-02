@@ -1,14 +1,14 @@
 <template>
   <div class="sale-card">
     <div class="sale-card__info">
-      <div class="sale-card__due-date-wrapper">
+      <div class="sale-card__due-date-wrapper font-small">
         <AppIcon symbol="icon_lightning" className="sale-card__icon" />
         <span>{{ card.dueDate }}</span>
       </div>
       <nuxt-link class="sale-card__title" :to="`/sale${card.id}`" href="sale">{{
         card.title
       }}</nuxt-link>
-      <p class="sale-card__decription">{{ card.description }}</p>
+      <p class="sale-card__decription font-small">{{ card.description }}</p>
       <span class="sale-card__discount" v-if="card.discount">{{
         card.discount
       }}</span>
@@ -71,8 +71,6 @@ export default {
 }
 .sale-card__due-date-wrapper {
   color: $text-black-9;
-  font-size: 0.867em;
-  line-height: 1.692em;
   margin-bottom: 13px;
 }
 .sale-card__icon {
@@ -94,8 +92,6 @@ export default {
   }
 }
 .sale-card__decription {
-  font-size: 0.867em;
-  line-height: 1.692em;
   margin-bottom: 20px;
   color: #777777;
 }

@@ -32,11 +32,11 @@
           <!-- TODO: Add quantity -->
           <AppButton
             :label="inCart ? 'В корзине' : 'В корзину'"
-            className="app-button--transparent product-card__main-btn product-card__main-btn--cart"
+            className="product-card__main-btn product-card__main-btn--cart"
           />
           <AppButton
             label="Купить в 1 клик"
-            className="app-button--transparent product-card__main-btn product-card__main-btn--buy"
+            className="product-card__main-btn product-card__main-btn--buy"
           />
         </div>
         <span class="product-card__delivery">
@@ -55,7 +55,7 @@
             <span>Доставка завтра - {{ product.deliveryPrice }} ₽</span>
           </span>
         </span>
-        <div class="product-card__description">{{ product.description }}</div>
+        <div class="product-card__description font-small">{{ product.description }}</div>
         <AppProductProps :properties="product.properties" />
       </div>
     </div>
@@ -203,8 +203,6 @@ export default {
   }
 }
 .product-card__description {
-  font-size: 0.867em;
-  line-height: 1.692em;
   color: $text-black-6;
   margin-bottom: 13px;
 }

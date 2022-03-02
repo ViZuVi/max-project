@@ -6,10 +6,9 @@
         >Будьте в курсе наших акций и новостей</span
       >
     </div>
-    <!-- TODO: move app-button__transparent to cpmponent (prop transparent) -->
     <AppButton
       label="Подписаться"
-      className="app-button--transparent subscribe-block__btn"
+      className="subscribe-block__btn"
     />
   </div>
 </template>

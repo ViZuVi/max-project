@@ -13,15 +13,15 @@
           }}</nuxt-link>
           <!-- TODO: rename -->
           <div class="contacts__details">
-            <span class="contacts__label">Метро</span>
+            <span class="contacts__label font-upper">Метро</span>
             <span class="contacts__text">{{ contacts.sub }}</span>
           </div>
           <div class="contacts__details">
-            <span class="contacts__label">Режим работы</span>
+            <span class="contacts__label font-upper">Режим работы</span>
             <span class="contacts__text">{{ contacts.schedule }}</span>
           </div>
           <div class="contacts__details">
-            <span class="contacts__label">Телефон</span>
+            <span class="contacts__label font-upper">Телефон</span>
             <a
               :href="`tel:${contacts.phone}`"
               class="contacts__text contacts__text--link"
@@ -29,7 +29,7 @@
             >
           </div>
           <div class="contacts__details">
-            <span class="contacts__label">e-mail</span>
+            <span class="contacts__label font-upper">e-mail</span>
             <a
               :href="`mailto:${contacts.email}`"
               class="contacts__text contacts__text--link"
@@ -38,7 +38,7 @@
           </div>
           <AppButton
             label="Написать сообщение"
-            className="app-button--transparent map__contact-btn"
+            className="map__contact-btn"
           />
         </div>
         <iframe
@@ -119,10 +119,6 @@ export default {
 }
 .contacts__label {
   display: block;
-  font-size: 0.667em;
-  line-height: 1.3em;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
   margin-bottom: 3px;
   color: $text-black-6;
 }

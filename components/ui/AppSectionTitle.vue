@@ -8,7 +8,7 @@
     <h2 class="section-title__name">{{ title }}</h2>
     <slot></slot>
     <slot name="link">
-      <nuxt-link class="section-title__link" :to="allLink">
+      <nuxt-link class="section-title__link font-upper" :to="allLink">
         <span class="section-title__link-title">{{ allName }}</span>
         <AppIcon symbol="icon_arrow" className="section-title__icon-next" />
       </nuxt-link>
@@ -68,7 +68,6 @@ export default {
 }
 .section-title__link {
   color: $text-black-9;
-  @include font-small-uppercase;
   &:hover {
     color: #356edc;
   }

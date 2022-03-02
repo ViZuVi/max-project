@@ -1,11 +1,12 @@
 <template>
   <div class="app-product-menu">
-    <AppButton btnSymbol="icon_heart" className="app-product-menu__btn" />
+    <AppButton btnSymbol="icon_heart" className="app-product-menu__btn" :transparent="false" />
     <AppButton
       btnSymbol="icon_diagram"
       className="app-product-menu__btn"
+      :transparent="false"
     />
-    <AppButton btnSymbol="icon_bag" className="app-product-menu__btn" />
+    <AppButton btnSymbol="icon_bag" className="app-product-menu__btn" :transparent="false" />
     <v-dialog v-model="showCardModal" width="968">
       <template v-slot:activator="{ on, attrs }">
         <AppButton
@@ -13,6 +14,7 @@
           v-on="on"
           btnSymbol="icon_eye"
           className="app-product-menu__btn"
+          :transparent="false"
         />
       </template>
       <AppProductsCard :product="product" />

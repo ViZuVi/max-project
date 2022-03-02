@@ -2,7 +2,7 @@
   <div class="footer-menu">
     <div class="footer-menu__wrapper">
       <nuxt-link
-        class="footer-menu__link footer-menu__link--short"
+        class="footer-menu__link footer-menu__link--short font-small"
         v-for="menuItem in menu.short"
         :key="menuItem.title"
         :to="menuItem.link"
@@ -15,7 +15,7 @@
       :key="menuItem.title"
     >
       <div class="footer-menu__link-wrapper">
-        <nuxt-link class="footer-menu__link" :to="menuItem.link">
+        <nuxt-link class="footer-menu__link font-small" :to="menuItem.link">
           {{ menuItem.title }}
         </nuxt-link>
         <AppIcon
@@ -48,7 +48,7 @@
     <div class="footer-menu__wrapper footer-menu__wrapper--contacts">
       <AppButton
         label="Подписаться на рассылку"
-        className="app-button--transparent footer-menu__subscribe-btn"
+        className="footer-menu__subscribe-btn"
         btnSymbol="icon_subscribe"
         iconClassName="footer-menu__subscribe-icon"
       />
@@ -57,7 +57,7 @@
         <AppIcon className="footer-menu__contacts-icon" symbol="icon_phone" />
         <a
           href="tel:+70000000000"
-          class="footer-menu__contacts-link footer-menu__contacts-link--phone"
+          class="footer-menu__contacts-link font-medium"
           >+7 (000) 000-00-00</a
         >
         <AppIcon
@@ -135,9 +135,7 @@ export default {
   }
   .footer-menu__link {
     color: #ffffff;
-    font-size: 0.867em;
     font-weight: 700;
-    line-height: 1.5385em;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     &--short:not(:last-child) {
@@ -301,11 +299,6 @@ export default {
     align-self: center;
     text-align: center;
     margin-bottom: 40px;
-  }
-}
-.footer-menu__contacts-link {
-  &--phone {
-    font-size: 1.0667em;
   }
 }
 .footer-menu__callback {

@@ -2,7 +2,7 @@
   <section class="company">
     <div class="company__about-wrapper">
       <div class="company__about">
-        <router-link to="/company" class="company__section-name"
+        <router-link to="/company" class="company__section-name font-upper"
           >О компании</router-link
         >
         <h3 class="company__title">Интернет-магазин в Москве</h3>
@@ -15,7 +15,7 @@
         </p>
         <AppButton
           label="Подробности"
-          className="app-button--transparent company__details-btn"
+          className="company__details-btn"
           @click="$router.push('/company')"
         />
       </div>
@@ -81,10 +81,6 @@ export default {
   // padding-top: 59.7%;
 }
 .company__section-name {
-  font-size: 0.667em;
-  line-height: 1.3em;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
   color: $text-black-9;
   margin-bottom: 20px;
 

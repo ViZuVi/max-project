@@ -1,6 +1,30 @@
 <template>
   <div class="banner-top">
-    <v-carousel height="631" show-arrows-on-hover hide-delimiter-background light>
+    <v-carousel
+      height="631"
+      show-arrows-on-hover
+      hide-delimiter-background
+      light
+    >
+      <template v-slot:prev="{ on, attrs }">
+        <button
+          class="app__carousel-btns app__carousel-btns--prev"
+          v-bind="attrs"
+          v-on="on"
+        >
+          <AppIcon symbol="icon_prev" class="app__carousel-icon" />
+        </button>
+      </template>
+      <template v-slot:next="{ on, attrs }">
+        <button
+          class="app__carousel-btns app__carousel-btns--next"
+          v-bind="attrs"
+          v-on="on"
+        >
+          <AppIcon symbol="icon_next" class="app__carousel-icon" />
+        </button>
+      </template>
+
       <v-carousel-item
         v-for="item in carouselItems"
         :key="item.id"
@@ -12,24 +36,26 @@
             <div class="banner-top__description">{{ item.text }}</div>
             <AppButton
               :label="item.link_title"
-              className="app-button--transparent banner-top__btn"
+              className="banner-top__btn"
               @click="$router.push(item.link)"
             />
           </div>
         </v-sheet>
-        <!-- position absolute -->
+        <!-- TODO: position absolute -->
       </v-carousel-item>
     </v-carousel>
   </div>
 </template>
 
 <script>
+import AppIcon from "~/components/ui/AppIcon";
 import AppButton from "~/components/ui/AppButton";
 
 export default {
   name: "BannerTop",
   components: {
     AppButton,
+    AppIcon,
   },
   data() {
     return {

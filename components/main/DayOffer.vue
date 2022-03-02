@@ -7,58 +7,46 @@
         allLink="/catalog"
         iconSymbol="icon_hot"
       />
-            <div class="day-offer-card">
-              <div class="day-offer-card__img-wrapper">
-                <AppProductTag
-                  class="day-offer-card__tags"
-                  :tags="product.tags"
-                />
-                <nuxt-link
-                  class="day-offer-card__link"
-                  :to="`/catalog/${product.id}`"
-                >
-                  <img
-                    class="day-offer-card__img"
-                    :src="product.image"
-                    alt=""
-                  />
-                </nuxt-link>
-                <AppProductMenu
-                  :product="product"
-                  class="day-offer-card__menu"
-                />
-              </div>
-              <div class="day-offer-card__info-wrapper">
-                <AppSaleTimer class="day-offer-card__timer" />
-                <AppRating
-                  class="day-offer-card__rating"
-                  :rating="product.rating"
-                  :showRatingValue="false"
-                />
-                <nuxt-link
-                  class="day-offer-card__title font-large"
-                  :to="`/catalog/${product.id}`"
-                  >{{ product.title }}</nuxt-link
-                >
-                <div>
-                  <span class="day-offer-card__availability">{{
-                    product.availability
-                  }}</span>
-                  <span class="day-offer-card__code"
-                    >Арт.: {{ product.code }}</span
-                  >
-                </div>
-                <p class="day-offer-card__price font-medium">
-                  {{ (product.price) }} ₽/шт
-                </p>
-                <!-- TODO: saving? - api -->
-                <AppButton
-                  label="Подробнее"
-                  className="day-offer-card__details-btn app-button--transparent"
-                  @click="$router.push(`/catalog/${product.id}`)"
-                />
-              </div>
-            </div>
+      <div class="day-offer-card">
+        <div class="day-offer-card__img-wrapper">
+          <AppProductTag class="day-offer-card__tags" :tags="product.tags" />
+          <nuxt-link
+            class="day-offer-card__link"
+            :to="`/catalog/${product.id}`"
+          >
+            <img class="day-offer-card__img" :src="product.image" alt="" />
+          </nuxt-link>
+          <AppProductMenu :product="product" class="day-offer-card__menu" />
+        </div>
+        <div class="day-offer-card__info-wrapper">
+          <AppSaleTimer class="day-offer-card__timer" />
+          <AppRating
+            class="day-offer-card__rating"
+            :rating="product.rating"
+            :showRatingValue="false"
+          />
+          <nuxt-link
+            class="day-offer-card__title font-large"
+            :to="`/catalog/${product.id}`"
+            >{{ product.title }}</nuxt-link
+          >
+          <div>
+            <span class="day-offer-card__availability">{{
+              product.availability
+            }}</span>
+            <span class="day-offer-card__code">Арт.: {{ product.code }}</span>
+          </div>
+          <p class="day-offer-card__price font-medium">
+            {{ product.price }} ₽/шт
+          </p>
+          <!-- TODO: saving? - api -->
+          <AppButton
+            label="Подробнее"
+            className="day-offer-card__details-btn"
+            @click="$router.push(`/catalog/${product.id}`)"
+          />
+        </div>
+      </div>
     </div>
   </section>
 </template>

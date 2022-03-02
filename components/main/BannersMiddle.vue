@@ -8,13 +8,13 @@
         :key="card.id"
       >
         <div class="banners-middle__item-info">
-          <span class="banners-middle__item-category">{{ card.category }}</span>
+          <span class="banners-middle__item-category font-upper">{{ card.category }}</span>
           <nuxt-link
             :to="`catalog/${card.id}`"
             class="banners-middle__item-title"
             >{{ card.title }}</nuxt-link
           >
-          <span class="banners-middle__item-description">{{
+          <span class="banners-middle__item-description font-small">{{
             card.description
           }}</span>
         </div>
@@ -100,10 +100,6 @@ export default {
   padding: 50px 10px 54px 50px;
 }
 .banners-middle__item-category {
-  font-size: 0.667em;
-  line-height: 1.3em;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
   color: $text-black-5;
   margin-bottom: 12px;
 }
@@ -114,8 +110,6 @@ export default {
   margin-bottom: 16px;
 }
 .banners-middle__item-description {
-  font-size: 0.867em;
-  line-height: 1.692em;
   color: $text-black-5;
 }
 .banners-middle__item-img-link {

@@ -5,8 +5,8 @@
       <div class="cart-total__price">{{ total }} ₽</div>
     </div>
     <div class="cart-total__saving-wrapper">
-      <span class="cart-total__saving-text">Экономия</span>
-      <span class="cart-total__saving">{{ saving }} ₽</span>
+      <span class="cart-total__saving-text font-small">Экономия</span>
+      <span class="cart-total__saving font-small">{{ saving }} ₽</span>
     </div>
     <div class="cart-total__input-wrapper">
       <input
@@ -22,10 +22,11 @@
       />
     </div>
     <div class="cart-total__btns-wrapper">
-      <AppButton label="Купить в 1 клик" className="app-button--transparent" />
+      <AppButton label="Купить в 1 клик" />
       <AppButton
         label="Перейти к оформлению"
         className="cart-total__checkout-btn"
+        :transparent="false"
         @click="$router.push('/order')"
       />
     </div>
@@ -104,8 +105,6 @@ export default {
 }
 .cart-total__saving-text,
 .cart-total__saving {
-  font-size: 0.867em;
-  line-height: 1.692em;
   padding-right: 10px;
   background-color: #ffffff;
   z-index: 1;

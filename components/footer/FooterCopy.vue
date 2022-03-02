@@ -1,6 +1,6 @@
 <template>
   <div class="footer-copy">
-    <div class="footer-copy__item footer-copy__item--text">
+    <div class="footer-copy__item font-small">
       2022 © Все права защищены
     </div>
     <div class="footer-copy__item footer-copy__item--pay">
@@ -52,11 +52,6 @@ export default {
 }
 .footer-copy__item {
   color: $text-black-9;
-
-  &--text {
-    font-size: 0.867em;
-    line-height: 1.692em;
-  }
 
   &--developed {
     display: flex;

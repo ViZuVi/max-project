@@ -7,10 +7,26 @@
       height="auto"
       show-arrows-on-hover
     >
-    <!-- TODO: customize arrows -->
+      <template v-slot:prev="{ on, attrs }">
+        <button
+          class="app__carousel-btns app__carousel-btns--prev"
+          v-bind="attrs"
+          v-on="on"
+        >
+          <AppIcon symbol="icon_prev" class="app__carousel-icon" />
+        </button>
+      </template>
+      <template v-slot:next="{ on, attrs }">
+        <button
+          class="app__carousel-btns app__carousel-btns--next"
+          v-bind="attrs"
+          v-on="on"
+        >
+          <AppIcon symbol="icon_next" class="app__carousel-icon" />
+        </button>
+      </template>
       <v-carousel-item v-for="product in products" :key="product.id">
         <v-sheet class="recommended-products__list">
-          <!-- TODO: check cards mobile -->
           <div class="recommended-products__card">
             <div class="recommended-products__img-wrapper">
               <nuxt-link
@@ -25,7 +41,7 @@
               </nuxt-link>
               <div class="recommended-products__info-wrapper">
                 <nuxt-link
-                  class="recommended-products__card-title"
+                  class="recommended-products__card-title font-small"
                   :to="`/catalog/${product.id}`"
                   >{{ product.title }}</nuxt-link
                 >
@@ -36,12 +52,8 @@
             </div>
             <AppButton
               label="Подробнее"
-              className="app-button--transparent app-button--small recommended-products__details"
-              @click="
-                $router.push(
-                  `/catalog/${product.id}`
-                )
-              "
+              className="app-button--small recommended-products__details"
+              @click="$router.push(`/catalog/${product.id}`)"
             />
           </div>
         </v-sheet>
@@ -51,12 +63,14 @@
 </template>
 
 <script>
+import AppIcon from "~/components/ui/AppIcon";
 import AppButton from "~/components/ui/AppButton";
 
 export default {
   name: "RecommendedProducts",
   components: {
     AppButton,
+    AppIcon,
   },
   data() {
     return {
@@ -81,8 +95,13 @@ export default {
 
   .reviews__carousel {
     @include adapt-mobile {
-    padding: 0;
+      padding: 0;
+    }
   }
+  .responsive__content {
+    @include adapt-mobile {
+      overflow-y: auto;
+    }
   }
 }
 .recommended-products__list {
@@ -122,8 +141,6 @@ export default {
   flex-direction: column;
 }
 .recommended-products__card-title {
-  line-height: 1.385em;
-  font-size: 0.867em;
   color: $text-black-3;
   &:hover {
     color: $text-link-hover;

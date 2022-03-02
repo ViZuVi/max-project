@@ -13,7 +13,6 @@
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in tabs" :key="item.cardsType">
         <div class="product-suggestions__list">
-          <!-- TODO: add cart icon -->
           <BestProductCard
             class="product-suggestions__item"
             v-for="product in products[item.cardsType]"

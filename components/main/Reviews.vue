@@ -6,15 +6,32 @@
         allName="Все отзывы"
         allLink="/reviews"
       >
-        <button class="reviews__add-btn">
+        <button class="reviews__add-btn font-upper">
           <AppIcon symbol="icon_chat" className="review__chat-icon" />
           <span>Оставить отзыв</span>
         </button>
       </AppSectionTitle>
       <v-carousel class="reviews__carousel" hide-delimiters height="auto">
-        <!-- <template #prev>
-          <AppIcon symbol="icon_prev" className="review__icon" />
-        </template> -->
+
+        <template v-slot:prev="{ on, attrs }">
+          <button
+            class="app__carousel-btns app__carousel-btns--prev"
+            v-bind="attrs"
+            v-on="on"
+          >
+            <AppIcon symbol="icon_prev" class="app__carousel-icon" />
+          </button>
+        </template>
+        <template v-slot:next="{ on, attrs }">
+          <button
+            class="app__carousel-btns app__carousel-btns--next"
+            v-bind="attrs"
+            v-on="on"
+          >
+            <AppIcon symbol="icon_next" class="app__carousel-icon" />
+          </button>
+        </template>
+
         <v-carousel-item v-for="review in reviews" :key="review.id">
           <v-sheet>
             <div class="reviews__item review">
@@ -26,8 +43,10 @@
                 />
                 <div class="review__title">
                   <!-- TODO: format date -->
-                  <span class="review__date">{{ review.published }}</span>
-                  <span class="review__name">{{ review.name }}</span>
+                  <span class="review__date font-upper">{{
+                    review.published
+                  }}</span>
+                  <span class="font-large">{{ review.name }}</span>
                 </div>
                 <!-- TODO: format rating; api - rating ? -->
                 <div class="review__rating">{{ review.raiting }}</div>
@@ -36,16 +55,10 @@
                 <AppIcon symbol="icon_quote" className="review__quote-icon" />
                 <span>{{ review.text }}</span>
               </div>
-              <AppButton
-                label="Отзыв полностью"
-                className="app-button--transparent raviews__btn"
-              />
+              <AppButton label="Отзыв полностью" className="raviews__btn" />
             </div>
           </v-sheet>
         </v-carousel-item>
-        <!-- <template #next>
-          <AppIcon symbol="icon_prev" className="review__icon" />
-        </template> -->
       </v-carousel>
     </div>
   </section>
@@ -121,16 +134,8 @@ export default {
   flex-direction: column;
 }
 .review__date {
-  font-size: 0.667em;
-  line-height: 1.3em;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
   color: #999;
   margin-bottom: 5;
-}
-.review__name {
-  font-size: 1.3333em;
-  line-height: 1.4em;
 }
 .review__rating {
   margin-left: auto;
@@ -151,10 +156,6 @@ export default {
   top: 7px;
 }
 .reviews__add-btn {
-  font-size: 0.667em;
-  line-height: 1.3em;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
   color: $text-black-9;
   margin-right: 37px;
   margin-left: auto;

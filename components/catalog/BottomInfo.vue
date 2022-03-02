@@ -23,7 +23,7 @@
           />
         </div>
         <div class="bottom-info__left-additional-goods">
-          <!-- TODO: products from api -->
+          <!-- TODO: static - change lists -->
           <ProductsSuggestions
             :products="{ mightLike: [product], buyWith: [product] }"
           />
@@ -55,7 +55,7 @@
 
         <div class="bottom-info__recommendations">
           <div class="bottom-info__section-title font-medium">Рекомендуем</div>
-          <!-- TODO: products from api -->
+          <!-- TODO: static - change list -->
           <AppProductCardSmall
             v-for="product in [
               product,
@@ -80,7 +80,7 @@
           </div>
           <AppButton
             label="Задать вопрос"
-            className="app-button--transparent bottom-info__feedback-btn"
+            className="bottom-info__feedback-btn"
           />
         </div>
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="app-tabs">
+  <div class="app-tabs font-small">
     <div
       class="app-tabs__item"
       :class="{ 'app-tabs__item--active': activeTab === tab }"
@@ -41,8 +41,6 @@ export default {
   display: flex;
   margin-right: 65px;
   margin-left: auto;
-  font-size: 0.867em;
-  line-height: 1.692em;
   color: $text-black-6;
   @include adapt-mobile {
     margin-left: 0;
