@@ -65,12 +65,10 @@
                   <AppButton
                     :label="inCart ? 'В корзине' : 'В корзину'"
                     className="product-details__cart-btn"
-                    @click="addToCart"
                   />
                   <AppButton
                     label="Купить в 1 клик"
                     className="product-details__ocb-btn"
-                    @click="buy"
                   />
                 </div>
               </div>
@@ -150,8 +148,8 @@ export default {
     product: {
       type: Object,
       required: true,
-      default: () => {}
-    }
+      default: () => {},
+    },
   },
   computed: {
     ...mapState("cart", ["products"]),
@@ -272,6 +270,7 @@ export default {
   flex-basis: 50%;
 }
 .product-details__actions-card {
+  max-width: 372px;
   margin-bottom: 16px;
   box-shadow: 0 3px 14px rgb(0 0 0 / 12%);
 }
@@ -287,6 +286,7 @@ export default {
 .product-details__cart-quantity {
   border-radius: 0;
   width: 50%;
+  flex-grow: 1;
 }
 
 .product-details__cart-quantity {
