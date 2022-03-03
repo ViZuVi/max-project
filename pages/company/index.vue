@@ -21,7 +21,6 @@
         <ActionsBlock />
         <ManagerBlock />
 
-        <!-- TODO: news&blog to ui card (+styles) -->
         <div class="news-block">
           <nuxt-link class="news-block__link font-medium" to="/company/news"
             >Новости</nuxt-link

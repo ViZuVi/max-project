@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      icons: ["icon_vk", "icon_vk", "icon_vk", "icon_vk"],
+      icons: ["icon_vk"],
     };
   },
 };
@@ -77,6 +77,7 @@ export default {
 }
 .footer-social__icon {
   line-height: 0;
+  color: inherit;
   svg {
     width: 20px;
     height: 20px;

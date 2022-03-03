@@ -28,6 +28,7 @@ export default {
   },
   data() {
     return {
+      // TODO: static - change in fetch
       cards: [
         {
           id: 1,

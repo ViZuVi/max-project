@@ -34,7 +34,7 @@ export default {
     const stories = await this.$axios.$get(
       "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/stories"
     );
-    this.stories = stories.itemж;
+    this.stories = stories.item;
   },
 };
 </script>
@@ -46,8 +46,8 @@ export default {
   margin: 0 auto;
 
   .stories__title {
-    text-transform: unset;
-    letter-spacing: unset;
+    text-transform: initial;
+    letter-spacing: initial;
   }
 
   .stories__tab {

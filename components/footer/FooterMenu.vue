@@ -52,7 +52,6 @@
         btnSymbol="icon_subscribe"
         iconClassName="footer-menu__subscribe-icon"
       />
-      <!-- TODO: to UI -->
       <div class="footer-menu__contacts-wrapper">
         <AppIcon className="footer-menu__contacts-icon" symbol="icon_phone" />
         <a

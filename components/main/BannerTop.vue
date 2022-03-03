@@ -41,7 +41,6 @@
             />
           </div>
         </v-sheet>
-        <!-- TODO: position absolute -->
       </v-carousel-item>
     </v-carousel>
   </div>
@@ -81,9 +80,16 @@ export default {
     background-color: transparent;
     @include adapt-mobile {
       width: 100%;
-      padding: 27px 20px;
+      padding: 16px;
       background-color: #ffffff;
     }
+  }
+}
+.banner-top__info {
+  margin-top: -7%;
+  margin-left: -16%;
+  @include adapt-mobile {
+    margin: 0;
   }
 }
 .banner-top__title {

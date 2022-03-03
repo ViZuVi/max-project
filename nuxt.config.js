@@ -23,6 +23,7 @@ module.exports = {
     '@nuxtjs/vuetify',
     '@nuxtjs/device',
     '@nuxtjs/moment',
+    // TODO: add ESLint and StyleLint
     // '@nuxtjs/stylelint-module',
     // '@nuxtjs/eslint-module',
   ],

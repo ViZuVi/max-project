@@ -4,7 +4,7 @@
       <div class="product-details__header">
         <div>
           <h1 class="product-details__title">{{ product.title }}</h1>
-          <!-- TODO: get links/ header to ui -->
+          <!-- TODO: static - change -->
           <AppBreadcrumbs
             class="product-details__breadcrumbs"
             :items="[
@@ -56,15 +56,11 @@
                   :availability="product.availability"
                 />
                 <div class="product-details__cart-btns">
-                  <!-- TODO: value from store -->
                   <AppProductQuantity
                     class="product-details__cart-quantity"
                     v-if="!inCart"
                     :quantity="product.quantity"
                     :value="1"
-                    @change="changeProductQuantity"
-                    @decrease="changeProductQuantity"
-                    @increase="changeProductQuantity"
                   />
                   <AppButton
                     :label="inCart ? 'В корзине' : 'В корзину'"
@@ -122,7 +118,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 import AppIcon from "~/components/ui/AppIcon";
 import AppButton from "~/components/ui/AppButton";
 import AppBreadcrumbs from "~/components/ui/AppBreadcrumbs";
@@ -134,7 +130,6 @@ import AppProductPrice from "~/components/ui/cards/AppProductPrice";
 import AppProductQuantity from "~/components/ui/cards/AppProductQuantity";
 import ProductDetailsFeatures from "./ProductDetailsFeatures";
 import BottomInfo from "./BottomInfo";
-import mockProduct from "./mock-product";
 
 export default {
   name: "ProductDetails",
@@ -151,28 +146,23 @@ export default {
     ProductDetailsFeatures,
     BottomInfo,
   },
-  data() {
-    return {
-      product: mockProduct,
-    };
+  props: {
+    product: {
+      type: Object,
+      required: true,
+      default: () => {}
+    }
   },
   computed: {
+    ...mapState("cart", ["products"]),
     inCart() {
-      return false;
-      // TODO: check cart store
+      return (
+        this.products.findIndex((item) => item.id === this.product.id) > -1
+      );
     },
   },
   methods: {
     ...mapActions("cart", ["changeProductQuantity"]),
-    // changeProductQuantity(e) {
-    //   // TODO: dispatch action in cart
-    // },
-    addToCart() {
-      // TODO: dispatch action in cart
-    },
-    buy() {
-      // TODO: dispatch action in cart
-    },
   },
 };
 </script>
@@ -313,7 +303,6 @@ export default {
   }
 }
 .product-details__ocb-btn {
-  // TODO: to button class?
   font-size: 0.7333em;
   width: 100%;
   border: 0;

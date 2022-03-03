@@ -1,8 +1,6 @@
 <template>
   <div class="footer-copy">
-    <div class="footer-copy__item font-small">
-      2022 © Все права защищены
-    </div>
+    <div class="footer-copy__item font-small">2022 © Все права защищены</div>
     <div class="footer-copy__item footer-copy__item--pay">
       <AppIcon
         v-for="(icon, i) in icons"
@@ -32,8 +30,14 @@ export default {
   },
   data() {
     return {
-      // TODO: from api store?
-      icons: ["icon_mastercard", "icon_mastercard", "icon_mastercard"],
+      icons: [
+        "icon_cash",
+        "icon_mastercard",
+        "icon_visa",
+        "icon_mir",
+        "icon_tinkoff",
+        "icon_sber",
+      ],
     };
   },
 };
@@ -59,8 +63,16 @@ export default {
     justify-content: space-between;
   }
 
+  &--pay {
+    display: flex;
+    align-items: center;
+  }
+
   @include adapt-mobile {
     margin: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 }
 .footer-copy__developed-text {
@@ -72,7 +84,7 @@ export default {
   }
 }
 .footer-copy__text-icon {
-  filter: grayscale(1);
+  filter: hue-rotate(180deg) grayscale(1);
   margin-left: 10px;
   margin-right: 10px;
   &:hover {

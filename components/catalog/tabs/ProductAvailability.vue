@@ -224,7 +224,6 @@ export default {
 .product-availability__list-email {
   color: $text-link-hover;
 }
-// TODO to uI
 .product-availability__quantity {
   font-size: 0.8em;
   margin-right: 24px;

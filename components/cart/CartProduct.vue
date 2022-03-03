@@ -2,7 +2,6 @@
   <div class="cart-product">
     <div class="cart-product__img-wrapper">
       <img :src="product.image" :alt="product.title" />
-      <!-- TODO: <button class="cart-product__preview-btn"></button> -->
     </div>
     <div class="cart-product__info">
       <div class="cart-product__tags">

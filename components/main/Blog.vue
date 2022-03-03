@@ -21,12 +21,15 @@
               :to="`/blog/${post.id}`"
             ></nuxt-link>
             <div class="blog__item-info">
-              <span class="blog__item-category font-upper">{{ post.category }}</span>
+              <span class="blog__item-category font-upper">{{
+                post.category
+              }}</span>
               <nuxt-link class="blog__item-title" :to="`/blog/${post.id}`">{{
                 post.title
               }}</nuxt-link>
-              <!-- TODO: format date -->
-              <span class="blog__item-date font-small">{{ post.published }}</span>
+              <span class="blog__item-date font-small">{{
+                post.published
+              }}</span>
             </div>
           </div>
         </div>
@@ -86,7 +89,10 @@ export default {
   margin-right: auto;
   display: flex;
   align-items: center;
-
+  @include adapt-mobile {
+    margin-right: 0;
+    margin-left: auto;
+  }
   &:hover {
     color: $text-link-hover;
   }

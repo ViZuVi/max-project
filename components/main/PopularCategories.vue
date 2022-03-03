@@ -11,6 +11,7 @@
         v-for="category in categories"
         :key="category.title"
       >
+        <!-- TODO: static - change link address when it appears in api -->
         <nuxt-link class="popular-categories__link" to="#">
           <img
             width="80"
@@ -44,7 +45,6 @@ export default {
       "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/blog"
     );
     this.categories = categories.item;
-    // TODO: api - link needed
   },
 };
 </script>

@@ -17,7 +17,7 @@ export default {
       default: () => "",
     },
     className: {
-      type: String,
+      type: [String, Array],
       required: false,
       default: () => "",
     },

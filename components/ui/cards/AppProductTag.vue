@@ -1,5 +1,4 @@
 <template>
-<!-- TODO: to best product card -->
   <div class="app-product-tags">
     <div
       class="app-product-tag"

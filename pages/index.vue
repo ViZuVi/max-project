@@ -1,12 +1,12 @@
 <template>
   <div class="main-page">
     <BannerTop />
-    <BannerBottom /> <!-- TODO: /blog -->
+    <BannerBottom />
     <FeaturesList />
     <PopularCategories />
     <BestProducts />
     <DayOffer />
-    <SaleProducts /> <!-- TODO: api - needed ? -->
+    <SaleProducts /> 
     <CollectionsList /> 
     <Stories />
     <Reviews />
@@ -51,8 +51,6 @@ export default {
     Brands,
   },
   layout: "hero",
-  // TODO: add ESLint and StyleLint
-  // TODO: check build in the end
 };
 </script>
 

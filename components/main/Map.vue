@@ -64,7 +64,7 @@ export default {
   },
   data() {
     return {
-      // TODO: use mask for phone
+      // TODO: static - change
       contacts: {
         address: "г. Москва, ул. Большая, 7/10",
         sub: "Охотный ряд",

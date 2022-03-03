@@ -29,11 +29,22 @@
           :availability="product.availability"
         />
         <div class="product-card__main-btn-wrapper">
-          <!-- TODO: Add quantity -->
-          <AppButton
-            :label="inCart ? 'В корзине' : 'В корзину'"
-            className="product-card__main-btn product-card__main-btn--cart"
-          />
+          <div class="product-card__quantity-wrapper">
+            <AppProductQuantity
+              class="product-card__quantity"
+              v-if="!inCart"
+              :quantity="product.quantity"
+              :value="1"
+              @change="$emit('change', $event)"
+              @decrease="$emit('decrease')"
+              @increase="$emit('increase')"
+            />
+            <AppButton
+              :label="inCart ? 'В корзине' : 'В корзину'"
+              className="product-card__main-btn product-card__main-btn--cart"
+              @click="onCartClick"
+            />
+          </div>
           <AppButton
             label="Купить в 1 клик"
             className="product-card__main-btn product-card__main-btn--buy"
@@ -55,7 +66,9 @@
             <span>Доставка завтра - {{ product.deliveryPrice }} ₽</span>
           </span>
         </span>
-        <div class="product-card__description font-small">{{ product.description }}</div>
+        <div class="product-card__description font-small">
+          {{ product.description }}
+        </div>
         <AppProductProps :properties="product.properties" />
       </div>
     </div>
@@ -78,6 +91,7 @@ import AppIcon from "~/components/ui/AppIcon";
 import AppProductHeaderControls from "~/components/ui/cards/AppProductHeaderControls";
 import AppProductProps from "~/components/ui/cards/AppProductProps";
 import AppProductPrice from "~/components/ui/cards/AppProductPrice";
+import AppProductQuantity from "~/components/ui/cards/AppProductQuantity";
 
 export default {
   title: "AppProductsCard",
@@ -87,7 +101,8 @@ export default {
     AppIcon,
     AppProductHeaderControls,
     AppProductProps,
-    AppProductPrice
+    AppProductPrice,
+    AppProductQuantity,
   },
   props: {
     product: {
@@ -96,10 +111,18 @@ export default {
       default: () => {},
     },
     inCart: {
-      // TODO: add to store in parrent
       type: Boolean,
       required: false,
       default: () => false,
+    },
+  },
+  methods: {
+    onCartClick() {
+      if (this.inCart) {
+        this.$router.push("/cart");
+      } else {
+        this.$emit("add-to-cart", this.product);
+      }
     },
   },
 };
@@ -189,12 +212,21 @@ export default {
 }
 .product-card__main-btn-wrapper {
   margin-bottom: 14px;
+
+  .product-card__quantity-wrapper {
+    display: flex;
+  }
+  .product-card__quantity {
+    margin-right: 12px;
+  }
 }
 .product-card__main-btn {
   width: 100%;
-  padding: 16px 26px 16px;
+  padding: 16px 4px;
   font-size: 0.7333em;
   letter-spacing: 0.8px;
+  line-height: 1.33;
+  max-height: 48px;
 
   &--cart {
     background-color: $text-link-hover;

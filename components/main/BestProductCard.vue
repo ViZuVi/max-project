@@ -1,5 +1,4 @@
 <template>
-  <!-- TODO: check class -->
   <div
     class="best-product-card"
     :class="
@@ -47,7 +46,6 @@
             :transparent="false"
             @click="fastBuy"
           />
-          <!-- TODO: from UI -->
           <v-dialog v-model="dialog" width="968">
             <template v-slot:activator="{ on, attrs }">
               <AppButton
@@ -58,7 +56,7 @@
                 :transparent="false"
               />
             </template>
-            <AppProductsCard :product="product" />
+            <AppProductsCard :product="product" :inCart="inCart" />
           </v-dialog>
         </div>
       </div>
@@ -94,6 +92,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import AppIcon from "~/components/ui/AppIcon";
 import AppButton from "~/components/ui/AppButton";
 import AppRating from "~/components/ui/AppRating";
@@ -122,6 +121,14 @@ export default {
     return {
       dialog: false,
     };
+  },
+  computed: {
+    ...mapState("cart", ["products"]),
+    inCart() {
+      return (
+        this.products.findIndex((item) => item.id === this.product.id) > -1
+      );
+    },
   },
   methods: {
     addToFavourite() {},
@@ -278,7 +285,7 @@ export default {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   padding: 20px 5px 19px;
-  font-size: .7333em;
+  font-size: 0.7333em;
 
   @include adapt-mobile {
     display: block;

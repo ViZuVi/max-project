@@ -1,5 +1,5 @@
 <template>
-  <!-- TODO: get timer from api -->
+  <!-- TODO: static - change -->
   <div class="app-sale-timer">
     <AppIcon symbol="icon_clock" class="app-sale-timer__icon" />
     <span class="app-sale-timer__item app-sale-timer__item--days">

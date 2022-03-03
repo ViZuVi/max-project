@@ -26,7 +26,6 @@
 </template>
 
 <script>
-// TODO: to UI
 import BestProductCard from "../main/BestProductCard";
 
 export default {

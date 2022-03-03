@@ -4,7 +4,6 @@
       {{ price }} ₽/шт
     </div>
     <div class="product-card-price__availability-wrapper">
-      <!-- TODO: availability modal? -->
       <span class="product-card-price__availability">{{ availability }}</span>
       <span class="product-card-price__question" v-if="price">
         <AppIcon

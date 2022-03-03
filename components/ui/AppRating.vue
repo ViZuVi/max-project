@@ -4,11 +4,12 @@
       v-for="(item, i) in stars"
       :key="i"
       symbol="icon_star"
-      :className="
+      :className="[
+        large ? 'app-rating__icon--large' : '',
         i < ratingRounded
           ? 'app-rating__icon app-rating__icon--filled'
-          : 'app-rating__icon'
-      "
+          : 'app-rating__icon',
+      ]"
     />
     <span class="app-rating__value" v-if="showRatingValue">{{ rating }}</span>
   </div>
@@ -32,6 +33,11 @@ export default {
       required: false,
       default: () => true,
     },
+    large: {
+      type: Boolean,
+      required: false,
+      default: () => false,
+    },
   },
   data() {
     return {
@@ -46,7 +52,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .app-rating {
   display: flex;
   align-items: center;
@@ -56,6 +62,11 @@ export default {
 
   &--filled {
     color: #e6c553;
+  }
+
+  &--large svg {
+    width: 21px;
+    height: 20px;
   }
 }
 .app-rating__value {

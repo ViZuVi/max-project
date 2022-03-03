@@ -1,6 +1,5 @@
 <template>
   <div class="cart-page">
-    <!-- TODO: to componnent -->
     <div class="cart-page__header">
       <div class="cart-page__title-wrapper">
         <h1 class="cart-page__title">Корзина</h1>

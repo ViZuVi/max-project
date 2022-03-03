@@ -42,14 +42,12 @@
                   :alt="review.name"
                 />
                 <div class="review__title">
-                  <!-- TODO: format date -->
                   <span class="review__date font-upper">{{
                     review.published
                   }}</span>
                   <span class="font-large">{{ review.name }}</span>
                 </div>
-                <!-- TODO: format rating; api - rating ? -->
-                <div class="review__rating">{{ review.raiting }}</div>
+                <AppRating class="review__rate" :rating="review.rate" :showRatingValue="false" :large="true" />
               </div>
               <div class="review__text">
                 <AppIcon symbol="icon_quote" className="review__quote-icon" />
@@ -68,6 +66,7 @@
 import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import AppButton from "~/components/ui/AppButton";
 import AppIcon from "~/components/ui/AppIcon";
+import AppRating from "~/components/ui/AppRating";
 
 export default {
   name: "Reviews",
@@ -75,6 +74,7 @@ export default {
     AppSectionTitle,
     AppButton,
     AppIcon,
+    AppRating
   },
   data() {
     return {
@@ -121,6 +121,9 @@ export default {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  @include adapt-mobile {
+    flex-wrap: wrap;
+  }
 }
 .review__user-img {
   display: block;
@@ -173,5 +176,12 @@ export default {
 .review__chat-icon {
   margin-right: 12px;
   color: inherit;
+}
+.review__rate {
+  margin-left: auto;
+  @include adapt-mobile {
+    width: 100%;
+    margin-top: 15px;
+  }
 }
 </style>
