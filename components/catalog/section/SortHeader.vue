@@ -1,7 +1,11 @@
 <template>
   <div class="sort-header">
     <div class="sort-header__sort-select">
-      <v-select :items="sortTypes" :label="activeSortType"></v-select>
+      <v-select :items="sortTypes" dense :hide-details="true">
+        <template #append>
+          <AppIcon symbol="icon_dropdown" className="app-select__icon" />
+        </template>
+      </v-select>
     </div>
     <!-- TODO: size and type to helper file -->
     <div class="sort-header__views-wrapper">
@@ -87,18 +91,33 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .sort-header {
   display: flex;
   align-items: center;
   padding: 13px 0 14px;
   border-bottom: $border;
+
+  .v-input__slot {
+    width: auto;
+    &::after {
+      content: none !important;
+    }
+  }
+
+  .v-select__selection {
+    margin: 0 !important;
+    font-size: 0.867em;
+    line-height: 1.692em;
+    color: $text-black-3;
+  }
 }
 .sort-header__views-wrapper {
   display: flex;
   align-items: center;
 }
 .sort-header__sort-select {
+  padding-top: 9px;
   margin-right: auto;
 }
 .sort-header__icon {

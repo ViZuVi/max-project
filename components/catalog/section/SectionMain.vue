@@ -12,7 +12,7 @@
       :viewType="productsViewType"
       :viewSize="productsViewSize"
     />
-    <div>
+    <div class="section-main__pagination-wrapper">
       <v-pagination :value="1" :length="5"></v-pagination>
     </div>
     <p class="section-main__text">
@@ -55,12 +55,34 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .section-main {
   padding-left: 30px;
 }
 .section-main__text {
   padding-top: 40px;
   margin-bottom: 30px;
+}
+.section-main__pagination-wrapper {
+  .v-pagination__navigation {
+    box-shadow: none;
+    &--disabled {
+      display: none;
+    }
+  }
+  .v-pagination__item {
+    box-shadow: none;
+    width: 26px;
+    height: 26px;
+    min-width: unset;
+    border-radius: 3px;
+    line-height: 26px;
+    margin: 0 12px 5px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    &--active {
+      background-color: $text-link-hover !important;
+    }
+  }
 }
 </style>
