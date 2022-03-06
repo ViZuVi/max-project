@@ -131,6 +131,12 @@ blockquote {
   height: 100vh !important;
 }
 
+.v-input__slot {
+  &::before {
+    content: none !important;
+  }
+}
+
 .app__carousel-icon {
   width: 100%;
   height: 100%;

@@ -1,4 +1,5 @@
 export const state = () => ({
+  city: "Москва"
 })
 
 export const mutations = {

@@ -283,6 +283,24 @@ const icons = {
       </clipPath>
       </defs>
     </svg>
+  `,
+  icon_card_view_small: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path data-name="Rounded Rectangle 1042 copy" d="M1473.5,613h-11a1.5,1.5,0,0,1-1.5-1.5v-7a1.5,1.5,0,0,1,1.5-1.5h11a1.5,1.5,0,0,1,1.5,1.5v7A1.5,1.5,0,0,1,1473.5,613Zm-8.5-8h-2v6h2v-6Zm2,0v6h2v-6h-2Zm6,0h-2v6h2v-6Z" transform="translate(-1461 -603)"></path></svg>
+  `,
+  icon_card_view_large: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path data-name="Rounded Rectangle 1042" d="M1502.5,613h-11a1.5,1.5,0,0,1-1.5-1.5v-7a1.5,1.5,0,0,1,1.5-1.5h11a1.5,1.5,0,0,1,1.5,1.5v7A1.5,1.5,0,0,1,1502.5,613Zm-10.5-8v6h1v-6h-1Zm4,0h-1v6h1v-6Zm3,0h-1v6h1v-6Zm3,0h-1v6h1v-6Z" transform="translate(-1490 -603)"></path></svg>
+  `,
+  icon_card_view_tile: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10" fill="currentColor"><path data-name="Rounded Rectangle 917 copy 3" d="M1566,603h1a1,1,0,0,1,0,2h-1A1,1,0,0,1,1566,603Zm5,0h1a1,1,0,0,1,0,2h-1A1,1,0,0,1,1571,603Zm5,0h1a1,1,0,0,1,0,2h-1A1,1,0,0,1,1576,603Zm-10,4h1a1,1,0,0,1,0,2h-1A1,1,0,0,1,1566,607Zm5,0h1a1,1,0,0,1,0,2h-1A1,1,0,0,1,1571,607Zm5,0h1a1,1,0,0,1,0,2h-1A1,1,0,0,1,1576,607Zm-10,4h1a1,1,0,0,1,0,2h-1A1,1,0,0,1,1566,611Zm5,0h1a1,1,0,0,1,0,2h-1A1,1,0,0,1,1571,611Zm5,0h1a1,1,0,0,1,0,2h-1A1,1,0,0,1,1576,611Z" transform="translate(-1565 -603)"></path></svg>
+  `,
+  icon_card_view_list: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10" fill="currentColor"><path data-name="Rounded Rectangle 917" d="M1594,603h1a1,1,0,0,1,0,2h-1A1,1,0,0,1,1594,603Zm5,0h6a1,1,0,0,1,0,2h-6A1,1,0,0,1,1599,603Zm-5,4h1a1,1,0,0,1,0,2h-1A1,1,0,0,1,1594,607Zm5,0h6a1,1,0,0,1,0,2h-6A1,1,0,0,1,1599,607Zm-5,4h1a1,1,0,0,1,0,2h-1A1,1,0,0,1,1594,611Zm5,0h6a1,1,0,0,1,0,2h-6A1,1,0,0,1,1599,611Z" transform="translate(-1593 -603)"></path></svg>
+  `,
+  icon_card_view_table: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10" fill="currentColor"><path data-name="Rounded Rectangle 918 copy 2" d="M1621.5,603h2a0.5,0.5,0,0,1,0,1h-2A0.5,0.5,0,0,1,1621.5,603Zm5,0h7a0.5,0.5,0,0,1,0,1h-7A0.5,0.5,0,0,1,1626.5,603Zm-5,3h2a0.5,0.5,0,0,1,0,1h-2A0.5,0.5,0,0,1,1621.5,606Zm5,0h7a0.5,0.5,0,0,1,0,1h-7A0.5,0.5,0,0,1,1626.5,606Zm-5,3h2a0.5,0.5,0,0,1,0,1h-2A0.5,0.5,0,0,1,1621.5,609Zm5,0h7a0.5,0.5,0,0,1,0,1h-7A0.5,0.5,0,0,1,1626.5,609Zm-5,3h2a0.5,0.5,0,0,1,0,1h-2A0.5,0.5,0,0,1,1621.5,612Zm5,0h7a0.5,0.5,0,0,1,0,1h-7A0.5,0.5,0,0,1,1626.5,612Z" transform="translate(-1621 -603)"></path></svg>
+  `,
+  icon_filter: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor"><path data-name="Rectangle 636 copy 5" d="M574.593,665.783L570,670.4V674l-2-1v-2.6l-4.6-4.614a0.94,0.94,0,0,1-.2-1.354,0.939,0.939,0,0,1,.105-0.16,0.969,0.969,0,0,1,.82-0.269h9.747a0.968,0.968,0,0,1,.82.269,0.94,0.94,0,0,1,.087.132A0.945,0.945,0,0,1,574.593,665.783Zm-8.164.216L569,668.581,571.571,666h-5.142Z" transform="translate(-563 -664)"></path></svg>
   `
 }
 

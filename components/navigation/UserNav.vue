@@ -15,7 +15,7 @@
     <v-dialog class="cities-modal" v-model="showCities" width="900">
       <template v-slot:activator="{ on, attrs }">
         <button class="user-nav__city-btn" v-on="on" v-bind="attrs">
-          <span>Москва</span>
+          <span>{{ city }}</span>
           <AppIcon symbol="icon_dropdown" className="user-nav__dropdown-icon" />
         </button>
       </template>
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapState } from "vuex";
 import AppIcon from "~/components/ui/AppIcon";
 import CompanyPhones from "./CompanyPhones";
 import CitiesModal from "./CitiesModal";
@@ -70,6 +70,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(["city"]),
     ...mapGetters("cart", ["productsQuantity"]),
   },
 };
