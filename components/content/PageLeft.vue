@@ -32,6 +32,7 @@ export default {
 <style lang="scss" scoped>
 .page-left {
   width: 244px;
+  flex-shrink: 0;
   @media (max-width: $tablet-width) {
     display: none;
   }

@@ -27,12 +27,17 @@ export default {
   layout: "hero",
   async asyncData({ $axios, params }) {
     const product = await $axios.$get(
-      "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/page/1"
+      "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/catalog/popular/products"
     );
     // TODO: static - change mockProducts
     return {
       section: params.section,
-      mockProducts: [],
+      mockProducts: [
+        ...product.items.map(item => ({...item, id: 1})),
+        ...product.items.map(item => ({...item, id: 2})),
+        ...product.items.map(item => ({...item, id: 3})),
+        ...product.items.map(item => ({...item, id: 4})),
+      ],
       mockSubsections: [
         {
           id: 1,

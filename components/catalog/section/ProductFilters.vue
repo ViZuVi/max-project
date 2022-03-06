@@ -27,6 +27,7 @@ export default {
 <style lang="scss" scoped>
 .product-filters {
   display: flex;
+  padding: 11px 0;
 }
 .product-filters__list {
   display: flex;

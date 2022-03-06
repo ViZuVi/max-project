@@ -1,10 +1,21 @@
 <template>
   <div class="section-main">
-    <SortHeader />
+    <SortHeader
+      :viewType="productsViewType"
+      :viewSize="productsViewSize"
+      @change-view-size="productsViewSize = $event"
+      @change-view-type="productsViewType = $event"
+    />
     <ProductFilters />
-    <ProductsList />
-    <!-- <Pagination /> -->
-    <p>
+    <ProductsList
+      :products="products"
+      :viewType="productsViewType"
+      :viewSize="productsViewSize"
+    />
+    <div>
+      <v-pagination :value="1" :length="5"></v-pagination>
+    </div>
+    <p class="section-main__text">
       В интернет-магазине представлено 500 позиций, чтобы выбрать технику для
       дома, работы и развлечений. Разобраться в разнообразии электроники поможет
       онлайн-консультант. С учетом пожеланий подберем товары по габаритам,
@@ -19,12 +30,14 @@
 <script>
 import SortHeader from "./SortHeader";
 import ProductFilters from "./ProductFilters";
+import ProductsList from "./ProductsList";
 
 export default {
   name: "SectionMain",
   components: {
     SortHeader,
     ProductFilters,
+    ProductsList,
   },
   props: {
     products: {
@@ -33,11 +46,21 @@ export default {
       default: () => [],
     },
   },
+  data() {
+    return {
+      productsViewType: "tile",
+      productsViewSize: "small",
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .section-main {
   padding-left: 30px;
+}
+.section-main__text {
+  padding-top: 40px;
+  margin-bottom: 30px;
 }
 </style>

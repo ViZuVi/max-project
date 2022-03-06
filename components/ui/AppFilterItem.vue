@@ -39,7 +39,7 @@ export default {
   },
   data() {
     return {
-      isOpened: "false",
+      isOpened: false,
     };
   },
 };
@@ -63,6 +63,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  font-size: 13px;
 }
 .app-filter-item__icon {
   display: flex;
