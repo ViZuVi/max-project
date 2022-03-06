@@ -58,6 +58,9 @@ export default {
 <style lang="scss">
 .section-main {
   padding-left: 30px;
+  @include adapt-mobile {
+    padding-left: 16px;;
+  }
 }
 .section-main__text {
   padding-top: 40px;

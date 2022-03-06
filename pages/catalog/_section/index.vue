@@ -70,6 +70,9 @@ export default {
   max-width: $max-width;
   margin: 0 auto;
   padding: 50px 30px;
+  @include adapt-mobile {
+    padding: 16px;
+  }
 }
 .main-page__content-wrapper {
   display: flex;

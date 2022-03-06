@@ -60,6 +60,9 @@ export default {
 .product-filters__list {
   display: flex;
   flex-wrap: wrap;
+  @include adapt-mobile {
+    display: none;
+  }
 }
 .product-filters__icon {
   padding-right: 16px;

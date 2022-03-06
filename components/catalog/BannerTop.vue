@@ -45,6 +45,11 @@ export default {
   position: relative;
   min-height: 372px;
   background-image: url("~assets/img/catalog-banner.jpg");
+
+  @include adapt-mobile {
+    background-image: unset;
+    min-height: unset;
+  }
 }
 .banner-top__info-wrapper {
   position: absolute;
@@ -53,14 +58,25 @@ export default {
   right: 0;
   margin: 0 auto;
   max-width: $max-width;
+  @include adapt-mobile {
+    margin: 62px 16px 9px;
+    position: static;
+  }
 }
 .banner-top__title-wrapper {
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+  @include adapt-mobile {
+    align-items: flex-end;
+  }
 }
 .banner-top__title {
   color: #ffffff;
+  @include adapt-mobile {
+    padding-top: 18px;
+    color: $text-black-3;
+  }
 }
 .banner-top__products-count {
   opacity: 0.5;
@@ -69,5 +85,9 @@ export default {
   margin-left: 8px;
   color: #ffffff;
   border-radius: 3px;
+  @include adapt-mobile {
+    color: $text-black-3;
+    border-color: $text-black-3;
+  }
 }
 </style>

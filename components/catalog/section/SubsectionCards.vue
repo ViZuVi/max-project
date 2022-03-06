@@ -55,6 +55,9 @@ export default {
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 10%);
     transform: translateY(-1px);
   }
+  @include adapt-mobile {
+    width: 100%;
+  }
 }
 .subsections__info-wrapper {
   padding-left: 20px;

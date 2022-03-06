@@ -115,6 +115,9 @@ export default {
 .sort-header__views-wrapper {
   display: flex;
   align-items: center;
+  @include adapt-mobile {
+    display: none;
+  }
 }
 .sort-header__sort-select {
   padding-top: 9px;
