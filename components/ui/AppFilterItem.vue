@@ -1,6 +1,6 @@
 <template>
   <div class="app-filter-item">
-    <button class="app-filter-item__btn" @click="isOpened = !isOpened">
+    <button class="app-filter-item__btn" @click="toggleFilter">
       <!-- TODO: emit opening and close other filters when one opened -->
       <span>{{ name }}</span>
       <AppIcon
@@ -13,7 +13,10 @@
         "
       />
     </button>
-    <slot v-show="isOpened"></slot>
+    <div class="app-filter-item__options" v-show="isOpened">
+      <slot></slot>
+      <div class="app-filter-item__footer">Выбрано: 1</div>
+    </div>
   </div>
 </template>
 
@@ -40,7 +43,18 @@ export default {
   data() {
     return {
       isOpened: false,
+      selected: false,
     };
+  },
+  methods: {
+    toggleFilter() {
+      if (this.hasDropdownIcon) {
+        this.isOpened = !this.isOpened;
+      } else {
+        this.selected = !this.selected;
+        this.$emit("toggle-selected", this.selected);
+      }
+    },
   },
 };
 </script>
@@ -76,5 +90,23 @@ export default {
   &--active {
     transform: rotate(180deg);
   }
+}
+.app-filter-item__options {
+  position: absolute;
+  background-color: #ffffff;
+  top: 31px;
+  left: 0;
+  min-width: 232px;
+  box-shadow: 0 5px 25px 0 rgb(0 0 0 / 10%);
+  z-index: 1;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.app-filter-item__footer {
+  padding: 12px 5px 14px 18px;
+  font-size: 13px;
+  color: $text-black-6;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ececec;
 }
 </style>
