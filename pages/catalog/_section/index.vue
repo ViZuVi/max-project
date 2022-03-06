@@ -4,7 +4,11 @@
     <section class="main-page">
       <SubsectionCards :subsections="mockSubsections" :section="section" />
       <div class="main-page__content-wrapper">
-        <PageLeft />
+        <PageLeft>
+          <template #navigation>
+            <SectionNav />
+          </template>
+        </PageLeft>
         <SectionMain class="main-page__content-main" :products="mockProducts" />
       </div>
     </section>
@@ -16,6 +20,7 @@ import BannerTop from "~/components/catalog/BannerTop";
 import SubsectionCards from "~/components/catalog/section/SubsectionCards";
 import PageLeft from "~/components/content/PageLeft";
 import SectionMain from "~/components/catalog/section/SectionMain";
+import SectionNav from "~/components/catalog/section/SectionNav";
 
 export default {
   components: {
@@ -23,6 +28,7 @@ export default {
     SubsectionCards,
     PageLeft,
     SectionMain,
+    SectionNav,
   },
   layout: "hero",
   async asyncData({ $axios, params }) {
@@ -33,10 +39,10 @@ export default {
     return {
       section: params.section,
       mockProducts: [
-        ...product.items.map(item => ({...item, id: 1})),
-        ...product.items.map(item => ({...item, id: 2})),
-        ...product.items.map(item => ({...item, id: 3})),
-        ...product.items.map(item => ({...item, id: 4})),
+        ...product.items.map((item) => ({ ...item, id: 1 })),
+        ...product.items.map((item) => ({ ...item, id: 2 })),
+        ...product.items.map((item) => ({ ...item, id: 3 })),
+        ...product.items.map((item) => ({ ...item, id: 4 })),
       ],
       mockSubsections: [
         {
