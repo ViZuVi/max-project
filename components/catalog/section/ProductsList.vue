@@ -3,7 +3,6 @@
     class="product-list"
     :class="viewSize === 'large' ? 'product-list--large' : ''"
   >
-    <!-- TODO: button view -->
     <BestProductCard
       class="product-list__item"
       v-for="product in products"

@@ -1,7 +1,6 @@
 <template>
   <div class="app-filter-item">
-    <button class="app-filter-item__btn" @click="toggleFilter">
-      <!-- TODO: emit opening and close other filters when one opened -->
+    <button class="app-filter-item__btn" @click="$emit('click')">
       <span>{{ name }}</span>
       <AppIcon
         v-if="hasDropdownIcon"
@@ -39,21 +38,15 @@ export default {
       required: false,
       default: () => false,
     },
-  },
-  data() {
-    return {
-      isOpened: false,
-      selected: false,
-    };
-  },
-  methods: {
-    toggleFilter() {
-      if (this.hasDropdownIcon) {
-        this.isOpened = !this.isOpened;
-      } else {
-        this.selected = !this.selected;
-        this.$emit("toggle-selected", this.selected);
-      }
+    isOpened: {
+      type: Boolean,
+      required: false,
+      default: () => false,
+    },
+    selected: {
+      type: Boolean,
+      required: false,
+      default: () => false,
     },
   },
 };

@@ -33,9 +33,16 @@ export default {
   components: {
     AppBreadcrumbs,
   },
+  props: {
+    section: {
+      type: Object,
+      required: true,
+      default: () => {}
+    }
+  },
   computed: {
     ...mapState(["city"]),
-    ...mapState("products", ["section", "products", "productsCount"]),
+    ...mapState("products", ["products", "productsCount"]),
   },
 };
 </script>

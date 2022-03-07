@@ -1,8 +1,11 @@
 <template>
   <div>
-    <BannerTop />
+    <BannerTop :section="mockSection" />
     <section class="main-page">
-      <SubsectionCards :subsections="mockSubsections" :section="section" />
+      <SubsectionCards
+        :subsections="mockSubsections"
+        :section="activeSection"
+      />
       <div class="main-page__content-wrapper">
         <PageLeft>
           <template #navigation>
@@ -37,7 +40,23 @@ export default {
     );
     // TODO: static - change mockProducts
     return {
-      section: params.section,
+      activeSection: params.section,
+      mockSection: {
+        id: 2,
+        image:
+          "https://img.freepik.com/free-vector/neon-lights-background-theme_52683-44625.jpg?size=626&ext=jpg",
+        title: "Электроника",
+        code: "electronics",
+        subSections: [
+          {
+            id: 1,
+            image:
+              "https://img.freepik.com/free-vector/neon-lights-background-theme_52683-44625.jpg?size=626&ext=jpg",
+            title: "Тестовый раздел",
+            code: "test_section",
+          },
+        ],
+      },
       mockProducts: [
         ...product.items.map((item) => ({ ...item, id: 1 })),
         ...product.items.map((item) => ({ ...item, id: 2 })),

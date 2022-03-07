@@ -2,14 +2,29 @@
   <div class="product-filters">
     <AppIcon symbol="icon_filter" className="product-filters__icon" />
     <div class="product-filters__list">
-      <AppFilterItem name="Цена" :hasDropdownIcon="true">
+      <AppFilterItem
+        name="Цена"
+        :hasDropdownIcon="true"
+        :isOpened="activeFilter === 'price'"
+        @click="toggleFilter('price')"
+      >
         <AppRange title="Розничная цена" />
         <AppRange title="Оптовая цена" />
       </AppFilterItem>
-      <AppFilterItem name="Наши предложения" :hasDropdownIcon="true">
+      <AppFilterItem
+        name="Наши предложения"
+        :hasDropdownIcon="true"
+        :isOpened="activeFilter === 'tags'"
+        @click="toggleFilter('tags')"
+      >
         <AppSelect :items="['test1', 'test2']" value="test1" />
       </AppFilterItem>
-      <AppFilterItem name="Бренд" :hasDropdownIcon="true">
+      <AppFilterItem
+        name="Бренд"
+        :hasDropdownIcon="true"
+        :isOpened="activeFilter === 'brand'"
+        @click="toggleFilter('brand')"
+      >
         <AppCheckboxes
           :items="[
             { title: 'Desti', value: 'desti' },
@@ -17,8 +32,17 @@
           ]"
         />
       </AppFilterItem>
-      <AppFilterItem name="В наличии" :hasDropdownIcon="false" />
-      <AppFilterItem name="Тип" :hasDropdownIcon="true">
+      <AppFilterItem
+        name="В наличии"
+        :hasDropdownIcon="false"
+        @click="toggleFilter('availability')"
+      />
+      <AppFilterItem
+        name="Тип"
+        :hasDropdownIcon="true"
+        :isOpened="activeFilter === 'type'"
+        @click="toggleFilter('type')"
+      >
         <AppRadioGroup
           :items="[
             { title: 'Все', value: 'all' },
@@ -48,6 +72,20 @@ export default {
     AppSelect,
     AppCheckboxes,
     AppRadioGroup,
+  },
+  data() {
+    return {
+      activeFilter: "",
+    };
+  },
+  methods: {
+    toggleFilter(e) {
+      if (e === this.activeFilter) {
+        this.activeFilter = "";
+      } else {
+        this.activeFilter = e;
+      }
+    },
   },
 };
 </script>

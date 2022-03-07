@@ -1,7 +1,7 @@
 <template>
   <div class="sort-header">
     <div class="sort-header__sort-select">
-      <v-select :items="sortTypes" dense :hide-details="true">
+      <v-select :items="sortTypes" dense :hide-details="true" value="По популярности (возрастание)">
         <template #append>
           <AppIcon symbol="icon_dropdown" className="app-select__icon" />
         </template>
