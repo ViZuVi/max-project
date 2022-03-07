@@ -5,15 +5,26 @@
       dense
       :max="max"
       :min="min"
-      v-model="range"
+      :value="range"
       track-fill-color="#365edc"
       hide-details
+      @change="range = $event"
     >
       <template #prepend>
-        <input type="text" :value="range[0]" @change="$set(range, 0, $event)" />
+        <input
+          class="app-range__input"
+          type="text"
+          :value="range[0]"
+          @change="range[0] = +$event.target.value"
+        />
       </template>
       <template #append>
-        <input type="text" :value="range[1]" @change="$set(range, 1, $event)" />
+        <input
+          class="app-range__input"
+          type="text"
+          :value="range[1]"
+          @change="range[1] = +$event.target.value"
+        />
       </template>
     </v-range-slider>
     <div class="app-range__values">
@@ -48,6 +59,10 @@ export default {
   background-color: #ffffff;
   border-top: 1px solid #ececec;
   padding: 19px 19px 15px 19px;
+
+  .app-range__input {
+    min-height: 100%;
+  }
 
   .v-input--range-slider {
     flex-wrap: wrap;

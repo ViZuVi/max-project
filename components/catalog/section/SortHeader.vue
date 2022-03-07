@@ -7,7 +7,6 @@
         </template>
       </v-select>
     </div>
-    <!-- TODO: size and type to helper file -->
     <div class="sort-header__views-wrapper">
       <div class="sort-header__view-size" v-if="viewType === 'tile'">
         <button
