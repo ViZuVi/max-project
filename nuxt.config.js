@@ -24,7 +24,7 @@ module.exports = {
     '@nuxtjs/device',
     '@nuxtjs/moment',
     // '@nuxtjs/stylelint-module',
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
   ],
   moment: {
     locales: ['ru']

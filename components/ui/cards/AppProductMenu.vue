@@ -1,12 +1,20 @@
 <template>
   <div class="app-product-menu">
-    <AppButton btnSymbol="icon_heart" className="app-product-menu__btn" :transparent="false" />
+    <AppButton
+      btnSymbol="icon_heart"
+      className="app-product-menu__btn"
+      :transparent="false"
+    />
     <AppButton
       btnSymbol="icon_diagram"
       className="app-product-menu__btn"
       :transparent="false"
     />
-    <AppButton btnSymbol="icon_bag" className="app-product-menu__btn" :transparent="false" />
+    <AppButton
+      btnSymbol="icon_bag"
+      className="app-product-menu__btn"
+      :transparent="false"
+    />
     <v-dialog v-model="showCardModal" width="968">
       <template v-slot:activator="{ on, attrs }">
         <AppButton
@@ -17,20 +25,25 @@
           :transparent="false"
         />
       </template>
-      <AppProductCard :product="product" />
+      <AppProductCardModal
+        :product="product"
+        section="electronics"
+        :inCart="inCart"
+      />
     </v-dialog>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import AppButton from "~/components/ui/AppButton";
-import AppProductCard from "~/components/ui/cards/AppProductCard";
+import AppProductCardModal from "~/components/ui/cards/AppProductCardModal";
 
 export default {
   name: "AppProductMenu",
   components: {
     AppButton,
-    AppProductCard,
+    AppProductCardModal,
   },
   props: {
     product: {
@@ -43,6 +56,14 @@ export default {
     return {
       showCardModal: false,
     };
+  },
+  computed: {
+    ...mapState("cart", ["products"]),
+    inCart() {
+      return (
+        this.products.findIndex((item) => item.id === this.product.id) > -1
+      );
+    },
   },
 };
 </script>

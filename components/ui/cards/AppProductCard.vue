@@ -116,6 +116,11 @@ export default {
       type: Number,
       required: false,
     },
+    section: {
+      type: String,
+      required: true,
+      default: () => "",
+    },
   },
   data() {
     return {

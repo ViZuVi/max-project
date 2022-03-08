@@ -16,6 +16,9 @@ export const mutations = {
     const index = state.products.findIndex(item => item.id === id);
     state.products.splice(index, 1);
   },
+  ADD_PRODUCT(state, product) {
+    state.products = [product, ...state.products];
+  },
   CLEAR_CART(state) {
     state.products = [];
   }
@@ -50,11 +53,16 @@ export const actions = {
 
   },
   changeProductQuantity({ commit }, payload) {
+    // axios.patch(".....")
     commit("SET_NEW_QUANTITY", payload);
   },
   deleteProduct({ commit }, payload) {
     // axios.delete(".....")
     commit("DELETE_PRODUCT", payload);
+  },
+  addProduct({ commit }, payload) {
+    // axios.post(".....")
+    commit("ADD_PRODUCT", payload);
   },
   clearCart({ commit }) {
     // axios.delete(".....")

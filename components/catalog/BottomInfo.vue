@@ -26,6 +26,7 @@
           <!-- TODO: static - change lists -->
           <ProductsSuggestions
             :products="{ mightLike: [product], buyWith: [product] }"
+            :inCart="inCart"
           />
         </div>
       </div>
@@ -111,6 +112,11 @@ export default {
       type: Object,
       required: true,
       default: () => {},
+    },
+    inCart: {
+      type: Boolean,
+      required: true,
+      default: () => false,
     },
   },
 };

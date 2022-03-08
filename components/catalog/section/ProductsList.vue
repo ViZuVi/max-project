@@ -8,6 +8,7 @@
       v-for="product in products"
       :key="product.id"
       :product="product"
+      section="electronics"
     />
     <AppButton label="Показать еще" class="product-list__show-more-btn" />
   </div>

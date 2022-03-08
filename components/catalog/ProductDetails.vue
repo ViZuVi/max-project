@@ -48,7 +48,7 @@
               class="product-details__props"
               :properties="product.properties"
             />
-            <div class="product-details__actions-card--wrapper">
+            <div class="product-details__actions-card-wrapper">
               <div class="product-details__actions-card">
                 <AppProductPrice
                   class="product-details__price"
@@ -65,6 +65,7 @@
                   <AppButton
                     :label="inCart ? 'В корзине' : 'В корзину'"
                     className="product-details__cart-btn"
+                    @click="goToCart"
                   />
                   <AppButton
                     label="Купить в 1 клик"
@@ -111,7 +112,7 @@
       </div>
       <ProductDetailsFeatures />
     </div>
-    <BottomInfo :product="product" />
+    <BottomInfo :product="product" :inCart="inCart" />
   </div>
 </template>
 
@@ -160,7 +161,11 @@ export default {
     },
   },
   methods: {
-    ...mapActions("cart", ["changeProductQuantity"]),
+    ...mapActions("cart", ["changeProductQuantity", "addProduct"]),
+    goToCart() {
+      console.log(this.inCart);
+      this.inCart ? this.$router.push("/cart") : this.addProduct(this.product);
+    },
   },
 };
 </script>

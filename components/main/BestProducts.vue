@@ -14,6 +14,7 @@
           :key="product.id"
           :product="product"
           :index="i"
+          section="electronics"
         />
       </div>
       <AppButton

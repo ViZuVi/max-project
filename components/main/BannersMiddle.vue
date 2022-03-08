@@ -10,7 +10,7 @@
         <div class="banners-middle__item-info">
           <span class="banners-middle__item-category font-upper">{{ card.category }}</span>
           <nuxt-link
-            :to="`catalog/${card.id}`"
+            :to="`catalog/electronics/${card.id}`"
             class="banners-middle__item-title"
             >{{ card.title }}</nuxt-link
           >
@@ -19,7 +19,7 @@
           }}</span>
         </div>
         <nuxt-link
-          :to="`catalog/${card.id}`"
+          :to="`catalog/electronics/${card.id}`"
           class="banners-middle__item-img-link"
           :style="{ backgroundImage: `url(${card.img})` }"
         ></nuxt-link>

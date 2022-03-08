@@ -18,6 +18,8 @@
             v-for="product in products[item.cardsType]"
             :key="product.id"
             :product="product"
+            :inCart="inCart"
+            section="electronics"
           />
         </div>
       </v-tab-item>
@@ -31,13 +33,18 @@ import AppProductCard from "~/components/ui/cards/AppProductCard";
 export default {
   name: "ProductsSuggestions",
   components: {
-    AppProductCard
+    AppProductCard,
   },
   props: {
     products: {
       type: Object,
       required: false,
       default: () => {},
+    },
+    inCart: {
+      type: Boolean,
+      required: true,
+      default: () => false,
     },
   },
   data() {
