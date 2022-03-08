@@ -112,7 +112,6 @@ export default {
     toggleSubmenu(e) {
       if (this.activeSubmenu.includes(e)) {
         const index = this.activeSubmenu.indexOf(e);
-        console.log(index);
         this.activeSubmenu.splice(index, 1);
       } else {
         this.activeSubmenu.push(e);

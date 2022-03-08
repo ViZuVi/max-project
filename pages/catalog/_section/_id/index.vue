@@ -16,7 +16,6 @@ export default {
     const product = await $axios.$get(
       "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/page/1"
     );
-      console.log(product, params);
     // TODO: static - change mockProduct
     return {
       // product: product.item,
