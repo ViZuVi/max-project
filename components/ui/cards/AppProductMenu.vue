@@ -17,20 +17,20 @@
           :transparent="false"
         />
       </template>
-      <AppProductsCard :product="product" />
+      <AppProductCard :product="product" />
     </v-dialog>
   </div>
 </template>
 
 <script>
 import AppButton from "~/components/ui/AppButton";
-import AppProductsCard from "~/components/ui/cards/AppProductsCard";
+import AppProductCard from "~/components/ui/cards/AppProductCard";
 
 export default {
   name: "AppProductMenu",
   components: {
     AppButton,
-    AppProductsCard,
+    AppProductCard,
   },
   props: {
     product: {

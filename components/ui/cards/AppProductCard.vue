@@ -18,7 +18,7 @@
           </div>
         </div>
         <nuxt-link
-          :to="`/catalog/${product.id}`"
+          :to="`/catalog/electronics/${product.id}`"
           class="best-product-card__link"
         >
           <img
@@ -56,7 +56,7 @@
                 :transparent="false"
               />
             </template>
-            <AppProductsCard :product="product" :inCart="inCart" />
+            <AppProductCardModal :product="product" :inCart="inCart" />
           </v-dialog>
         </div>
       </div>
@@ -69,7 +69,7 @@
           />
           <nuxt-link
             class="best-product-card__title"
-            :to="`/catalog/${product.id}`"
+            :to="`/catalog/electronics/${product.id}`"
             >{{ product.title }}</nuxt-link
           >
           <span class="best-product-card__availability">{{
@@ -86,7 +86,7 @@
       label="Подробнее"
       className="best-product-card__details-btn"
       :transparent="false"
-      @click="$router.push(`/catalog/${product.id}`)"
+      @click="$router.push(`/catalog/electronics/${product.id}`)"
     />
   </div>
 </template>
@@ -96,15 +96,15 @@ import { mapState } from "vuex";
 import AppIcon from "~/components/ui/AppIcon";
 import AppButton from "~/components/ui/AppButton";
 import AppRating from "~/components/ui/AppRating";
-import AppProductsCard from "~/components/ui/cards/AppProductsCard";
+import AppProductCardModal from "~/components/ui/cards/AppProductCardModal";
 
 export default {
-  title: "BestProductCard",
+  name: "AppProductCard",
   components: {
     AppIcon,
     AppButton,
     AppRating,
-    AppProductsCard,
+    AppProductCardModal,
   },
   props: {
     product: {

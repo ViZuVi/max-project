@@ -13,7 +13,7 @@
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in tabs" :key="item.cardsType">
         <div class="product-suggestions__list">
-          <BestProductCard
+          <AppProductCard
             class="product-suggestions__item"
             v-for="product in products[item.cardsType]"
             :key="product.id"
@@ -26,12 +26,12 @@
 </template>
 
 <script>
-import BestProductCard from "../main/BestProductCard";
+import AppProductCard from "~/components/ui/cards/AppProductCard";
 
 export default {
   name: "ProductsSuggestions",
   components: {
-    BestProductCard
+    AppProductCard
   },
   props: {
     products: {

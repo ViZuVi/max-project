@@ -14,7 +14,7 @@
           >Хит</span
         >
       </div>
-      <nuxt-link class="cart-product__title" :to="`/catalog/${product.id}`">{{
+      <nuxt-link class="cart-product__title" :to="`/catalog/electronics/${product.id}`">{{
         product.title
       }}</nuxt-link>
       <span class="cart-product__prop" v-if="product.discount">

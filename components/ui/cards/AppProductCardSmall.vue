@@ -1,10 +1,10 @@
 <template>
   <div class="product-card-small">
-    <nuxt-link class="product-card-small__img-link" :to="`/catalog/${product.id}`">
+    <nuxt-link class="product-card-small__img-link" :to="`/catalog/electronics/${product.id}`">
       <img class="product-card-small__img" :src="product.image" :alt="product.title" />
     </nuxt-link>
     <div class="product-card-small__info">
-      <nuxt-link :to="`/catalog/${product.id}`" class="product-card-small__title">{{
+      <nuxt-link :to="`/catalog/electronics/${product.id}`" class="product-card-small__title">{{
         product.title
       }}</nuxt-link>
       <span class="product-card-small__price">{{ product.price }} ₽/шт</span>

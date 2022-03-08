@@ -31,7 +31,7 @@
             <div class="recommended-products__img-wrapper">
               <nuxt-link
                 class="recommended-products__img-link"
-                :to="`/catalog/${product.id}`"
+                :to="`/catalog/electronics/${product.id}`"
               >
                 <img
                   class="recommended-products__img"
@@ -42,7 +42,7 @@
               <div class="recommended-products__info-wrapper">
                 <nuxt-link
                   class="recommended-products__card-title font-small"
-                  :to="`/catalog/${product.id}`"
+                  :to="`/catalog/electronics/${product.id}`"
                   >{{ product.title }}</nuxt-link
                 >
                 <span class="recommended-products__price"
@@ -53,7 +53,7 @@
             <AppButton
               label="Подробнее"
               className="app-button--small recommended-products__details"
-              @click="$router.push(`/catalog/${product.id}`)"
+              @click="$router.push(`/catalog/electronics/${product.id}`)"
             />
           </div>
         </v-sheet>

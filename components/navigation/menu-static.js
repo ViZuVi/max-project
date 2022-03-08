@@ -1,5 +1,5 @@
 const menuStatic = [
-  { title: "Каталог", icon: "icon_catalog", link: "/catalog", subMenu: [{ title: "Test Test", link: "/test" }] },
+  { title: "Каталог", icon: "icon_catalog", link: "/catalog", subMenu: [{ title: "Электроника", link: "/catalog/electronics" }] },
   { title: "Акции", icon: "icon_lightning", link: "" },
   { title: "Услуги", link: "", subMenu: [{ title: "Test Test", link: "/test" }] },
   { title: "Блог", link: "" },

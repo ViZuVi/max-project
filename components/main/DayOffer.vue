@@ -13,7 +13,7 @@
           <AppProductTag class="day-offer-card__tags" :tags="product.tags" />
           <nuxt-link
             class="day-offer-card__link"
-            :to="`/catalog/${product.id}`"
+            :to="`/catalog/electronics/${product.id}`"
           >
             <img class="day-offer-card__img" :src="product.image" alt="" />
           </nuxt-link>
@@ -28,7 +28,7 @@
           />
           <nuxt-link
             class="day-offer-card__title font-large"
-            :to="`/catalog/${product.id}`"
+            :to="`/catalog/electronics/${product.id}`"
             >{{ product.title }}</nuxt-link
           >
           <div>
@@ -43,7 +43,7 @@
           <AppButton
             label="Подробнее"
             className="day-offer-card__details-btn"
-            @click="$router.push(`/catalog/${product.id}`)"
+            @click="$router.push(`/catalog/electronics/${product.id}`)"
           />
         </div>
       </div>

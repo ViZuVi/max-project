@@ -23,7 +23,7 @@
           <AppProductTag class="product-details__tags" :tags="product.tags" />
           <nuxt-link
             class="product-details__img-link"
-            :to="`/catalog/${product.id}`"
+            :to="`/catalog/electronics/${product.id}`"
           >
             <img
               class="product-details__img"

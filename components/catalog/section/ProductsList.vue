@@ -3,7 +3,7 @@
     class="product-list"
     :class="viewSize === 'large' ? 'product-list--large' : ''"
   >
-    <BestProductCard
+    <AppProductCard
       class="product-list__item"
       v-for="product in products"
       :key="product.id"
@@ -14,13 +14,13 @@
 </template>
 
 <script>
-import BestProductCard from "~/components/main/BestProductCard";
+import AppProductCard from "~/components/ui/cards/AppProductCard";
 import AppButton from "~/components/ui/AppButton";
 
 export default {
   name: "ProductsList",
   components: {
-    BestProductCard,
+    AppProductCard,
     AppButton,
   },
   props: {

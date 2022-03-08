@@ -4,7 +4,7 @@
       <h2 class="product-card__header-title">
         <nuxt-link
           class="product-card__header-link"
-          :to="`/catalog/${product.id}`"
+          :to="`/catalog/electronics/${product.id}`"
           >{{ product.title }}</nuxt-link
         >
       </h2>
@@ -75,7 +75,7 @@
     <div class="product-card__footer">
       <nuxt-link
         class="product-card__footer-details-btn"
-        :to="`/catalog/${product.id}`"
+        :to="`/catalog/electronics/${product.id}`"
       >
         <span>Больше информации о товаре</span>
         <AppIcon symbol="" />
@@ -94,7 +94,7 @@ import AppProductPrice from "~/components/ui/cards/AppProductPrice";
 import AppProductQuantity from "~/components/ui/cards/AppProductQuantity";
 
 export default {
-  title: "AppProductsCard",
+  name: "AppProductCardModal",
   components: {
     AppButton,
     AppRating,

@@ -35,8 +35,8 @@
           symbol="icon_dropdown"
           className="app-side-nav__arrow-right-icon"
         />
-        <div v-if="item.subSections" class="app-side-nav__subsections">
-          <div
+        <span v-if="item.subSections" class="app-side-nav__subsections">
+          <span
             class="app-side-nav__subsection-wrapper"
             v-for="subItem in item.subSections"
             :key="subItem.id"
@@ -50,8 +50,8 @@
             <nuxt-link class="app-side-nav__subsection-link" to="">
               {{ subItem.title }}
             </nuxt-link>
-          </div>
-        </div>
+          </span>
+        </span>
       </nuxt-link>
     </div>
   </div>

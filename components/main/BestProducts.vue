@@ -9,7 +9,7 @@
         <AppTabs :tabs="['Хит', 'Советуем', 'Новинка', 'Акция']" />
       </AppSectionTitle>
       <div class="best-products__list">
-        <BestProductCard
+        <AppProductCard
           v-for="(product, i) in products"
           :key="product.id"
           :product="product"
@@ -28,7 +28,7 @@
 import AppSectionTitle from "~/components/ui/AppSectionTitle";
 import AppTabs from "~/components/ui/AppTabs";
 import AppButton from "~/components/ui/AppButton";
-import BestProductCard from "./BestProductCard";
+import AppProductCard from "~/components/ui/cards/AppProductCard";
 
 export default {
   name: "BestProducts",
@@ -36,7 +36,7 @@ export default {
     AppSectionTitle,
     AppTabs,
     AppButton,
-    BestProductCard,
+    AppProductCard,
   },
   data() {
     return {
