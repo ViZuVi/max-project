@@ -32,9 +32,7 @@
             >{{ product.title }}</nuxt-link
           >
           <div>
-            <span class="day-offer-card__availability">{{
-              product.availability
-            }}</span>
+            <AppAvailabilityBlock :availability="product.availability" />
             <span class="day-offer-card__code">Арт.: {{ product.code }}</span>
           </div>
           <p class="day-offer-card__price font-medium">
@@ -58,6 +56,7 @@ import AppProductMenu from "~/components/ui/cards/AppProductMenu";
 import AppSaleTimer from "~/components/ui/cards/AppSaleTimer";
 import AppRating from "~/components/ui/AppRating";
 import AppButton from "~/components/ui/AppButton";
+import AppAvailabilityBlock from "~/components/ui/AppAvailabilityBlock";
 
 export default {
   name: "DayOffer",
@@ -68,6 +67,7 @@ export default {
     AppSaleTimer,
     AppRating,
     AppButton,
+    AppAvailabilityBlock,
   },
   data() {
     return {
@@ -138,25 +138,6 @@ export default {
 }
 .day-offer-card__rating {
   margin-bottom: 20px;
-}
-.day-offer-card__availability {
-  font-size: 0.8em;
-  margin-right: 24px;
-  margin-left: 15px;
-  color: #5fa800;
-  position: relative;
-  &::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    left: -15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: #5fa800;
-  }
 }
 .day-offer-card__code {
   font-size: 0.8em;

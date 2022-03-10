@@ -99,9 +99,7 @@
                   </a>
                 </span>
               </div>
-              <span class="product-availability__quantity">{{
-                product.availability
-              }}</span>
+              <AppAvailabilityBlock :availability="product.availability" />
             </div>
           </SectionCard>
         </div>
@@ -113,12 +111,14 @@
 <script>
 import SectionCard from "../SectionCard";
 import AppIcon from "~/components/ui/AppIcon";
+import AppAvailabilityBlock from "~/components/ui/AppAvailabilityBlock";
 
 export default {
   name: "ProductAvailability",
   components: {
     SectionCard,
     AppIcon,
+    AppAvailabilityBlock,
   },
   props: {
     product: {
@@ -223,25 +223,6 @@ export default {
 }
 .product-availability__list-email {
   color: $text-link-hover;
-}
-.product-availability__quantity {
-  font-size: 0.8em;
-  margin-right: 24px;
-  margin-left: 15px;
-  color: #5fa800;
-  position: relative;
-  &::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    left: -15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: #5fa800;
-  }
 }
 .product-availability__card {
   width: 100%;

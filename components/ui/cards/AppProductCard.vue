@@ -72,9 +72,11 @@
             :to="`/catalog/electronics/${product.id}`"
             >{{ product.title }}</nuxt-link
           >
-          <span class="best-product-card__availability">{{
-            product.availability
-          }}</span>
+          <AppAvailabilityBlock
+            class="best-product-card__availability"
+            :availability="product.availability"
+            :hasModal="true"
+          />
           <span class="best-product-card__code">Арт.: {{ product.code }}</span>
         </div>
         <p class="best-product-card__price font-medium">
@@ -97,6 +99,7 @@ import AppIcon from "~/components/ui/AppIcon";
 import AppButton from "~/components/ui/AppButton";
 import AppRating from "~/components/ui/AppRating";
 import AppProductCardModal from "~/components/ui/cards/AppProductCardModal";
+import AppAvailabilityBlock from "~/components/ui/AppAvailabilityBlock";
 
 export default {
   name: "AppProductCard",
@@ -105,6 +108,7 @@ export default {
     AppButton,
     AppRating,
     AppProductCardModal,
+    AppAvailabilityBlock,
   },
   props: {
     product: {
@@ -232,27 +236,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  .best-product-card__availability {
-    font-size: 0.8em;
-    margin-right: 24px;
-    margin-left: 15px;
-    color: #5fa800;
-    border-bottom: 1px dotted #5fa800;
-    position: relative;
 
-    &::before {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      left: -15px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: #5fa800;
-    }
-  }
   .best-product-card__price {
     margin: 0;
     margin-top: 7px;

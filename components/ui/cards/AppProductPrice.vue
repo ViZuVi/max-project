@@ -1,10 +1,11 @@
 <template>
   <div class="product-card-price">
-    <div class="product-card-price__price">
-      {{ price }} ₽/шт
-    </div>
+    <div class="product-card-price__price">{{ price }} ₽/шт</div>
     <div class="product-card-price__availability-wrapper">
-      <span class="product-card-price__availability">{{ availability }}</span>
+      <AppAvailabilityBlock
+        :availability="availability"
+        :hasModal="true"
+      />
       <span class="product-card-price__question" v-if="price">
         <AppIcon
           symbol="icon_wallet"
@@ -20,11 +21,13 @@
 
 <script>
 import AppIcon from "~/components/ui/AppIcon";
+import AppAvailabilityBlock from "~/components/ui/AppAvailabilityBlock";
 
 export default {
   name: "AppProductPrice",
   components: {
     AppIcon,
+    AppAvailabilityBlock,
   },
   props: {
     price: {
@@ -51,28 +54,6 @@ export default {
 .product-card-price__availability-wrapper {
   display: flex;
   margin-bottom: 20px;
-}
-.product-card-price__availability {
-  font-size: 0.8em;
-  line-height: 15px;
-  margin-right: 24px;
-  margin-left: 15px;
-  color: #5fa800;
-  border-bottom: 1px dotted #5fa800;
-  position: relative;
-
-  &::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    left: -15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: #5fa800;
-  }
 }
 .product-card-price__question {
   font-size: 0.8em;
