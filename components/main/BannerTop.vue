@@ -4,7 +4,9 @@
       height="631"
       show-arrows-on-hover
       hide-delimiter-background
-      light
+      :light="true"
+      :show-arrows="!!!$device.isMobileOrTablet"
+      @change="changeCarouselItem"
     >
       <template v-slot:prev="{ on, attrs }">
         <button
@@ -30,19 +32,18 @@
         :key="item.id"
         :src="item.image"
       >
-        <v-sheet>
-          <div class="banner-top__info">
-            <span class="banner-top__title">{{ item.title }}</span>
-            <div class="banner-top__description">{{ item.text }}</div>
-            <AppButton
-              :label="item.link_title"
-              className="banner-top__btn"
-              @click="$router.push(item.link)"
-            />
-          </div>
-        </v-sheet>
       </v-carousel-item>
     </v-carousel>
+    <div class="banner-top__info">
+      <span class="banner-top__title">{{ activeItem.title }}</span>
+      <div class="banner-top__description">{{ activeItem.text }}</div>
+      <AppButton
+        :label="activeItem.link_title"
+        className="banner-top__btn"
+        :transparent="false"
+        @click="$router.push(activeItem.link)"
+      />
+    </div>
   </div>
 </template>
 
@@ -58,6 +59,7 @@ export default {
   },
   data() {
     return {
+      activeItem: {},
       carouselItems: [],
     };
   },
@@ -65,31 +67,64 @@ export default {
     const res = await this.$axios.$get(
       "https://virtserver.swaggerhub.com/Russi4nBe4r/kasumi/0.1.0/index/carousel"
     );
-    this.carouselItems = res.items;
+    this.carouselItems = [
+      ...res.items.map((el) => ({ ...el, id: 1 })),
+      ...res.items.map((el) => ({ ...el, id: 2, title: "Test" })),
+    ];
+  },
+  methods: {
+    changeCarouselItem(i) {
+      this.activeItem = this.carouselItems[i];
+    },
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .banner-top {
-  .v-sheet {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: transparent;
-    @include adapt-mobile {
-      width: 100%;
-      padding: 16px;
-      background-color: #ffffff;
+  position: relative;
+
+  .v-btn__content {
+    &::before {
+      content: none;
     }
+  }
+
+  .v-btn {
+    width: 12px;
+    height: 12px;
+    &::before {
+      content: none;
+    }
+
+    &--active {
+      .v-icon.mdi {
+        background-color: $text-link-hover;
+      }
+    }
+  }
+  .v-icon.mdi {
+    &::before,
+    &::after {
+      content: none;
+    }
+    opacity: 1;
+    color: #ffffff;
+    background-color: #ffffff;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
   }
 }
 .banner-top__info {
-  margin-top: -7%;
-  margin-left: -16%;
+  max-width: 600px;
+  position: absolute;
+  top: 37%;
+  left: 17%;
   @include adapt-mobile {
-    margin: 0;
+    position: static;
+    padding: 27px 20px;
+    text-align: center;
   }
 }
 .banner-top__title {
@@ -107,5 +142,9 @@ export default {
   margin-left: 0;
   background-color: $text-link-hover;
   color: #ffffff;
+
+  @include adapt-mobile {
+    margin-left: auto;
+  }
 }
 </style>
